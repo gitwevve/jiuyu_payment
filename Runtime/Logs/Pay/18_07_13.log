@@ -1,0 +1,243 @@
+[ 2018-07-13T00:08:30+08:00 ] 172.18.0.1 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000023s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001195s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002085s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002104s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0013s ]
+SQL: SELECT `is_repeat_order` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10002 AND `out_trade_id` = 'E20180712160828283882' LIMIT 1   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `pay_user_riskcontrol_config` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`unit_paying_number`,`unit_frist_paying_time`,`unit_paying_amount`,`paying_money`,`last_paying_time` FROM `pay_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `user_id` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `is_system` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_product` WHERE `id` = 907 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_product_user` WHERE `pid` = 907 AND `userid` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_channel` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T00:08:46+08:00 ] 172.18.0.1 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001033s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002536s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002561s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0012s ]
+SQL: SELECT `is_repeat_order` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10002 AND `out_trade_id` = 'E20180712160828283882' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `pay_user_riskcontrol_config` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`unit_paying_number`,`unit_frist_paying_time`,`unit_paying_amount`,`paying_money`,`last_paying_time` FROM `pay_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `user_id` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `is_system` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_product` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_product` WHERE `id` = 907 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_product_user` WHERE `pid` = 907 AND `userid` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-13T00:16:58+08:00 ] 172.18.0.1 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001120s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002078s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002095s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT `is_repeat_order` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10002 AND `out_trade_id` = 'E20180712160828283882' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `pay_user_riskcontrol_config` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`unit_paying_number`,`unit_frist_paying_time`,`unit_paying_amount`,`paying_money`,`last_paying_time` FROM `pay_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `user_id` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `is_system` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_product` WHERE `id` = 907 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_product_user` WHERE `pid` = 907 AND `userid` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-13T00:23:55+08:00 ] 172.18.0.1 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000996s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002485s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002505s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT `is_repeat_order` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10002 AND `out_trade_id` = 'E20180712160828283882' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `pay_user_riskcontrol_config` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`unit_paying_number`,`unit_frist_paying_time`,`unit_paying_amount`,`paying_money`,`last_paying_time` FROM `pay_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `user_id` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `is_system` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_product` WHERE `id` = 907 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_product_user` WHERE `pid` = 907 AND `userid` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_channel` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-13T23:32:45+08:00 ] 172.18.0.1 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011929s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.016642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.028612s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.748980s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.749012s ]
+ERR: SQLSTATE[HY000] [1049] Unknown database 'pay'
+
+[ 2018-07-13T23:33:04+08:00 ] 172.18.0.1 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001968s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.004500s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.004522s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0247s ]
+SQL: SELECT `is_repeat_order` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10002 AND `out_trade_id` = 'E20180713153241144451' LIMIT 1   [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `pay_user_riskcontrol_config` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`unit_paying_number`,`unit_frist_paying_time`,`unit_paying_amount`,`paying_money`,`last_paying_time` FROM `pay_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `user_id` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0024s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `is_system` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_product` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_product` WHERE `id` = 907 AND `status` = 1 LIMIT 1   [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `pay_product_user` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `pay_product_user` WHERE `pid` = 907 AND `userid` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `pay_channel` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0086s ]
+SQL: SHOW COLUMNS FROM `pay_banks` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `pay_banks` WHERE `status` = 1 AND `code` = 'ABC' LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 AND `status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 214 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000675s ]
+INFO: [ action_begin ] --END-- [ RunTime:-0.145691s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: userid /var/www/jiuyu/fundtime.cn/Application/Pay/Controller/PayController.class.php 第 36 行.
+SQL: SELECT * FROM `pay_member` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_userrate` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: userid /var/www/jiuyu/fundtime.cn/Application/Pay/Controller/PayController.class.php 第 46 行.
+NOTIC: [8] Undefined index: pid /var/www/jiuyu/fundtime.cn/Application/Pay/Controller/PayController.class.php 第 46 行.
+SQL: SELECT * FROM `pay_userrate` WHERE `userid` = null AND `payapiid` = null LIMIT 1   [ RunTime:0.0077s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_channel_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `pay_channel_account` WHERE `channel_id` = 212 AND `status` = 1  [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `pay_channel_account` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: pid /var/www/jiuyu/fundtime.cn/Application/Pay/Controller/PayController.class.php 第 101 行.
+SQL: SELECT * FROM `pay_product` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-13T23:33:15+08:00 ] 172.18.0.1 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001723s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.003499s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003527s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0017s ]
+SQL: SELECT `is_repeat_order` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10002 AND `out_trade_id` = 'E20180713153241144451' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `pay_user_riskcontrol_config` [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`unit_paying_number`,`unit_frist_paying_time`,`unit_paying_amount`,`paying_money`,`last_paying_time` FROM `pay_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `user_id` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `is_system` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_product` [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_product` WHERE `id` = 907 AND `status` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `pay_product_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_product_user` WHERE `pid` = 907 AND `userid` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `pay_channel` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `pay_banks` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_banks` WHERE `status` = 1 AND `code` = 'SPDB' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-13T23:33:20+08:00 ] 172.18.0.1 /Pay_Index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001285s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003138s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002546s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002566s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT `is_repeat_order` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10002 AND `out_trade_id` = 'E20180713153241144451' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `pay_user_riskcontrol_config` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`unit_paying_number`,`unit_frist_paying_time`,`unit_paying_amount`,`paying_money`,`last_paying_time` FROM `pay_member` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `user_id` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_user_riskcontrol_config` WHERE `is_system` = 1 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_product` WHERE `id` = 907 AND `status` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `pay_product_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_product_user` WHERE `pid` = 907 AND `userid` = 2 AND `status` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `pay_channel` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 212 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `pay_banks` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_banks` WHERE `status` = 1 AND `code` = 'HXB' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 214 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 214 AND `status` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000989s ]
+INFO: [ action_begin ] --END-- [ RunTime:-0.033366s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: userid /var/www/jiuyu/fundtime.cn/Application/Pay/Controller/PayController.class.php 第 36 行.
+SQL: SELECT * FROM `pay_member` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_userrate` [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: userid /var/www/jiuyu/fundtime.cn/Application/Pay/Controller/PayController.class.php 第 46 行.
+NOTIC: [8] Undefined index: pid /var/www/jiuyu/fundtime.cn/Application/Pay/Controller/PayController.class.php 第 46 行.
+SQL: SELECT * FROM `pay_userrate` WHERE `userid` = null AND `payapiid` = null LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_channel` WHERE `id` = 214 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_channel_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_channel_account` WHERE `channel_id` = 214 AND `status` = 1  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `pay_channel_account` [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: pid /var/www/jiuyu/fundtime.cn/Application/Pay/Controller/PayController.class.php 第 101 行.
+SQL: SELECT * FROM `pay_product` WHERE `id` = null LIMIT 1   [ RunTime:0.0001s ]
+

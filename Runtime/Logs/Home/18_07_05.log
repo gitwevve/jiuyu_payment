@@ -1,0 +1,32 @@
+[ 2018-07-05T23:15:14+08:00 ] 172.18.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.013172s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.019022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.032234s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.956110s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.956147s ]
+ERR: 1146:Table 'pay.pay_template' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pay_template`
+ERR: 1146:Table 'pay.pay_template' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pay_template`
+
+[ 2018-07-05T23:29:57+08:00 ] 172.18.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000033s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001067s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.007770s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.007792s ]
+ERR: 1146:Table 'pay.pay_template' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pay_template`
+ERR: 1146:Table 'pay.pay_template' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `pay_template`
+

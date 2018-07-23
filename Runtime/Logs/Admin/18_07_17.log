@@ -1,0 +1,126 @@
+[ 2018-07-17T21:58:57+08:00 ] 172.18.0.1 /manage_Index_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000035s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012598s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.018438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031077s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.922773s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.922803s ]
+
+[ 2018-07-17T21:58:57+08:00 ] 172.18.0.1 /manage_Login_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000601s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000680s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000045s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.106735s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.106756s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.009363s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.010820s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.020215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008077s ]
+
+[ 2018-07-17T21:58:57+08:00 ] 172.18.0.1 /manage_Login_verifycode.html?t=1531835937
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001163s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001190s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000713s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000726s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000041s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000071s ]
+
+[ 2018-07-17T21:59:05+08:00 ] 172.18.0.1 /manage_Login_checkLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001222s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.004395s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.004416s ]
+SQL: SHOW COLUMNS FROM `pay_admin` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `pay_admin` WHERE `username` = 'adminroot' AND `password` = 'fb1e1fffc2db48b9b4ca111c75cea199' LIMIT 1   [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0012s ]
+SQL: SELECT `login_ip` FROM `pay_websiteconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `pay_loginrecord` [ RunTime:0.0014s ]
+SQL: INSERT INTO `pay_loginrecord` (`userid`,`logindatetime`,`loginip`,`loginaddress`,`type`) VALUES ('1','2018-07-17 21:59:05','172.18.0.1','局域网-对方和您在同一内部网','1') [ RunTime:0.0070s ]
+SQL: UPDATE `pay_admin` SET `session_random`='BSdj9FwMsEhDRy23SJokbhMQHL1DSQUI' WHERE `username` = 'adminroot' [ RunTime:0.0102s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-17T21:59:06+08:00 ] 172.18.0.1 /manage_Auth_google.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001182s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001331s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001353s ]
+SQL: SHOW COLUMNS FROM `pay_admin` [ RunTime:0.0017s ]
+SQL: SELECT `groupid` FROM `pay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `session_random` FROM `pay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member_agent_cate` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `pay_member_agent_cate`  [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `pay_auth_group_access` [ RunTime:0.0011s ]
+SQL: SELECT b.rules FROM pay_auth_group_access a LEFT JOIN pay_auth_group b ON b.id=a.group_id  WHERE a.uid = '1'  [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `pay_auth_rule` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `pay_auth_rule` WHERE `id` IN ('1','49','2','3','51','4','57','5','55','56','58','59','6','43','44','52','53','48','70','54','7','8','60','61','62','9','63','64','65','66','10','67','68','69','11','12','79','80','81','82','83','84','85','86','87','88','89','90','91','93','94','95','96','97','98','99','100','101','120','13','14','15','92','16','73','76','77','78','17','18','19','71','75','72','74','123','22','23','24','25','26','46','27','28','108','29','102','30','103','107','104','105','122','31','32','33','34','121','35','36','37','38','39','40','41','42','45','47') AND `is_menu` = 1 AND `status` = 1  [ RunTime:0.0098s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_admin` [ RunTime:0.0008s ]
+SQL: SELECT `google_secret_key` FROM `pay_admin` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079070s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000441s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000452s ]
+
+[ 2018-07-17T21:59:06+08:00 ] 172.18.0.1 /manage_Login_verifycode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000014s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000040s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001509s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001533s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000051s ]
+

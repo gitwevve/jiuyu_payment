@@ -1,0 +1,154 @@
+[ 2018-07-07T11:51:17+08:00 ] 172.18.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.012781s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.018659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031478s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.822458s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.822485s ]
+SQL: SHOW COLUMNS FROM `pay_template` [ RunTime:0.0009s ]
+SQL: SELECT `theme` FROM `pay_template` WHERE `is_default` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: logo /var/www/jiuyu/fundtime.cn/Application/Home/Controller/BaseController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000057s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089778s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089804s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013669s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.017093s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.030795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.014666s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014685s ]
+
+[ 2018-07-07T11:51:23+08:00 ] 172.18.0.1 /Home_Index_userLogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000026s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000189s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002286s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002297s ]
+SQL: SHOW COLUMNS FROM `pay_template` [ RunTime:0.0009s ]
+SQL: SELECT `theme` FROM `pay_template` WHERE `is_default` = 1 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: logo /var/www/jiuyu/fundtime.cn/Application/Home/Controller/BaseController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025233s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025252s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000990s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000480s ]
+
+[ 2018-07-07T12:27:20+08:00 ] 172.18.0.1 /Home_Index_generateQrcode?str=otpauth%3A%2F%2Ftotp%2Fhttp%3A%2F%2Fwww.9pay.local%3Fsecret%3DWF6ZKPUIZYGEBRJU
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000169s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000538s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `pay_template` [ RunTime:0.0007s ]
+SQL: SELECT `theme` FROM `pay_template` WHERE `is_default` = 1 LIMIT 1   [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: logo /var/www/jiuyu/fundtime.cn/Application/Home/Controller/BaseController.class.php 第 39 行.
+
+[ 2018-07-07T12:32:07+08:00 ] 172.18.0.1 /Home_Index_generateQrcode?str=otpauth%3A%2F%2Ftotp%2Fhttp%3A%2F%2Fwww.9pay.local%3Fsecret%3DWF6ZKPUIZYGEBRJU
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000243s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001250s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001288s ]
+SQL: SHOW COLUMNS FROM `pay_template` [ RunTime:0.0010s ]
+SQL: SELECT `theme` FROM `pay_template` WHERE `is_default` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: logo /var/www/jiuyu/fundtime.cn/Application/Home/Controller/BaseController.class.php 第 39 行.
+
+[ 2018-07-07T14:06:58+08:00 ] 172.18.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001031s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002272s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002289s ]
+SQL: SHOW COLUMNS FROM `pay_template` [ RunTime:0.0011s ]
+SQL: SELECT `theme` FROM `pay_template` WHERE `is_default` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: logo /var/www/jiuyu/fundtime.cn/Application/Home/Controller/BaseController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000055s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033487s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033510s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000494s ]
+
+[ 2018-07-07T19:18:14+08:00 ] 172.18.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001289s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.003550s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003580s ]
+SQL: SHOW COLUMNS FROM `pay_template` [ RunTime:0.0007s ]
+SQL: SELECT `theme` FROM `pay_template` WHERE `is_default` = 1 LIMIT 1   [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: logo /var/www/jiuyu/fundtime.cn/Application/Home/Controller/BaseController.class.php 第 39 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034274s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000479s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000933s ]
+

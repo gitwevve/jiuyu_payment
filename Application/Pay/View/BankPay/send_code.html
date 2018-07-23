@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>快捷支付</title>
+	<link rel="stylesheet" href="Public/weui/weui.min.css">
+
+	<link rel="stylesheet" href="Public/weui/base.css">
+
+	<style>
+		.bd {
+			padding-bottom: 65px;
+		}
+		.weui-cells {
+			font-size: 14px;
+		}
+		.mg_l10 {
+			margin-left: 10px;
+		}
+		i, em {
+			font-style: normal;
+		}
+		.color_org {
+			color: #f1511e!important;
+		}
+		.color_red {
+			color: #d81c00!important;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="bd">
+			<div class="weui-cells__title" style="margin-top: 100px;"></div>
+			<div style="max-width:500px;margin: auto;background-color: #fff; ">
+					<div class="weui-cell">
+						<div class="tit">
+							<p><h2>快捷支付</h2></p>
+							<p><span class="t-name">订单号：<i class="mg_l10"><{$orderid}></i></span></p>
+							<p><span class="t-name">支付金额:<em class="mg_l10 color_org">￥<{$money}>元</em></span></p>
+						</div>
+					</div>
+			</div>
+			<div class="weui-cells weui-cells_form" style="max-width:500px;max-height:800px; margin: auto;background-color: #fff; ">
+				<form id="payOrder" action="<{$rpay_url}>" method="post">
+		      		<div class="weui-cell weui-cell_vcode" style="border-bottom: solid #e5e5e5 1px;" >	
+<!-- 						<div class="weui-cell">
+							<div class="weui-cell__hd"><label class="weui-label"><i class="color_red">*</i>手机验证码号</label></div>
+							<div class="weui-cell__bd">
+								<input class="weui-input" type="text" name="smsCode" id="phoneNo"  placeholder="请输入手机验证码号">
+							</div>
+						</div> -->
+
+						<div class="weui-cell__hd">
+							<label class="weui-label"><i class="color_red">*</i>手机验证码</label>
+						</div>
+						<div class="weui-cell__bd">
+							<input class="weui-input" type="tel" placeholder="请输入手机验证码">
+						</div>
+						<div class="weui-cell__ft">
+							<button class="weui-vcode-btn" id="getAgainCode">重新获取验证码</button>
+						</div>
+					</div>
+					<input type="hidden" name="orderno" value="<{$orderno}>">
+					<input type="hidden" name="paytoken" value="<{$paytoken}>">
+					<input type="hidden" name="encryp" value="<{$encryp}>">
+				</form>
+				<div class="weui-btn-area">
+		            <a class="weui-btn weui-btn_primary fz16" id="btnPay" href="javascript:">确定</a>
+		        </div>
+		        <br>
+	        </div>
+		</div>
+	</div>
+</body>
+<script src="/Public/Front/js/jquery.min.js"></script>
+<script src="/Public/weui/weui.min.js"></script>
+<script>
+	$('input[name="__hash__"]').remove();
+	
+	var isbtn=true;
+$("#btnPay").on("click",function(){
+   
+	var phoneNo=$("#phoneNo").val();
+    
+    if (!phoneNo) {
+        weui.topTips("手机验证码号不为空");
+        return false;
+    }
+    $('#payOrder').submit();
+});
+var time = 60;
+$("#getAgainCode").click(function(){
+	var orderno = $("input[name='orderno']").val();
+	var paytoken = $("input[name='paytoken']").val();
+	$.ajax({
+		'type':'post',
+		'url':"<{:U("SdDs/getCode")}>",
+		'data':{'orderno':orderno, 'paytoken':paytoken},
+		'success':function(info){
+			if(info['status'] != 'error'){	
+				$("#getAgainCode").attr("disabled", true);
+				window.setInterval(function(){
+					time -= 1;
+					if(time<=0){
+						$("$getAgainCode").attr("disabled", false);
+						$("$getAgainCode").html("重新获取验证码！");
+					}else{
+						$("#getAgainCode").html( time + "秒后重新获取验证码！");
+					}
+				},1000);
+			}else{
+				weui.topTips(info["msg"]);
+			}
+		},
+		'error':function(){
+			weui.topTips("网关繁忙，请稍后重试！");
+		}
+	});
+	return false;
+});
+</script>
+</html>

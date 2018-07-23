@@ -1,0 +1,87 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=320, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<title>银联网银支付</title>
+<link rel="stylesheet" href="Public/bank/common.css">
+
+</head>
+
+	<body>
+		<div class="header">
+			<div class="header-main"><img src="Public/bank/bank.jpg" height="40px" > </div>
+		</div>
+		<div class="zhezhao-bg"></div>
+		<div class="content">
+		<div class="top-content">
+			<p class="float-l" style="width:250px">订单号：<?php echo ($orderid); ?></p>
+			<p class="float-l">商品名：<?php echo ($body); ?></p>
+			<p class="float-r" style="margin-top:-10px">订单金额：<span><?php echo ($money); ?></span>元</p>
+		</div>
+		<div class="float-clear"></div>
+		<div class="main-content">
+			<div class="main-title"> 网银快捷支付 </div>
+			<div class="pay-tab">
+    <form id="payOrder" method="post" action="<?php echo ($rpay_url); ?>">
+				<div class="choose-bank" style="opacity: 1;">
+					<p class="choose-bank-title"><span></span>请选择支付银行</p>
+					<div class="div-bank-list">
+
+
+						<ul class="pay-label" name="bankCode">
+							<?php if(is_array($bank_array)): foreach($bank_array as $key=>$item): ?><li>
+									<input value="<?php echo ($item); ?>" checked="checked" name="bankCode" id="<?php echo ($item); ?>" type="radio">
+									<label for="<?php echo ($item); ?>"><img src="Public/bank/<?php echo ($key); ?>.png" alt="<?php echo ($key); ?>"><span></span></label>
+								</li><?php endforeach; endif; ?>
+						</ul>
+					</div>
+					<div class="disable-screen" style="display:none"></div>
+				</div>
+<div style="display:block; height:220px">
+				<!--<p class="pay-money ">订单金额：<span>0.01</span>元</p>-->
+
+			<div class="pay-banknumber">
+					<input type="hidden" name="encryp" value="<?php echo ($encryp); ?>">
+					<input type="hidden" name="url" value="<?php echo ($url); ?>">
+				</form>
+				<a type="submit" class="bcn-btn float-l" value="确认" id="btnPay" href="javascript:">确定</a>
+				<div style="margin-top:40px;position:absolute;display:none;color:red;" id="error">错误信息提示</div>
+				<div class="float-clear"></div>
+			</div>	
+</div>
+			</div>
+		</div>
+	</form>
+
+        <div class="bottom-content">
+            <p class="bottom-content-title">常见问题</p>
+            <ul class="ul-question">
+                <li>
+                    <p class="q-text">如何使用快捷支付进行付款？</p>
+                    <p class="a-text">首次选择快捷支付时，需要填写您办理银行卡的身份信息和预留手机号码，信息通过验证后，通过您收到的短信验证码进行开通和支付。开通成功后
+下次可凭支付密码和短信验证码进行支付。</p>
+                </li>
+                <li>
+                    <p class="q-text">手机已更换，怎么更新手机号码？</p>
+                    <p class="a-text">修改快捷支付银行卡预留手机号时，您需要首先在银行变更手机号码，再重新添加该卡。
+下次可凭支付密码和短信验证码进行支付。</p>
+                </li>
+                <li>
+                    <p class="q-text">支付时收不到验证码怎么办？</p>
+                    <p class="a-text">请您检查一下是否常用手机，网络是否正常，如因网络拥堵造成短信延迟，可尝试重启手机。</p>
+                </li>
+            </ul>
+        </div>
+				<script src="Public/Front/js/jquery.min.js"></script>
+				<script src="Public/weui/weui.min.js"></script>
+				<script>
+					$('input[name="__hash__"]').remove();
+
+					var isbtn=true;
+				$("#btnPay").on("click",function(){
+
+
+				    $('#payOrder').submit();
+				});
+				</script>
+		</body></html>

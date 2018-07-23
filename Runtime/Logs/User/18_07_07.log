@@ -1,0 +1,1801 @@
+[ 2018-07-07T11:51:23+08:00 ] 172.18.0.1 /agent_Login_verifycode.html?t=1530935483
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000198s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000687s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000714s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000051s ]
+
+[ 2018-07-07T11:51:30+08:00 ] 172.18.0.1 /User_Login_checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001812s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001825s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_member` WHERE `username` = 'adminroot' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `login_warning_num` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-07T12:12:47+08:00 ] 172.18.0.1 //agent_Login_register_invitecode_kqkPFdRhF4mHxbuGKnTrTUBOhh8BUR.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002399s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002422s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031433s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031448s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000673s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000293s ]
+
+[ 2018-07-07T12:20:01+08:00 ] 172.18.0.1 /user_Login_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000750s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001875s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001888s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000015s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000031s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027739s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027761s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000432s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000454s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000908s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000276s ]
+
+[ 2018-07-07T12:20:01+08:00 ] 172.18.0.1 /agent_Login_verifycode.html?t=1530937201
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000053s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000734s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000048s ]
+
+[ 2018-07-07T12:20:03+08:00 ] 172.18.0.1 /agent_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000184s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000911s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000032s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000045s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019640s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019654s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000279s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000399s ]
+
+[ 2018-07-07T12:20:32+08:00 ] 172.18.0.1 /user_Login_checkinvitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001612s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001622s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `pay_invitecode` WHERE `invitecode` = '4kqirr' AND `status` = 1 AND `yxdatetime` >= 1530937232 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000316s ]
+
+[ 2018-07-07T12:20:48+08:00 ] 172.18.0.1 /user_Login_checkinvitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001811s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001822s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `pay_invitecode` WHERE `invitecode` = '9ucguw5j42hmpp9alrw83obs6ew070' AND `status` = 1 AND `yxdatetime` >= 1530937248 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000330s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000338s ]
+
+[ 2018-07-07T12:21:06+08:00 ] 172.18.0.1 /user_Login_checkinvitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000191s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001610s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001621s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `pay_invitecode` WHERE `invitecode` = '5pzj0lpb9o8nsf557f9ryl83dcgx42' AND `status` = 1 AND `yxdatetime` >= 1530937266 LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000270s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2018-07-07T12:21:26+08:00 ] 172.18.0.1 /user_Login_checkinvitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001910s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001922s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `pay_invitecode` WHERE `invitecode` = 'GJhipszCqCRrFQTH5vQvOB3GZnBBb7' AND `status` = 1 AND `yxdatetime` >= 1530937286 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000252s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000260s ]
+
+[ 2018-07-07T12:21:37+08:00 ] 172.18.0.1 /user_Login_checkinvitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001578s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001589s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0006s ]
+SQL: SELECT `id` FROM `pay_invitecode` WHERE `invitecode` = 'GJhipszCqCRrFQTH5vQvOB3GZnBBb7' AND `status` = 1 AND `yxdatetime` >= 1530937297 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000415s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000426s ]
+
+[ 2018-07-07T12:23:08+08:00 ] 172.18.0.1 /user_Login_checkinvitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001207s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001583s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001903s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001915s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `pay_invitecode` WHERE `invitecode` = '5pzj0lpb9o8nsf557f9ryl83dcgx42' AND `status` = 1 AND `yxdatetime` >= 1530937388 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000275s ]
+
+[ 2018-07-07T12:23:11+08:00 ] 172.18.0.1 /user_Login_checkinvitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000188s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002375s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002388s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `pay_invitecode` WHERE `invitecode` = '123456' AND `status` = 1 AND `yxdatetime` >= 1530937391 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000262s ]
+
+[ 2018-07-07T12:23:13+08:00 ] 172.18.0.1 /user_Login_checkinvitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001110s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001122s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0005s ]
+SQL: SELECT `id` FROM `pay_invitecode` WHERE `invitecode` = '5pzj0lpb9o8nsf557f9ryl83dcgx42' AND `status` = 1 AND `yxdatetime` >= 1530937393 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000302s ]
+
+[ 2018-07-07T12:25:08+08:00 ] 172.18.0.1 /user_Login_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001918s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001933s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000014s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000024s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007162s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007179s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000322s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000293s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000300s ]
+
+[ 2018-07-07T12:25:08+08:00 ] 172.18.0.1 /agent_Login_verifycode.html?t=1530937508
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000008s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000040s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001050s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000029s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000047s ]
+
+[ 2018-07-07T12:25:12+08:00 ] 172.18.0.1 /agent_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000029s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.004320s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.004353s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020161s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020180s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000495s ]
+
+[ 2018-07-07T12:25:17+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.010738s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.010758s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029667s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029682s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000488s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001096s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000370s ]
+
+[ 2018-07-07T12:25:19+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001037s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001220s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001234s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008672s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008687s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000175s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000182s ]
+
+[ 2018-07-07T12:25:20+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000048s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.007813s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.007828s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000027s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007738s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007750s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000036s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000015s ]
+
+[ 2018-07-07T12:25:20+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000039s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000697s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005973s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005985s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000058s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000013s ]
+
+[ 2018-07-07T12:25:20+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000052s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000995s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000028s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007447s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007461s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000059s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000013s ]
+
+[ 2018-07-07T12:25:20+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001033s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000872s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000021s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000038s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009092s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000258s ]
+
+[ 2018-07-07T12:25:21+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000014s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000008s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000039s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.008543s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.008571s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000021s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008689s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008703s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000014s ]
+
+[ 2018-07-07T12:25:21+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000014s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000054s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000909s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000925s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007864s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007883s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000042s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000078s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000014s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000020s ]
+
+[ 2018-07-07T12:25:21+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000015s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000040s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000906s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000028s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007684s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007699s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000013s ]
+
+[ 2018-07-07T12:25:21+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000014s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000055s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000889s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000903s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000029s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006613s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000060s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000014s ]
+
+[ 2018-07-07T12:25:21+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000031s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000058s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.003366s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003398s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007649s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007666s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000025s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000057s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000031s ]
+
+[ 2018-07-07T12:25:21+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000053s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002592s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002619s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000027s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009815s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009829s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000044s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000016s ]
+
+[ 2018-07-07T12:25:22+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001086s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.005937s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.005955s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008294s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008311s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000397s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+
+[ 2018-07-07T12:25:22+08:00 ] 172.18.0.1 /user_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000014s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000055s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000771s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000041s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007677s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000059s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000014s ]
+
+[ 2018-07-07T12:27:02+08:00 ] 172.18.0.1 /user_Login_checklogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001227s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002093s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002112s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `pay_member` WHERE `username` = 'rangerdong' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `login_warning_num` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `pay_member` SET `login_error_num`=login_error_num+1,`last_error_time`='1530937622' WHERE `id` = 18 [ RunTime:0.0892s ]
+
+[ 2018-07-07T12:27:07+08:00 ] 172.18.0.1 /agent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000084s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000113s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000623s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0007s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000040s ]
+NOTIC: [2] Use of undefined constant agent_cate - assumed 'agent_cate' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 53 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 58 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 69 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 102 行.
+NOTIC: [2] Use of undefined constant df_api - assumed 'df_api' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 112 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 115 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 121 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 135 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039476s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000258s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000011s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000018s ]
+
+[ 2018-07-07T12:27:07+08:00 ] 172.18.0.1 /agent_Index_main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000038s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001716s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001738s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0016s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0024s ]
+SQL: SELECT SUM( pay_actualamount ) AS total, FROM_UNIXTIME( pay_successdate,  '%Y-%m-%d' ) AS DATETIME
+FROM pay_order WHERE pay_successdate >= UNIX_TIMESTAMP(  '2018-07-01' ) AND pay_successdate < UNIX_TIMESTAMP(  '2018-07-31' ) AND pay_status>=1 AND pay_memberid=10018  GROUP BY DATETIME [ RunTime:0.0096s ]
+SQL: SELECT COUNT( id ) AS num, FROM_UNIXTIME( pay_successdate,  '%Y-%m-%d' ) AS DATETIME
+FROM pay_order WHERE pay_successdate >= UNIX_TIMESTAMP(  '2018-07-01' ) AND pay_successdate < UNIX_TIMESTAMP(  '2018-07-31' ) AND pay_status>=1 AND pay_memberid=10018  GROUP BY DATETIME [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: category /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 57 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 57 行.
+NOTIC: [8] Undefined variable: dataone /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 58 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 58 行.
+NOTIC: [8] Undefined variable: datatwo /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 59 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 59 行.
+SQL: SHOW COLUMNS FROM `pay_article` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_article` WHERE `status` = 1 AND `groupid` IN ('0','2') ORDER BY id desc LIMIT 2   [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `pay_loginrecord` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_loginrecord` WHERE `userid` = 18 ORDER BY id desc LIMIT 2   [ RunTime:0.0043s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_successdate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(pay_amount) AS tp_sum FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` = 0 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT SUM(pay_actualamount) AS tp_sum FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_successdate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` IN ('1','2') LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: ipItem /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 93 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000021s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000035s ]
+NOTIC: [2] Illegal string offset 'loginip' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Illegal string offset 'loginaddress' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Illegal string offset 'logindatetime' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 37 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058085s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058101s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000061s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000013s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000019s ]
+
+[ 2018-07-07T12:27:20+08:00 ] 172.18.0.1 /agent_Account_google.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002116s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002136s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0010s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `google_secret_key` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000031s ]
+NOTIC: [8] Undefined variable: sendUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/cf42a6e37c33798481f6a61c3a2399ad.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043932s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043948s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000631s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000363s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2018-07-07T12:27:35+08:00 ] 172.18.0.1 /agent_Agent_invitecode.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000189s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.003594s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003618s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0011s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_invitecode` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_invitecode` WHERE `fmusernameid` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_invitecode` WHERE `fmusernameid` = 18 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000019s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000034s ]
+NOTIC: [8] Undefined index: invitecod /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c4a36356e5b205710a905de8a9d1212d.php 第 43 行.
+NOTIC: [8] Undefined index: syusername /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c4a36356e5b205710a905de8a9d1212d.php 第 49 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040698s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000376s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000290s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000297s ]
+
+[ 2018-07-07T12:28:00+08:00 ] 172.18.0.1 /agent_Login_register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000032s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002009s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002020s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000029s ]
+NOTIC: [8] Undefined variable: loginUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/79f66d8b4fb4ea6f1ecc9517963eb677.php 第 29 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008999s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000384s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000244s ]
+
+[ 2018-07-07T12:28:55+08:00 ] 172.18.0.1 /agent_Account_changeRecord.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000894s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001845s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001859s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0007s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product_user` [ RunTime:0.0007s ]
+SQL: SELECT pay_product.name,pay_product.id,pay_product.code FROM `pay_product_user` LEFT JOIN pay_product ON pay_product.id = pay_product_user.pid  WHERE pay_product_user.status = 1 AND pay_product_user.userid = '18'  [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `pay_moneychange` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_moneychange` WHERE `userid` = 18 LIMIT 1   [ RunTime:0.0035s ]
+SQL: SELECT * FROM `pay_moneychange` WHERE `userid` = 18 ORDER BY id desc LIMIT 0,15   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000037s ]
+NOTIC: [8] Undefined index: orderid /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 42 行.
+NOTIC: [8] Undefined index: createtime /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 46 行.
+NOTIC: [2] Use of undefined constant bank - assumed 'bank' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 60 行.
+NOTIC: [8] Undefined index: bank /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 60 行.
+NOTIC: [2] Use of undefined constant bank - assumed 'bank' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 61 行.
+NOTIC: [8] Undefined index: bank /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 61 行.
+NOTIC: [2] Use of undefined constant bank - assumed 'bank' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 62 行.
+NOTIC: [8] Undefined index: bank /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 62 行.
+NOTIC: [2] Use of undefined constant bank - assumed 'bank' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 63 行.
+NOTIC: [8] Undefined index: bank /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 63 行.
+NOTIC: [2] Use of undefined constant bank - assumed 'bank' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 64 行.
+NOTIC: [8] Undefined index: bank /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 64 行.
+NOTIC: [2] Use of undefined constant bank - assumed 'bank' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 65 行.
+NOTIC: [8] Undefined index: bank /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 65 行.
+NOTIC: [2] Use of undefined constant bank - assumed 'bank' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 66 行.
+NOTIC: [8] Undefined index: bank /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 66 行.
+NOTIC: [2] Use of undefined constant rows - assumed 'rows' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 142 行.
+NOTIC: [8] Undefined index: rows /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 142 行.
+NOTIC: [2] Use of undefined constant rows - assumed 'rows' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 143 行.
+NOTIC: [8] Undefined index: rows /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 143 行.
+NOTIC: [2] Use of undefined constant rows - assumed 'rows' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 144 行.
+NOTIC: [8] Undefined index: rows /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 144 行.
+NOTIC: [2] Use of undefined constant rows - assumed 'rows' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 145 行.
+NOTIC: [8] Undefined index: rows /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 145 行.
+NOTIC: [2] Use of undefined constant rows - assumed 'rows' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 146 行.
+NOTIC: [8] Undefined index: rows /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 146 行.
+NOTIC: [2] Use of undefined constant rows - assumed 'rows' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 147 行.
+NOTIC: [8] Undefined index: rows /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 147 行.
+NOTIC: [2] Use of undefined constant orderid - assumed 'orderid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 183 行.
+NOTIC: [8] Undefined index: orderid /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 183 行.
+NOTIC: [2] Use of undefined constant createtime - assumed 'createtime' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 183 行.
+NOTIC: [8] Undefined index: createtime /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 183 行.
+NOTIC: [2] Use of undefined constant tongdao - assumed 'tongdao' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 183 行.
+NOTIC: [8] Undefined index: tongdao /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 183 行.
+NOTIC: [2] Use of undefined constant bank - assumed 'bank' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 183 行.
+NOTIC: [8] Undefined index: bank /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/c1a3d30f96ea1fe32934762b403e9f2e.php 第 183 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042932s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000211s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000218s ]
+
+[ 2018-07-07T12:28:58+08:00 ] 172.18.0.1 /agent_Account_channelFinance.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001399s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002039s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002055s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_product` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_product` LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `id`,`name`,`code` FROM `pay_product` LIMIT 0,15   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+NOTIC: [2] bcdiv(): Division by zero /var/www/jiuyu/fundtime.cn/Application/User/Controller/AccountController.class.php 第 755 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000014s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000028s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031390s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031409s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000375s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000801s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000356s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+
+[ 2018-07-07T12:29:27+08:00 ] 172.18.0.1 /agent_Account_authorized.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000180s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000784s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001829s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001844s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `authorized` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_attachment` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_attachment` WHERE `userid` = 18  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000034s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025150s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025170s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000550s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000479s ]
+
+[ 2018-07-07T12:29:27+08:00 ] 172.18.0.1 /agent_Account_editPassword.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000039s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000689s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0007s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8] Undefined variable: sendUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/66f337f6060630701be49435e4569214.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029657s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000032s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000056s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000012s ]
+
+[ 2018-07-07T12:29:38+08:00 ] 172.18.0.1 /agent_Account_editPassword.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000192s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002006s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002019s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0007s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-07T12:29:39+08:00 ] 172.18.0.1 /agent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001343s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001484s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001499s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+NOTIC: [2] Use of undefined constant agent_cate - assumed 'agent_cate' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 53 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 58 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 69 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 102 行.
+NOTIC: [2] Use of undefined constant df_api - assumed 'df_api' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 112 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 115 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 121 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 135 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033698s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033712s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000506s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001065s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000625s ]
+
+[ 2018-07-07T12:29:39+08:00 ] 172.18.0.1 /agent_Index_main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000011s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000042s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000956s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000975s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0011s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0011s ]
+SQL: SELECT SUM( pay_actualamount ) AS total, FROM_UNIXTIME( pay_successdate,  '%Y-%m-%d' ) AS DATETIME
+FROM pay_order WHERE pay_successdate >= UNIX_TIMESTAMP(  '2018-07-01' ) AND pay_successdate < UNIX_TIMESTAMP(  '2018-07-31' ) AND pay_status>=1 AND pay_memberid=10018  GROUP BY DATETIME [ RunTime:0.0003s ]
+SQL: SELECT COUNT( id ) AS num, FROM_UNIXTIME( pay_successdate,  '%Y-%m-%d' ) AS DATETIME
+FROM pay_order WHERE pay_successdate >= UNIX_TIMESTAMP(  '2018-07-01' ) AND pay_successdate < UNIX_TIMESTAMP(  '2018-07-31' ) AND pay_status>=1 AND pay_memberid=10018  GROUP BY DATETIME [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: category /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 57 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 57 行.
+NOTIC: [8] Undefined variable: dataone /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 58 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 58 行.
+NOTIC: [8] Undefined variable: datatwo /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 59 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 59 行.
+SQL: SHOW COLUMNS FROM `pay_article` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_article` WHERE `status` = 1 AND `groupid` IN ('0','2') ORDER BY id desc LIMIT 2   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `pay_loginrecord` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_loginrecord` WHERE `userid` = 18 ORDER BY id desc LIMIT 2   [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_successdate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(pay_amount) AS tp_sum FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(pay_actualamount) AS tp_sum FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_successdate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: ipItem /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 93 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000044s ]
+NOTIC: [2] Illegal string offset 'loginip' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Illegal string offset 'loginaddress' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Illegal string offset 'logindatetime' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 37 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042089s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042105s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000013s ]
+
+[ 2018-07-07T12:29:44+08:00 ] 172.18.0.1 /agent_Account_editPassword.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001132s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.003095s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.003117s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0009s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000033s ]
+NOTIC: [8] Undefined variable: sendUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/66f337f6060630701be49435e4569214.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011494s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011510s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000420s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000347s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000355s ]
+
+[ 2018-07-07T12:30:04+08:00 ] 172.18.0.1 /agent_Login_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000959s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001871s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001883s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000014s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000029s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033021s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000402s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000808s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000536s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000544s ]
+
+[ 2018-07-07T12:30:04+08:00 ] 172.18.0.1 /agent_Login_verifycode.html?t=1530937804
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000008s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000038s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000912s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000059s ]
+
+[ 2018-07-07T12:30:12+08:00 ] 172.18.0.1 /user_Login_checklogin.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001944s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001956s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_member` WHERE `username` = 'rangerdong' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `login_warning_num` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `pay_member` SET `login_error_num`='0',`session_random`='QMttAiIHnkPnAFUf7JAYoaZPkW3PZdfn' WHERE `id` = 18 [ RunTime:0.0224s ]
+SQL: SHOW COLUMNS FROM `pay_loginrecord` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_loginrecord` WHERE `userid` = 18 AND `type` = 0 ORDER BY id desc LIMIT 3   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `pay_loginrecord` (`userid`,`logindatetime`,`loginip`,`loginaddress`,`type`) VALUES ('18','2018-07-07 12:30:12','172.18.0.1','局域网-','0') [ RunTime:0.0020s ]
+
+[ 2018-07-07T12:30:15+08:00 ] 172.18.0.1 /user_Index_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000181s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001688s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001700s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0007s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000048s ]
+NOTIC: [2] Use of undefined constant agent_cate - assumed 'agent_cate' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 53 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 58 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 69 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 102 行.
+NOTIC: [2] Use of undefined constant df_api - assumed 'df_api' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 112 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 115 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 121 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 135 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028356s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028370s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000295s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2018-07-07T12:30:15+08:00 ] 172.18.0.1 /agent_Index_main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000041s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000708s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0007s ]
+SQL: SELECT SUM( pay_actualamount ) AS total, FROM_UNIXTIME( pay_successdate,  '%Y-%m-%d' ) AS DATETIME
+FROM pay_order WHERE pay_successdate >= UNIX_TIMESTAMP(  '2018-07-01' ) AND pay_successdate < UNIX_TIMESTAMP(  '2018-07-31' ) AND pay_status>=1 AND pay_memberid=10018  GROUP BY DATETIME [ RunTime:0.0010s ]
+SQL: SELECT COUNT( id ) AS num, FROM_UNIXTIME( pay_successdate,  '%Y-%m-%d' ) AS DATETIME
+FROM pay_order WHERE pay_successdate >= UNIX_TIMESTAMP(  '2018-07-01' ) AND pay_successdate < UNIX_TIMESTAMP(  '2018-07-31' ) AND pay_status>=1 AND pay_memberid=10018  GROUP BY DATETIME [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: category /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 57 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 57 行.
+NOTIC: [8] Undefined variable: dataone /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 58 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 58 行.
+NOTIC: [8] Undefined variable: datatwo /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 59 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 59 行.
+SQL: SHOW COLUMNS FROM `pay_article` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_article` WHERE `status` = 1 AND `groupid` IN ('0','2') ORDER BY id desc LIMIT 2   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `pay_loginrecord` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_loginrecord` WHERE `userid` = 18 ORDER BY id desc LIMIT 2   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_successdate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` IN ('1','2') LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT SUM(pay_amount) AS tp_sum FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(pay_actualamount) AS tp_sum FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_successdate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` IN ('1','2') LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: ipItem /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 93 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000035s ]
+NOTIC: [2] Illegal string offset 'loginip' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Illegal string offset 'loginaddress' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Illegal string offset 'logindatetime' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 37 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038461s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038477s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000049s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000014s ]
+
+[ 2018-07-07T12:30:32+08:00 ] 172.18.0.1 /agent_Account_profile.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001170s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001921s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001932s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0010s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0006s ]
+SQL: SELECT `df_api` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `username` FROM `pay_member` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000039s ]
+NOTIC: [2] Use of undefined constant sex - assumed 'sex' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/ab070ebc0ea52ddabda22edffd505f45.php 第 95 行.
+NOTIC: [2] Use of undefined constant sex - assumed 'sex' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/ab070ebc0ea52ddabda22edffd505f45.php 第 97 行.
+NOTIC: [2] Use of undefined constant login_ip - assumed 'login_ip' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/ab070ebc0ea52ddabda22edffd505f45.php 第 112 行.
+NOTIC: [2] Use of undefined constant df_domain - assumed 'df_domain' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/ab070ebc0ea52ddabda22edffd505f45.php 第 134 行.
+NOTIC: [2] Use of undefined constant df_ip - assumed 'df_ip' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/ab070ebc0ea52ddabda22edffd505f45.php 第 141 行.
+NOTIC: [8] Undefined variable: sendUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/ab070ebc0ea52ddabda22edffd505f45.php 第 162 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038752s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038766s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000377s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000393s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000405s ]
+
+[ 2018-07-07T12:30:32+08:00 ] 172.18.0.1 /agent_Account_bankcard.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000009s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000039s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000603s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000612s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0007s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_bankcard` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_bankcard` WHERE `userid` = 18 ORDER BY id desc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000031s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035486s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035505s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000026s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000052s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000012s ]
+
+[ 2018-07-07T12:32:07+08:00 ] 172.18.0.1 /agent_Account_google.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000963s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002018s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002034s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0010s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `google_secret_key` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000018s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000035s ]
+NOTIC: [8] Undefined variable: sendUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/cf42a6e37c33798481f6a61c3a2399ad.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000320s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000277s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000285s ]
+
+[ 2018-07-07T12:32:37+08:00 ] 172.18.0.1 /agent_Account_google.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002493s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002511s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0007s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `pay_member` SET `google_secret_key`='WF6ZKPUIZYGEBRJU' WHERE `id` = 18 AND `google_secret_key` = '' [ RunTime:0.0454s ]
+
+[ 2018-07-07T12:32:38+08:00 ] 172.18.0.1 /agent_Account_google.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000958s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `google_secret_key` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000026s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008729s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000231s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000208s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000214s ]
+
+[ 2018-07-07T12:32:42+08:00 ] 172.18.0.1 /agent_Account_authorized.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002428s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002446s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0009s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `authorized` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_attachment` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_attachment` WHERE `userid` = 18  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000013s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000025s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009880s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009899s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000245s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000251s ]
+
+[ 2018-07-07T12:32:43+08:00 ] 172.18.0.1 /agent_Account_editPassword.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000010s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000068s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000904s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0009s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000016s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000029s ]
+NOTIC: [8] Undefined variable: sendUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/66f337f6060630701be49435e4569214.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009266s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009282s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000028s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000055s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000013s ]
+
+[ 2018-07-07T12:32:43+08:00 ] 172.18.0.1 /agent_Account_editPaypassword.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000008s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000020s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000038s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000738s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000750s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0014s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_sms` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `pay_sms` LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000017s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000032s ]
+NOTIC: [8] Undefined variable: sendUrl /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/1b73f30b4eaee6463e0e959f055b2379.php 第 71 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029247s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000032s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000060s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000009s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000013s ]
+
+[ 2018-07-07T14:11:00+08:00 ] 172.18.0.1 /user_Index_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001238s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001859s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001873s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000042s ]
+NOTIC: [2] Use of undefined constant agent_cate - assumed 'agent_cate' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 53 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 58 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 69 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 102 行.
+NOTIC: [2] Use of undefined constant df_api - assumed 'df_api' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 112 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 115 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 121 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 135 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/d7a7632f153cf12d0db44c934c28bcfe.php 第 149 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045866s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045882s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000383s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000839s ]
+
+[ 2018-07-07T14:11:01+08:00 ] 172.18.0.1 /agent_Index_main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000029s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000151s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.001344s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.001365s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0042s ]
+SQL: SELECT `id` as uid,`username`,`password`,`groupid`,`parentid`,`salt`,`balance`,`blockedbalance`,`email`,`realname`,`authorized`,`apidomain`,`apikey`,`status`,`mobile`,`receiver`,`agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime` FROM `pay_member` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `pay_order` [ RunTime:0.0014s ]
+SQL: SELECT SUM( pay_actualamount ) AS total, FROM_UNIXTIME( pay_successdate,  '%Y-%m-%d' ) AS DATETIME
+FROM pay_order WHERE pay_successdate >= UNIX_TIMESTAMP(  '2018-07-01' ) AND pay_successdate < UNIX_TIMESTAMP(  '2018-07-31' ) AND pay_status>=1 AND pay_memberid=10018  GROUP BY DATETIME [ RunTime:0.0042s ]
+SQL: SELECT COUNT( id ) AS num, FROM_UNIXTIME( pay_successdate,  '%Y-%m-%d' ) AS DATETIME
+FROM pay_order WHERE pay_successdate >= UNIX_TIMESTAMP(  '2018-07-01' ) AND pay_successdate < UNIX_TIMESTAMP(  '2018-07-31' ) AND pay_status>=1 AND pay_memberid=10018  GROUP BY DATETIME [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: category /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 57 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 57 行.
+NOTIC: [8] Undefined variable: dataone /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 58 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 58 行.
+NOTIC: [8] Undefined variable: datatwo /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 59 行.
+NOTIC: [2] implode(): Invalid arguments passed /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 59 行.
+SQL: SHOW COLUMNS FROM `pay_article` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `pay_article` WHERE `status` = 1 AND `groupid` IN ('0','2') ORDER BY id desc LIMIT 2   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `pay_loginrecord` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_loginrecord` WHERE `userid` = 18 ORDER BY id desc LIMIT 2   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_successdate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(pay_amount) AS tp_sum FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_applydate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(pay_actualamount) AS tp_sum FROM `pay_order` WHERE `pay_memberid` = 10018 AND `pay_successdate` BETWEEN 1530892800 AND 1530979199 AND `pay_status` IN ('1','2') LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: ipItem /var/www/jiuyu/fundtime.cn/Application/User/Controller/IndexController.class.php 第 93 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000020s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000033s ]
+NOTIC: [2] Illegal string offset 'loginip' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Illegal string offset 'loginaddress' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Illegal string offset 'logindatetime' /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [8] Uninitialized string offset: 0 /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 29 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 37 行.
+NOTIC: [2] Use of undefined constant groupid - assumed 'groupid' (this will throw an Error in a future version of PHP) /var/www/jiuyu/fundtime.cn/Runtime/Cache/User/0a2302724c4cbc626c8639028f086c96.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000027s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000008s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000014s ]
+

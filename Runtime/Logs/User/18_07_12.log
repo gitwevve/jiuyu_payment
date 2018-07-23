@@ -1,0 +1,82 @@
+[ 2018-07-12T21:39:13+08:00 ] 172.18.0.1 /agent_Login_verifycode.html?t=1531402753
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.000680s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000054s ]
+
+[ 2018-07-12T21:39:18+08:00 ] 172.18.0.1 /User_Login_checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000026s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001215s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002813s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002833s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `pay_member` WHERE `username` = 'adminroot' LIMIT 1   [ RunTime:0.0031s ]
+SQL: SELECT `login_warning_num` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-12T21:39:26+08:00 ] 172.18.0.1 /User_Login_checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000901s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001198s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002362s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002378s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-07-12T21:39:31+08:00 ] 172.18.0.1 /agent_Login_verifycode.html?d=0.4445806786885227
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001196s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002156s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002170s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2018-07-12T21:39:35+08:00 ] 172.18.0.1 /User_Login_checklogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000004s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000858s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001163s ]
+INFO: [ action_begin ] --START--
+INFO: Run Behavior\CheckAuthBehavior [ RunTime:0.002288s ]
+INFO: [ action_begin ] --END-- [ RunTime:0.002301s ]
+SQL: SHOW COLUMNS FROM `pay_websiteconfig` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `pay_member` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `pay_member` WHERE `username` = 'adminroot' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `login_warning_num` FROM `pay_websiteconfig` LIMIT 1   [ RunTime:0.0001s ]
+
