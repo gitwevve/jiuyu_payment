@@ -425,6 +425,7 @@ class AgentController extends UserController
         $current_user = session('user_auth');
         $siteconfig   = M("Websiteconfig")->find();
         $u            = generateUser($u, $siteconfig);
+        $u['authorized'] = 2;
 
         $s['activatedatetime'] = date("Y-m-d H:i:s");
         $u['parentid']         = $current_user['uid'];
