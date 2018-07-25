@@ -274,7 +274,7 @@ class AuthController extends BaseController
         $uid = session('admin_auth')['uid'];
         $res = M('Admin')->where(['id' => $uid])->find();
         if ( ! $sms_is_open || strlen($res['mobile']) == 0) {
-            $this->error('系统未绑定手机号，无法操作');
+            $this->error('系统未绑定手机号，无法操作', $_SERVER['HTTP_REFERER']);
         }
         if (IS_POST) {
             //验证验证码
@@ -315,7 +315,7 @@ class AuthController extends BaseController
             if ($sms_is_open) {
                 $this->redirect('Auth/verifySms', ['redirect' => I("request.redirect"), 'requestData' =>I("request.requestData")]);
             }
-            $this->error('系统未开启谷歌身份验证');
+            $this->error('系统未开启谷歌身份验证', $_SERVER['HTTP_REFERER']);
         }
         if (!session('admin_auth')) {
             $this->error('未登录','/' . C("LOGINNAME"));
