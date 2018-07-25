@@ -259,6 +259,50 @@ class AuthController extends BaseController
         }
     }
 
+    public function verifySmsSend()
+    {
+//        $mobile = I('request.mobile');
+        $uid = session('admin_auth')['uid'];
+        $res = M('Admin')->where(['id' => $uid])->find();
+        $res    = $this->send('adminverifySms', $res['mobile'], '修改余额或出金操作');
+        $this->ajaxReturn(['status' => $res['code']]);
+    }
+
+    public function verifySms()
+    {
+        $sms_is_open = smsStatus();
+        $uid = session('admin_auth')['uid'];
+        $res = M('Admin')->where(['id' => $uid])->find();
+        if ( ! $sms_is_open || strlen($res['mobile']) == 0) {
+            $this->error('系统未绑定手机号，无法操作');
+        }
+        if (IS_POST) {
+            //验证验证码
+            $code   = I('code');
+            if (session('send.adminverifySms') == $code && $this->checkSessionTime('adminverifySms', $code)) {
+                $last_redirect = I("redirect");
+                $requestData = I("requestData");
+                $redirect = str_replace('-', '/', $last_redirect);
+                $requestData = json_decode(base64_decode($requestData), true);
+                session('google_verify', 1);
+                $this->success("验证通过", U($redirect, $requestData));
+            } else {
+                $this->error('验证码错误');
+            }
+        } else {
+            $id = I('request.id', '');
+            $this->assign('sendUrl', U('Auth/verifySmsSend'));
+            $this->assign('first_bind_mobile', 1);
+            $this->assign('sms_is_open', $sms_is_open);
+            $this->assign('mobile', $res['mobile']);
+            $this->assign('redirect', I("request.redirect"));
+            $this->assign('requestData', I("request.requestData"));
+            $this->display();
+        }
+
+    }
+
+
     /**
      * 谷歌令牌验证
      */
@@ -267,6 +311,10 @@ class AuthController extends BaseController
         $siteconfig = M("Websiteconfig")->find();
 
         if($siteconfig['google_auth'] == 0) {
+            $sms_is_open = smsStatus();
+            if ($sms_is_open) {
+                $this->redirect('Auth/verifySms', ['redirect' => I("request.redirect"), 'requestData' =>I("request.requestData")]);
+            }
             $this->error('系统未开启谷歌身份验证');
         }
         if (!session('admin_auth')) {
