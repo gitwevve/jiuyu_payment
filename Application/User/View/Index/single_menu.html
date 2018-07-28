@@ -1,0 +1,39 @@
+<li><a href="<if condition="!count($nm[$nm['id']])"><{:U($nm[menu_name])}><else/>#</if>"> <i
+        class="<{$nm['icon']}>"></i> <span
+        class="nav-label"><{$nm['title']}></span>
+    <if condition="$nm[$nm['id']]"><span class="fa arrow"></span> </if></a>
+    <if condition="$nm[$nm['id']]">
+        <ul class="nav nav-second-level">
+            <volist name="nm[$nm['id']]" id="sub">
+                <if condition="$sub['menu_name'] eq 'Account/qrcode'">
+                    <if condition="$fans[agent_cate] gt 4">
+                        <include file="Index:showli"/>
+                    </if>
+                <elseif condition="$sub['menu_name'] eq 'Account/reconciliation'" />
+                    <eq name="fans[groupid]" value="4">
+                        <include file="Index:showli"/>
+                    </eq>
+                <elseif condition="$sub['menu_name'] eq 'Withdrawal/dfapply'" />
+                    <if condition="$siteconfig['payingservice']">
+                        <include file="Index:showli"/>
+                    </if>
+                <elseif condition="$sub['menu_name'] eq 'Withdrawal/check'" />
+                    <if condition="$siteconfig['df_api'] and $fans[df_api]">
+                        <include file="Index:showli"/>
+                    </if>
+                <elseif condition="$sub['menu_name'] eq 'Agent/invitecode'" />
+                    <if condition="$siteconfig['invitecode']">
+                        <include file="Index:showli"/>
+                    </if>
+                <elseif condition="$sub['menu_name'] eq 'Channel/apidocumnet'" />
+                    <eq name="fans[groupid]" value="4">
+                        <include file="Index:showli"/>
+                    </eq>
+                <else />
+                    <include file="Index:showli"/>
+                </if>
+
+            </volist>
+        </ul>
+    </if>
+</li>

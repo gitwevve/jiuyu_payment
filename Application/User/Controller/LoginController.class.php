@@ -77,6 +77,7 @@ class LoginController extends BaseController
         $username     = I('post.username', '', 'trim');
         $password     = I('post.password', '', 'trim');
         $varification = I('post.varification', '', 'trim');
+        $subaccount   = I('post.subusername', '', 'trim');
         $cookiename   = I('post.cookiename');
         if (!$username || !$password || !$varification) {
             $this->error('用户名、密码、验证码不能为空！');
@@ -88,6 +89,11 @@ class LoginController extends BaseController
         }
         $fans = M('Member')->where(['username' => $username])->find();
 
+        //不存在
+        if (!$fans || $fans['status'] != 1) {
+            $this->error('商户已被禁用！');
+        }
+        $subid = 0;
         //判断是白名单登录
         $ip = get_client_ip();
         if (trim($fans['login_ip'])) {
@@ -103,10 +109,7 @@ class LoginController extends BaseController
             $this->error('您今天密码输错超过' . $loginWarningNum . '次，已锁定，请联系管理员或24小时后解锁');
         }
 
-        //不存在
-        if (!$fans || $fans['status'] != 1) {
-            $this->error('商户已被禁用！');
-        }
+
 
         //判断用户登录最后一次错误时间是否在昨天
         $lastErrorTime = date('Ymd', $fans['last_error_time']);
@@ -118,32 +121,49 @@ class LoginController extends BaseController
 
 
         //密码验证
-        if (md5($password . $fans['salt']) != $fans['password']) {
-
-            //如果用户密码错误，记录错误次数跟时间
-            $loginErrorNum = $fans['login_error_num'] + 1;
-            $loginData     = [
-                'login_error_num' => ['exp', 'login_error_num+1'],
-                'last_error_time' => time(),
-            ];
-
-            //超过一定次数，修改
-            if ($loginErrorNum >= $loginWarningNum && $loginWarningNum != 0) {
-                $loginData['status'] = 0;
+        if ($subaccount) {
+            $account = M('MemberAdmin')->where([
+                'member_id' => $fans['id'],
+                'username' => $subaccount,
+                'password' => md5($password . C('DATA_AUTH_KEY'))
+            ])->find();
+            if (!$account) {
+                $this->error('子账户的用户名或密码错误');
             }
-            M('Member')->where(['id' => $fans['id']])->save($loginData);
-            $this->error('密码输入有误！');
-        } else {
+            $subid = $account['id'];
             $session_random = randpw(32);
-            M('Member')->where(['id' => $fans['id']])->save(['login_error_num' => 0, 'session_random' => $session_random]);
+            M('MemberAdmin')->where(['member_id' => $fans['id'], ])->save(['login_error_num' => 0, 'session_random' => $session_random]);
+        } else {
+            if (md5($password . $fans['salt']) != $fans['password']) {
+
+                //如果用户密码错误，记录错误次数跟时间
+                $loginErrorNum = $fans['login_error_num'] + 1;
+                $loginData     = [
+                    'login_error_num' => ['exp', 'login_error_num+1'],
+                    'last_error_time' => time(),
+                ];
+
+                //超过一定次数，修改
+                if ($loginErrorNum >= $loginWarningNum && $loginWarningNum != 0) {
+                    $loginData['status'] = 0;
+                }
+                M('Member')->where(['id' => $fans['id']])->save($loginData);
+                $this->error('密码输入有误！');
+            } else {
+                $session_random = randpw(32);
+                M('Member')->where(['id' => $fans['id']])->save(['login_error_num' => 0, 'session_random' => $session_random]);
+            }
         }
+
         //用户登录
         $user_auth = [
             'uid'      => $fans['id'],
             'username' => $fans['username'],
             'groupid'  => $fans['groupid'],
             'password' => $fans['password'],
-            'session_random' => $session_random
+            'session_random' => $session_random,
+            'subid'    => $subid
+
         ];
         session('user_auth', $user_auth);
         ksort($user_auth); //排序

@@ -33,6 +33,12 @@
                            placeholder="请输入用户名"/>
                     <span class="errorTips"><i></i><em></em></span>
                 </div>
+                <div class="loginList loginListUser">
+                    <label></label>
+                    <input type="text" class="loginText" name="subaccount" id="subaccount" value=""
+                           placeholder="子账户登陆名，可空"/>
+                    <span class="errorTips"><i></i><em></em></span>
+                </div>
                 <div class="loginList loginListPwd">
                     <label></label>
                     <input type="password" class="loginText" name="password" id="password" value="" placeholder="请输入密码"/>
@@ -68,6 +74,7 @@
         var username = $("#username").val();
         var password = $("#password").val();
         var varification = $("#captcha").val();
+        var subaccount = $("#subaccount").val();
 
 
         username = $.trim(username);
@@ -94,7 +101,7 @@
             $.ajax({
                 type:'post',
                 url:'user_Login_checklogin.html',
-                data: { username: username, password: password, varification:varification},
+                data: { username: username, password: password, subaccount: subaccount, varification:varification},
                 dataType:'json',
 
                 success:function(result){

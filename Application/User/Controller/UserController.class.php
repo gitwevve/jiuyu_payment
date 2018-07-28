@@ -18,6 +18,14 @@ class UserController extends BaseController
         //用户信息
         $this->fans = M('Member')->where(['id'=>$user_auth['uid']])->field('`id` as uid, `username`, `password`, `groupid`, `parentid`,`salt`,`balance`, `blockedbalance`, `email`, `realname`, `authorized`, `apidomain`, `apikey`, `status`, `mobile`, `receiver`, `agent_cate`,`df_api`,`login_ip`,`open_charge`,`google_secret_key`,`session_random`,`regdatetime`')->find();
 		$this->fans['memberid'] = $user_auth['uid']+10000;
+		if ($user_auth['subid']) {
+		    $subaccount = M('MemberAdmin')->where(['member_id' => $user_auth['uid'], 'id' => $user_auth['subid']])->find();
+		    if ( ! $subaccount) {
+                session("user_auth", null);
+                header("Location: ".U(__MODULE__.'/Login/index'));
+            }
+		    $this->fans['subaccount'] = $subaccount;
+        }
         if(session('user_auth') && $this->fans['google_secret_key'] &&  !session('user_google_auth')) {
             if(!(CONTROLLER_NAME == 'Account' && ACTION_NAME == 'unbindGoogle')
                 &&!(CONTROLLER_NAME == 'Index' && ACTION_NAME == 'google')
@@ -45,6 +53,12 @@ class UserController extends BaseController
         }
         $this->assign('groupId',$groupId);
         $this->assign('fans',$this->fans);
+
+        //左侧菜单栏
+        $admin_auth_group_access_model = D('AdminAuthGroupAccess');
+        $uid = array_key_exists('subaccount', $this->fans) ? $this->fans['subaccount']['id'] : 0;
+        $navmenus = $admin_auth_group_access_model->getUserRules($uid);
+        $this->assign('navmenus', $navmenus);
     }
 }
 ?>
