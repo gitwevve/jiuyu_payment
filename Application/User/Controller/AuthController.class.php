@@ -108,7 +108,7 @@ class AuthController extends UserController
                 $groupAccessModel = D('AdminAuthGroupAccess');
                 $groupAccess = $groupAccessModel->where(array("uid"=>$data['id']))->find();
                 if ($groupAccess) {
-                    $groupAccessModel->save(["group_id"=>$data["groupid"]]);
+                    M("member_auth_group_access")->where(array("uid"=>$data['id']))->setField('group_id', $data['groupid']);
                 } else {
                     M("member_auth_group_access")->add(array("uid"=>$data['id'],"group_id"=>$data["groupid"]));
                 }

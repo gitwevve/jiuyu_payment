@@ -77,16 +77,16 @@ class LoginController extends BaseController
         $username     = I('post.username', '', 'trim');
         $password     = I('post.password', '', 'trim');
         $varification = I('post.varification', '', 'trim');
-        $subaccount   = I('post.subusername', '', 'trim');
+        $subaccount   = I('post.subaccount', '', 'trim');
         $cookiename   = I('post.cookiename');
         if (!$username || !$password || !$varification) {
             $this->error('用户名、密码、验证码不能为空！');
         }
         //验证码
-        $verify = new Verify();
-        if (!$verify->check($varification)) {
-            $this->error('验证码输入有误！');
-        }
+//        $verify = new Verify();
+//        if (!$verify->check($varification)) {
+//            $this->error('验证码输入有误！');
+//        }
         $fans = M('Member')->where(['username' => $username])->find();
 
         //不存在
