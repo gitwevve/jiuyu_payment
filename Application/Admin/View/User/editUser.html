@@ -74,6 +74,9 @@
 				<div class="layui-input-inline">
 				  <select name="u[groupid]" lay-verify="required" lay-search="">
 					<option value=""></option>
+					    <if condition="$is_agent eq 0">
+							<option value="4" <if condition="$u['groupid'] eq 4">selected</if>>普通商户</option>
+						</if>
 						<foreach name="groupId" item="v" key="k">
 	                      <option <if condition="$u['groupid'] eq $k">selected</if>
 							  value="<{$k}>"><{$v}></option>

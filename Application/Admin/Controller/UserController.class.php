@@ -1405,6 +1405,7 @@ class UserController extends BaseController
     public function editUser()
     {
         $userid = I('get.uid', 0, 'intval');
+        $agent = I('get.agent', 0, 'intval');
         if ($userid) {
             $data = M('Member')
                 ->where(['id' => $userid])->find();
@@ -1424,6 +1425,7 @@ class UserController extends BaseController
             $agentCateSel[$v['id']] = $v['cate_name'];
         }
         $this->assign('agentCateSel', $agentCateSel);
+        $this->assign('is_agent', $agent);
         $this->assign('merchants', C('MERCHANTS'));
         $this->display();
     }
@@ -1434,6 +1436,7 @@ class UserController extends BaseController
             $userid        = I('post.userid', 0, 'intval');
             $u             = $_POST['u'];
             $u['birthday'] = strtotime($u['birthday']);
+            $u['birthday'] = $u['birthday'] > 0 ? $u['birthday'] : 0;
 
             if ($userid) {
                 $res = M('Member')->where(['id' => $userid])->save($u);

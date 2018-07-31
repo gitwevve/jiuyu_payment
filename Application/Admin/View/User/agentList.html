@@ -69,7 +69,7 @@
                                 <a href="javascript:;" id="export"
                                    class="layui-btn layui-btn-danger"><span
                                         class="glyphicon glyphicon-export"></span> 导出数据</a>
-                                <button  class="layui-btn" onclick="member_edit('编辑','<{:U('User/editUser')}>',800,600);return false;"><span
+                                <button  class="layui-btn" onclick="member_edit('编辑','<{:U('User/editUser', ["agent" => 1])}>',800,600);return false;"><span
                                         class="glyphicon glyphicon-user"></span> 添加代理商
                                 </button>
                             </div>
@@ -149,7 +149,7 @@
                                                 onclick="member_edit('编辑','<{:U('User/editPassword',['uid'=>$vo[id]])}>',800,540)"
                                         >密码</button>
 
-                                        <button class="layui-btn layui-btn-small" onclick="member_edit('编辑','<{:U('User/editUser',['uid'=>$vo[id]])}>',800,600)"
+                                        <button class="layui-btn layui-btn-small" onclick="member_edit('编辑','<{:U('User/editUser',['uid'=>$vo[id], 'agent' => 1])}>',800,600)"
                                         >编辑</button>
 
                                         <button class="layui-btn layui-btn-small" onclick="member_del(this,'<{$vo.id}>')">删除</button>
