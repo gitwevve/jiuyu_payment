@@ -121,11 +121,22 @@
 									<select name="bankcode" id="payList" class="vx_form-control" >
 
 										<volist name="products" id="product" key="key">
-										<option  value="<{$product.id}>"><{$product.name}></option>
+										<option  value="<{$product.id}>" data-type="<{$product.paytype}>"><{$product.name}></option>
 										</volist>
 									</select>
 								</div>
 							</div>
+								<div class="whiteBox_5k4pn1" id="bankList">
+									<div class="css-1gb3gzr">
+										<label for="payList" class="css-onfkoe vx_text-5">网银类型</label>
+										<select name="banktype" id="bankMap" class="vx_form-control" >
+
+											<volist name="banks" id="bank" key="key">
+												<option  value="<{$bank.code}>"><{$bank.name}></option>
+											</volist>
+										</select>
+									</div>
+								</div>
 								<input type="hidden" name="mchid" id="mchid" value="<{$cache['id']+10000}>">
 							<div class="submitButtonWrapper_1ntyrs8">
 								<button type="button" class="vx_btn submitButton_1sxl9gz preview-getFundingOptions" id="pay">立即支付</button></div>
@@ -158,6 +169,16 @@
 <script type="text/javascript">
     $(function(){
 
+        $("select#payList").change(function () {
+			var type = $(this).find("option:selected").data('type');
+			console.log(type);
+			console.log($(this).find("option:selected"));
+			if (type == 5) {
+			    $("#bankList").show();
+			} else {
+                $("#bankList").hide();
+			}
+        });
 // 基本配置
         var hostPath = "",
             domain = "";

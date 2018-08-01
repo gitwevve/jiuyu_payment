@@ -52,13 +52,16 @@ class ChargesController extends PayController{
                 $finalProducts[] = $product; 
             }
         }
-        
+
         $pay_orderid = date("YmdHis").rand(100000,999999);    //订单号
+
+        $banks = M('Banks')->select();
         
         $this->assign('pay_orderid', $pay_orderid);
         $this->assign('products', $finalProducts);
         $this->assign("cache",$member);
         $this->assign("mchid",$mchid);
+        $this->assign('banks', $banks);
         $this->assign("posturl",$this->_site."Pay_Charges_checkout.html");
         if(isMobile()) {
             $this->display();
@@ -111,6 +114,13 @@ class ChargesController extends PayController{
                 die("信息不完整！");
             }
 
+            $pay_bankid = I('banktype'); //银行code
+            if ($pay_bankid) {
+                if ( ! M('Banks')->where(['code' => $pay_bankid])->find()) {
+                    exit("充值银行已关闭或不存在");
+                }
+            }
+
             $pay_applydate = date("Y-m-d H:i:s");  //订单时间
             $pay_notifyurl = $this->_site."Pay_Charges_notify.php";   //服务端返回地址
             $pay_callbackurl = $this->_site."Pay_Charges_callback.php";  //页面跳转返回地址
@@ -125,6 +135,7 @@ class ChargesController extends PayController{
                 "pay_amount" => $pay_amount,
                 "pay_applydate" => $pay_applydate,
                 "pay_bankcode" => $pay_bankcode,
+                "pay_bankid" => $pay_bankid,
                 "pay_notifyurl" => $pay_notifyurl,
                 "pay_callbackurl" => $pay_callbackurl,
             );
