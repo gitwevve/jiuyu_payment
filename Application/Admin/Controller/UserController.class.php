@@ -1401,6 +1401,15 @@ class UserController extends BaseController
         $this->display();
     }
 
+    public function unbindGoogle()
+    {
+        if (IS_POST) {
+            $id  = I('post.uid', 0, 'intval');
+            $res = M('Member')->where(['id' => $id])->save(['google_secret_key' => '']);
+            $this->ajaxReturn(['status' => $res]);
+        }
+    }
+
     //编辑用户级别
     public function editUser()
     {

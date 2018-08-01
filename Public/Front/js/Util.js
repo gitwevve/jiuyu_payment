@@ -6,7 +6,8 @@ function sendSms(obj, mobile, url){
     $(obj).addClass('layui-disabled');
     $.post(url,{mobile:mobile}, function(data) {
         if(data.status != 1){
-           layer.alert("发送验证失败", {icon: 5}); 
+           layer.alert("发送验证失败: " + data.msg, {icon: 5});
+            $(obj).removeClass('layui-disabled');
         }else{
             settime(obj);
         }

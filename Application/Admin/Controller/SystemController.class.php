@@ -311,7 +311,7 @@ EOD;
     {
         $mobile = I('request.mobile');
         $res    = $this->send('adminbindMobile', $mobile, '绑定手机');
-        $this->ajaxReturn(['status' => $res['code']]);
+        $this->ajaxReturn(['status' => $res['code'], 'msg' => $res['message']]);
     }
 
     /**

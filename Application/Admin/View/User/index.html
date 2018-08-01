@@ -165,6 +165,12 @@
                                                 onclick="member_edit('编辑','<{:U('User/editPassword',['uid'=>$vo[id]])}>',800,540)"
                                         >密码</button>
 
+                                        <if condition="$vo.google_secret_key neq ''">
+                                            <button class="layui-btn layui-btn-small"
+                                                    onclick="member_google(this, '<{$vo.id}>')"
+                                            >解绑谷歌验证</button>
+                                        </if>
+
                                         <button class="layui-btn layui-btn-small" onclick="member_edit('编辑','<{:U('User/editUser',['uid'=>$vo[id]])}>',800,600)"
                                         >编辑</button>
 
@@ -338,6 +344,29 @@
                         $(obj).parents("tr").remove();
                         layer.msg('已删除!',{icon:1,time:1000});
                     }
+                    setTimeout(function(){
+                        location.replace(location.href);
+                    },1500);
+                }
+            });
+        });
+    }
+
+    /*解绑谷歌绑定*/
+    function member_google(obj, id) {
+        layer.confirm('确认要解除此账户的谷歌验证吗？', function (index) {
+            $.ajax({
+                url:"<{:U('User/unbindGoogle')}>",
+                type:'post',
+                data:'uid='+id,
+                success:function(res){
+                    if(res.status){
+                        $(obj).parents("tr").remove();
+                        layer.msg('解绑成功!',{icon:1,time:1000});
+                    }
+                    setTimeout(function(){
+                        location.replace(location.href);
+                    },1500);
                 }
             });
         });
