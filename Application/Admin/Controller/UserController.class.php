@@ -2209,6 +2209,17 @@ class UserController extends BaseController
         }
     }
 
+    //用户充值开关
+    public function editChannel()
+    {
+        if (IS_POST) {
+            $userid   = intval(I('post.uid'));
+            $isstatus = I('post.isopen') ? I('post.isopen') : 0;
+            $res      = M('Member')->where(['id' => $userid])->save(['open_channel' => $isstatus]);
+            $this->ajaxReturn(['status' => $res]);
+        }
+    }
+
     /**
      * 发送冲正交易验证码信息
      */

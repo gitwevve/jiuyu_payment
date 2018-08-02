@@ -94,6 +94,7 @@
                             <th lay-data="{field:'status', width:80}">状态</th>
                             <th lay-data="{field:'authorized', width:100}">认证</th>
                             <th lay-data="{field:'charge', width:100}">充值功能</th>
+                            <th lay-data="{field:'channel', width:100}">通道功能</th>
                             <th lay-data="{field:'money', width:400,style:'background-color: #5FB878; color: #fff;cursor: pointer;'}">账户总额</th>
                             
                             <th lay-data="{field:'regdatetime', width:120}">注册时间</th>
@@ -134,6 +135,17 @@
                                     lay-skin="switch"
                                     lay-filter="switchCharge"
                                     lay-text="开启|关闭">
+                                    </eq>
+                                </td>
+                                <td>
+                                    <eq name="vo.groupid" value="4">
+                                        <input type="checkbox"
+                                               data-uid="<{$vo.id}>"
+                                        <if condition="$vo['open_channel']">checked</if>
+                                        name="open"
+                                        lay-skin="switch"
+                                        lay-filter="switchChannel"
+                                        lay-text="开启|关闭">
                                     </eq>
                                 </td>
                                 <td><div title="用户资金管理"
@@ -290,6 +302,23 @@
                         location.replace(location.href);
                     },1500);
 
+                }
+            });
+        });
+
+        form.on('switch(switchChannel)', function (data) {
+            var isopen = this.checked ? 1 : 0,
+                uid = $(this).attr('data-uid');
+            $.ajax({
+                url: "<{:U('User/editChannel')}>",
+                type: 'post',
+                data: "uid=" + uid + "&isopen=" + isopen,
+                success: function (res) {
+                    if (res.status) {
+                        layer.tips('温馨提示：开启成功', data.othis);
+                    } else {
+                        layer.tips('温馨提示：关闭成功', data.othis);
+                    }
                 }
             });
         });

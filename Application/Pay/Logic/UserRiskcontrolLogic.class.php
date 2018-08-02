@@ -24,10 +24,14 @@ class UserRiskcontrolLogic extends RiskcontrolLogic
                 'unit_paying_amount',
                 'paying_money',
                 'last_paying_time',
+                'open_channel'
             ])->where(['id' => $user_id])
             ->find();
         if (!$this->member_info) {
             return '无此商户号！';
+        }
+        if (!$this->member_info['open_channel']) {
+            return '通道权限已关闭';
         }
 
         /*******************生成基本风控配置********************/
