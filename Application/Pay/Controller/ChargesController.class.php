@@ -135,7 +135,6 @@ class ChargesController extends PayController{
                 "pay_amount" => $pay_amount,
                 "pay_applydate" => $pay_applydate,
                 "pay_bankcode" => $pay_bankcode,
-                "pay_bankid" => $pay_bankid,
                 "pay_notifyurl" => $pay_notifyurl,
                 "pay_callbackurl" => $pay_callbackurl,
             );
@@ -150,6 +149,7 @@ class ChargesController extends PayController{
             $native['pay_attach'] = $_POST["remarks"];
             $native['pay_productname'] ='收款';
             $native['ddlx'] = 1;
+            $native['pay_bankid'] = $pay_bankid;
 
             $this->setHtml($tjurl,$native);
         }
