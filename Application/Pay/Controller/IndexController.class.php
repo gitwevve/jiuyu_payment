@@ -142,7 +142,7 @@ class IndexController extends PayController
             $weight_item  = [];
             $error_msg    = '已经下线';
             $temp_weights = explode('|', $this->channel['weight']);
-            foreach ($temp_weights as $k => $v) {
+            foreach ($temp_wei-ghts as $k => $v) {
 
                 list($pid, $weight) = explode(':', $v);
                 //检查是否开通

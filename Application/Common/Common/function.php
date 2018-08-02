@@ -813,10 +813,10 @@ function generateUser($user, $siteconfig = null)
         'salt'=>$salt,
         'status'=>$register_need_activate,
     );
-    if($siteconfig['random_mchno'] == 1) {
-        $mchno = generateMchNo();
-        $userdata['id'] = $mchno;
-    }
+//    if($siteconfig['random_mchno'] == 1) {
+//        $mchno = generateMchNo();
+//        $userdata['id'] = $mchno;
+//    }
     return array_merge($user, $userdata);
 }
 /**
