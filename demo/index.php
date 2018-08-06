@@ -43,6 +43,8 @@ $pay_amount  = "0.01"; //交易金额
                                 <li>支付金额：<strong><?php echo $pay_amount; ?> <span>元</span></strong></li>
                                 <li>订单编号：<span><?php echo $pay_orderid; ?></span></li>
                             </ul>
+                            <h5>商户id：<input type="text" name="memberid" value=""/></h5>
+                            <h5>商户密钥：<input type="text" name="key" value=""/></h5>
                             <h5>选择支付方式：</h5>
                             <ul class="pay-label">
                                 <!--<li>
