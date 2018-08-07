@@ -218,7 +218,7 @@ class LoginController extends BaseController
     public function loginout()
     {
         $user_auth = session('user_auth');
-        $url       = 'index.html';
+        $url       = '/';
         session('user_auth', null);
         session('user_auth_sign', null);
         session('user_google_auth', null);
