@@ -100,28 +100,28 @@
 
                     </div>
                     <eq name="df_api" value="1">
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">代付API接口状态：</label>
-                        <div class="layui-input-block">
-                            <input type="radio" name="p[df_api]" lay-filter="df_api" value="1" title="开启" <if
-                                condition="$p['df_api'] eq 1">checked
-                        </if>>
-                            <input type="radio" name="p[df_api]" lay-filter="df_api" value="0" title="关闭" <if
-                                condition="$p['df_api'] eq 0">checked
-                        </if>>
-                        </div>
-                    </div>
-                        <div class="layui-form-item" id="df_auto_check" <if  condition="$p['df_api'] eq 0">style="display: none;"</if>>
-                            <label class="layui-form-label">代付API自动审核：</label>
-                            <div class="layui-input-block">
-                                <input type="radio" name="p[df_auto_check]" lay-filter="df_auto_check" value="1" title="开启" <if
-                                    condition="$p['df_auto_check'] eq 1">checked
-                            </if>>
-                                <input type="radio" name="p[df_auto_check]" lay-filter="df_auto_check" value="0" title="关闭" <if
-                                    condition="$p['df_auto_check'] eq 0">checked
-                            </if>>
-                            </div>
-                        </div>
+                    <!--<div class="layui-form-item">-->
+                        <!--<label class="layui-form-label">代付API接口状态：</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input type="radio" name="p[df_api]" lay-filter="df_api" value="1" title="开启" <if-->
+                                <!--condition="$p['df_api'] eq 1">checked-->
+                        <!--</if>>-->
+                            <!--<input type="radio" name="p[df_api]" lay-filter="df_api" value="0" title="关闭" <if-->
+                                <!--condition="$p['df_api'] eq 0">checked-->
+                        <!--</if>>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                        <!--<div class="layui-form-item" id="df_auto_check" <if  condition="$p['df_api'] eq 0">style="display: none;"</if>>-->
+                            <!--<label class="layui-form-label">代付API自动审核：</label>-->
+                            <!--<div class="layui-input-block">-->
+                                <!--<input type="radio" name="p[df_auto_check]" lay-filter="df_auto_check" value="1" title="开启" <if-->
+                                    <!--condition="$p['df_auto_check'] eq 1">checked-->
+                            <!--</if>>-->
+                                <!--<input type="radio" name="p[df_auto_check]" lay-filter="df_auto_check" value="0" title="关闭" <if-->
+                                    <!--condition="$p['df_auto_check'] eq 0">checked-->
+                            <!--</if>>-->
+                            <!--</div>-->
+                        <!--</div>-->
                         <div class="layui-form-item" id="df_domain" <if  condition="$p['df_api'] eq 0">style="display: none;"</if>>
                             <label class="layui-form-label">代付域名报备：</label>
                             <div class="layui-input-block">
