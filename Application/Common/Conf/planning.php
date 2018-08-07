@@ -2,7 +2,7 @@
 return [
     'PLANNING'=>[
         'postnum'=>"5",
-        'allowstart'=>"3",
+        'allowstart'=>"6",
         'allowend'=>"6",
     ]
 ];
