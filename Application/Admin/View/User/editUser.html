@@ -43,7 +43,7 @@
 			  <div class="layui-form-item">
 				<label class="layui-form-label">出生日期：</label>
 				<div class="layui-inline">
-				  <input class="layui-input" name="u[birthday]" placeholder="出生日期" id="birthday" value="<{$u[birthday]|date="Y-m-d",###}>">
+				  <input class="layui-input" name="u[birthday]" placeholder="出生日期" id="birthday" value="<{$u[birthday] ? $u[birthday]: '1980-01-01'}>">
 				</div>
 			  </div>
 			  

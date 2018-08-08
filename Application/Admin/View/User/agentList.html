@@ -96,7 +96,8 @@
                         <volist name="list" id="vo">
                             <tr>
                                 <td><{$vo.id}></td>
-                                <td><a href="<{:U('User/changeuser',array('userid'=>$vo['id']))}>" target="_blank"><{$vo['id']|shanghubianhao=###}></a></td>
+                                <!--<td><a href="<{:U('User/changeuser',array('userid'=>$vo['id']))}>" target="_blank"><{$vo['id']|shanghubianhao=###}></a></td>-->
+                                <td><{$vo['id']|shanghubianhao=###}></td>
                                 <td><{$vo.username}></td>
                                 <td><{$vo.groupname}></td>
                                 <td><{$vo['parentid']|getParentName=###}></td>

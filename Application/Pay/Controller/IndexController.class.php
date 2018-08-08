@@ -122,6 +122,10 @@ class IndexController extends PayController
             if (!$bank_channel) {
                 $this->showmessage('暂不支持的银行！');
             }
+            $single_channel = M('BankUser')->where(['pid' => $bank_channel->id, 'userid' => $this->memberid, 'status' => 1])->find();
+            if ($single_channel) {
+                $bank_channel = $single_channel;
+            }
             $this->channel = $bank_channel;
             $this->channel['userid'] = $userid;
             $this->channel['pid'] = $pid;

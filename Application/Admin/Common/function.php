@@ -446,3 +446,14 @@ function get_black_list_type($type)
     ];
     return $typeArr[$type] ? : '--';
 }
+
+function has_bank_product($uid)
+{
+    $count = M('Product_user')
+        ->where(['pay_product_user.userid'=> $uid])
+        ->join('pay_product ON pay_product.id=pay.pay_product_user.pid')
+        ->where(['pay_product.paytype' => 5])->select();
+    if (count($count) > 0) return true;
+    return false;
+
+}

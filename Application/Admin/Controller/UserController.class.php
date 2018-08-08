@@ -1337,7 +1337,7 @@ class UserController extends BaseController
     public function changeuser()
     {
         $userid = I('get.userid');
-        $info   = M('Member')->where(['id=' . $userid])->find();
+        $info   = M('Member')->where(['id' => $userid])->find();
         if ($info) {
             $user_auth = [
                 'uid'            => $info['id'],
@@ -1418,6 +1418,7 @@ class UserController extends BaseController
         if ($userid) {
             $data = M('Member')
                 ->where(['id' => $userid])->find();
+            $data['birthday'] = date('Y-m-d', $data['birthday']);
             $this->assign('u', $data);
 
             //用户组
@@ -1586,6 +1587,7 @@ class UserController extends BaseController
         $this->assign('products', $products);
         $this->display();
     }
+
     //保存编辑用户通道
     public function saveUserProduct()
     {
@@ -1611,6 +1613,83 @@ class UserController extends BaseController
             }
             M('Product_user')->addAll($data_insert, [], true);
             M('Product_user')->addAll($data_update, [], true);
+            $this->ajaxReturn(['status' => 1]);
+        }
+    }
+
+    //编辑用户通道
+    public function editUserBankProduct()
+    {
+
+        $userid = I('get.uid', 0, 'intval');
+        //系统产品列表
+        $products = M('Banks')
+            ->where(['isdisplay' => 1])
+            ->field('id,name,status,paytype')
+            ->select();
+        //用户产品列表
+        $userprods = M('Bank_user')->where(['userid' => $userid])->select();
+        if ($userprods) {
+            foreach ($userprods as $key => $item) {
+                $_tmpData[$item['pid']] = $item;
+            }
+        }
+        //重组产品列表
+        $list = [];
+        if ($products) {
+            foreach ($products as $key => $item) {
+                $products[$key]['status']  = $_tmpData[$item['id']]['status'];
+                $products[$key]['channel'] = $_tmpData[$item['id']]['channel'];
+                $products[$key]['polling'] = $_tmpData[$item['id']]['polling'];
+                //权重
+                $weights    = [];
+                $weights    = explode('|', $_tmpData[$item['id']]['weight']);
+                $_tmpWeight = [];
+                if (is_array($weights)) {
+                    foreach ($weights as $value) {
+                        list($pid, $weight) = explode(':', $value);
+                        if ($pid) {
+                            $_tmpWeight[$pid] = ['pid' => $pid, 'weight' => $weight];
+                        }
+                    }
+                } else {
+                    list($pid, $weight) = explode(':', $_tmpData[$item['id']]['weight']);
+                    if ($pid) {
+                        $_tmpWeight[$pid] = ['pid' => $pid, 'weight' => $weight];
+                    }
+                }
+                $products[$key]['weight'] = $_tmpWeight;
+            }
+        }
+        $this->assign('products', $products);
+        $this->display();
+    }
+
+    //保存编辑用户通道
+    public function saveUserBankProduct()
+    {
+        if (IS_POST) {
+            $userid = I('post.userid', 0, 'intval');
+            $u      = $_POST['u'];
+            foreach ($u as $key => $item) {
+                $weightStr = '';
+                $status    = $item['status'] ? $item['status'] : 0;
+                if (is_array($item['w'])) {
+                    foreach ($item['w'] as $weigths) {
+                        if ($weigths['pid']) {
+                            $weightStr .= $weigths['pid'] . ':' . $weigths['weight'] . "|";
+                        }
+                    }
+                }
+                $product = M('Bank_user')->where(['userid' => $userid, 'pid' => $key])->find();
+                if ($product) {
+                    $data_insert[] = ['id' => $product['id'], 'userid' => $userid, 'pid' => $key, 'status' => $status, 'polling' => $item['polling'], 'channel' => $item['channel'], 'weight' => trim($weightStr, '|')];
+                } else {
+                    $data_update[] = ['userid' => $userid, 'pid' => $key, 'status' => $status, 'polling' => $item['polling'], 'channel' => $item['channel'], 'weight' => trim($weightStr, '|')];
+                }
+            }
+            M('Bank_user')->addAll($data_insert, [], true);
+            M('Bank_user')->addAll($data_update, [], true);
             $this->ajaxReturn(['status' => 1]);
         }
     }
