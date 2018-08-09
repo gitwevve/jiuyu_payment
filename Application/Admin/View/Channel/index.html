@@ -150,6 +150,9 @@ layui.use(['layer', 'form'], function(){
 		success:function(res){
 			if(res.status){
 				layer.tips('温馨提示：'+title+'开启', data.othis);
+                setTimeout(function(){
+                    location.replace(location.href);
+                },1500);
 			}else{
 				layer.tips('温馨提示：'+title+'关闭', data.othis);
 			}
@@ -222,6 +225,9 @@ function admin_del(obj,id){
 				if(res.status){
 				$(obj).parents("tr").remove();
 				layer.msg('已删除!',{icon:1,time:1000});
+                    setTimeout(function(){
+                        location.replace(location.href);
+                    },1500);
 				}
 			}
 		});

@@ -246,6 +246,9 @@
                     } else {
                         layer.tips('温馨提示：关闭成功', data.othis);
                     }
+                    setTimeout(function(){
+                        location.replace(location.href);
+                    },1500);
                 }
             });
         });

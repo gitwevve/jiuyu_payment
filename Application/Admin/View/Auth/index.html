@@ -77,6 +77,9 @@
                     if(res.status){
                         $(obj).parents("tr").remove();
                         layer.msg('已删除!',{icon:1,time:1000});
+                        setTimeout(function(){
+                            location.replace(location.href);
+                        },1500);
                     }
                 }
             });

@@ -424,6 +424,7 @@ class AgentController extends UserController
         }
         $current_user = session('user_auth');
         $siteconfig   = M("Websiteconfig")->find();
+        $u['verifycode']['regtype'] = $u['groupid'];
         $u            = generateUser($u, $siteconfig);
         $u['authorized'] = 2;
 

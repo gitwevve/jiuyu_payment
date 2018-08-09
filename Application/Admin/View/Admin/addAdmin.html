@@ -58,9 +58,7 @@
               success:function(res){
                   if(res.status){
                       layer.alert("操作成功", {icon: 6},function () {
-                          parent.location.reload();
-                          var index = parent.layer.getFrameIndex(window.name);
-                          parent.layer.close(index);
+                          refresh_parent_window();
                       });
                   }else{
 

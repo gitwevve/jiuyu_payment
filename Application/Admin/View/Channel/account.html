@@ -101,6 +101,9 @@ layui.use(['layer', 'form'], function(){
         success:function(res){
             var isopen_desc = isopen ?  '开启' : '关闭'
             layer.tips('温馨提示：'+title+isopen_desc, data.othis);
+            setTimeout(function(){
+                location.replace(location.href);
+            },1500);
         }
     });
   });
