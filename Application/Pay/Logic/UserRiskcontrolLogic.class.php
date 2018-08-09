@@ -30,9 +30,6 @@ class UserRiskcontrolLogic extends RiskcontrolLogic
         if (!$this->member_info) {
             return '无此商户号！';
         }
-        if (!$this->member_info['open_channel']) {
-            return '通道权限已关闭';
-        }
 
         /*******************生成基本风控配置********************/
         $this->config_info = $this->m_UserRiskcontrolConfig->findConfigInfo($user_id);
@@ -47,6 +44,16 @@ class UserRiskcontrolLogic extends RiskcontrolLogic
 
     }
 
+
+    public function verifyChannelOpen($orderid = '')
+    {
+        if (session('order.'. $orderid) != 1) {
+            if (!$this->member_info['open_channel']) {
+                return '通道权限已关闭';
+            }
+        }
+        return true;
+    }
     //监测数据
     public function monitoringData()
     {

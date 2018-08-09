@@ -287,15 +287,22 @@ class AgentController extends UserController
             ->select();
         //用户产品列表
         $userprods = M('Userrate')->where(['userid' => $userid])->select();
+        $personprods = M('Userrate')->where(['userid' => $this->fans['uid']])->select();
         if ($userprods) {
             foreach ($userprods as $item) {
                 $_tmpData[$item['payapiid']] = $item;
+            }
+        }
+        if ($personprods) {
+            foreach ($personprods as $item) {
+                $_personTmpData[$item['payapiid']] = $item;
             }
         }
         //重组产品列表
         $list = [];
         if ($products) {
             foreach ($products as $key => $item) {
+                $products[$key]['rate']     = $_personTmpData[$item['id']]['feilv'] ? $_personTmpData[$item['id']]['feilv'] : '0.000';
                 $products[$key]['feilv']    = $_tmpData[$item['id']]['feilv'] ? $_tmpData[$item['id']]['feilv'] : '0.000';
                 $products[$key]['fengding'] = $_tmpData[$item['id']]['fengding'] ? $_tmpData[$item['id']]['fengding'] : '0.000';
             }
@@ -434,6 +441,20 @@ class AgentController extends UserController
 
         // 创建用户
         $res = M('Member')->add($u);
+        //用户产品列表
+        $userprods = M('Product_user')->where(['userid' => $this->fans['uid']])->select();
+        $prodData = [];
+        if ($userprods) {
+            foreach ($userprods as $prod) {
+                $data = $prod;
+                unset($data['id']);
+                $data['userid'] = $res;
+                $prodData[] = $data;
+            }
+        }
+        if ( ! empty($prodData)) {
+            M('Product_user')->addAll($prodData);
+        }
 
         // 发邮件通知用户密码
         sendPasswordEmail($u['username'], $u['email'], $u['origin_password'], $siteconfig);

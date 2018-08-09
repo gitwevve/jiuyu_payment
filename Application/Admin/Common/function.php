@@ -450,7 +450,7 @@ function get_black_list_type($type)
 function has_bank_product($uid)
 {
     $count = M('Product_user')
-        ->where(['pay_product_user.userid'=> $uid])
+        ->where(['pay_product_user.userid'=> $uid, 'pay_product_user.status' => 1])
         ->join('pay_product ON pay_product.id=pay.pay_product_user.pid')
         ->where(['pay_product.paytype' => 5])->select();
     if (count($count) > 0) return true;

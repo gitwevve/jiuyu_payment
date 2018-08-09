@@ -27,6 +27,7 @@
 				<thead>
 				<tr>
 				  <th>接口名称</th>
+				  <th>自身费率</th>
 
 				  <th>运营费率</th>
 				  <th>封顶费率</th>
@@ -36,6 +37,7 @@
 				<volist name="products" id="p">
 				<tr>
 					<td><{$p.name}></td>
+					<td><{$p.rate}></td>
 
 					<td>
 						<div class="layui-input-inline" style="width: 100px;">

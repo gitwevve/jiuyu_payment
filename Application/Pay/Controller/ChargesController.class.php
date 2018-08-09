@@ -150,6 +150,7 @@ class ChargesController extends PayController{
             $native['pay_productname'] ='收款';
             $native['ddlx'] = 1;
             $native['pay_bankid'] = $pay_bankid;
+            session('order.' . $pay_orderid, 1);
 
             $this->setHtml($tjurl,$native);
         }

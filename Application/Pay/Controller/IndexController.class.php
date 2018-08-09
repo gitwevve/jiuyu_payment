@@ -86,7 +86,12 @@ class IndexController extends PayController
      */
     protected function userRiskcontrol()
     {
+
         $l_UserRiskcontrol = new \Pay\Logic\UserRiskcontrolLogic($this->pay_amount, $this->memberid); //用户风控类
+        $channel_msg = $l_UserRiskcontrol->verifyChannelOpen($this->orderid);
+        if ($channel_msg !== true) {
+            $this->showmessage('商户：' . $channel_msg);
+        }
         $error_msg         = $l_UserRiskcontrol->monitoringData();
         if ($error_msg !== true) {
             $this->showmessage('商户：' . $error_msg);
