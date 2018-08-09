@@ -444,16 +444,35 @@ class AgentController extends UserController
         //用户产品列表
         $userprods = M('Product_user')->where(['userid' => $this->fans['uid']])->select();
         $prodData = [];
+        $is_bankprod = false;
         if ($userprods) {
             foreach ($userprods as $prod) {
                 $data = $prod;
                 unset($data['id']);
                 $data['userid'] = $res;
                 $prodData[] = $data;
+                if (M('Product')->where(['id' => $prod['pid'], 'paytype' => 5, 'status' => 1])->select()) {
+                    $is_bankprod = true;
+                }
             }
         }
         if ( ! empty($prodData)) {
             M('Product_user')->addAll($prodData);
+        }
+        if ($is_bankprod) {
+            $bankData = [];
+            $bankprods = M('Bank_user')->where(['userid' => $this->fans['uid']])->select();
+            if ($bankprods) {
+                foreach ($bankprods as $prod) {
+                    $data = $prod;
+                    unset($data['id']);
+                    $data['userid'] = $res;
+                    $bankData[] = $data;
+                }
+            }
+            if ( ! empty($bankData)) {
+                M('Bank_user')->addAll($bankData);
+            }
         }
 
         // 发邮件通知用户密码
