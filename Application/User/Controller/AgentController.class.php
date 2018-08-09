@@ -327,7 +327,7 @@ class AgentController extends UserController
                 if ($rates) {
                     $datalist[] = ['id' => $rates['id'], 'userid' => $userid, 'payapiid' => $key, 'feilv' => $item['feilv'], 'fengding' => $item['fengding']];
                 } else {
-                    $datalist[] = ['userid' => $userid, 'payapiid' => $key, 'feilv' => $item['feilv'], 'fengding' => $item['fengding']];
+                    $datalist[] = ['id' => $rates['id'], 'userid' => $userid, 'payapiid' => $key, 'feilv' => $item['feilv'], 'fengding' => $item['fengding']];
                 }
             }
             M('Userrate')->addAll($datalist, [], true);
