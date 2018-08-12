@@ -62,14 +62,14 @@ layui.use(['layer', 'form','laydate'], function(){
               type:"post",
               data:$('#form').serialize(),
               success:function(res){
-                  if(res.status){
+                  if(res.status == 'success'){
                       layer.alert(res.msg? res.msg :"设置成功！", {icon: 6},function () {
                           parent.location.reload();
                           var index = parent.layer.getFrameIndex(window.name);
                           parent.layer.close(index);
                       });
                   }else{
-                      layer.alert(res.msg, {icon: 5},function (index) {
+                      layer.alert(res.msg, {icon: 2},function (index) {
                           layer.close(index)
                       });
                   }

@@ -1110,4 +1110,16 @@ function diffBetweenTwoDays ($day1, $day2)
     }
     return ($second1 - $second2) / 86400;
 }
+
+function convertToUTF8($words) {
+    $encoding = mb_detect_encoding($words, mb_detect_order(), false);
+
+    if($encoding == "UTF-8")
+    {
+        $words = mb_convert_encoding($words, 'UTF-8', 'UTF-8');
+    }
+    $out = iconv(mb_detect_encoding($words, mb_detect_order(), false), "UTF-8//IGNORE", $words);
+
+    return $out;
+}
 ?>

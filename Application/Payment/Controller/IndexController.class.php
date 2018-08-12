@@ -72,7 +72,7 @@ class IndexController extends PaymentController{
                     }
                     $v['money'] = round($v['money'],2);
                     $result = R('Payment/'.$code.'/Payment' . $opt, [$v, $pfa_list]);
-                    if($result==FALSE) {
+                    if($result === FALSE) {
                         if($opt == 'Exec') {
                             M('Wttklist')->where(['id' => $v['id']])->setField('df_lock', 0);
                         }
@@ -102,7 +102,11 @@ class IndexController extends PaymentController{
             if($opt == 'Query') {
                 showSuccess($result['msg']);
             } else {
-                showSuccess('请求成功！');
+                if ($result['status'] == 3) {
+                    showError('代付申请失败:' . $result['msg']);
+                } else {
+                    showSuccess($result['msg']);
+                }
             }
             exit;
         }
