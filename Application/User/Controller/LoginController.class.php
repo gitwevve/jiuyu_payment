@@ -248,6 +248,9 @@ class LoginController extends BaseController
             if ($password != $confirmpassword) {
                 $this->ajaxReturn(['errono' => 10002, 'msg' => '密码输入不一致!']);
             }
+            if(strlen($username) > 25) {
+                $this->ajaxReturn(array('errorno' => 10003, 'msg' => '用户账户不能大于25个字符!'));
+            }
 
             //邀请码验证
             if ($this->siteconfig['invitecode']) {

@@ -148,7 +148,7 @@ html;
 
     public function notifyurl()
     {
-        $postData = I('request.', '');
+        $postData = json_decode(file_get_contents('php://input'), true);
         $pubkey = $this->loadX509Cert($this->publicKey_);
         if ($postData) {
             $sign = $postData['sign']; //签名
@@ -168,6 +168,7 @@ html;
                 //签名验证失败
                 file_put_contents("temp/sd_notifyUrl_log.txt", date("Y-m-d H:i:s") . "  " . "异步通知返回报文：" . $data . "\r\n",
                     FILE_APPEND);
+                echo 'sign failed';
                 exit;
             }
         }
