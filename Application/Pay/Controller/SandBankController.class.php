@@ -7,6 +7,8 @@
  */
 namespace Pay\Controller;
 
+use Think\Log;
+
 class SandBankController extends PayController
 {
     protected $b2cBank_ = [
