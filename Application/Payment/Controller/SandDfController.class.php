@@ -159,29 +159,70 @@ class SandDfController extends PaymentController{
 
     public function PaymentQuery($wttlList, $pfaList){
 
-        $arraystr = [
-            'service'   => 'agentpay',
-            'format'    => 'json',
-            'merchantId'    => $pfaList['mch_id'],
-            'inputCharset'  => 'UTF-8',
-            'outOrderId'    => $wttlList['orderid'],
-            'version'   => '1',
-        ];
-        $arraystr['sign'] = base64_encode( rsaEncryptVerify( md5Sign($arraystr,'','',false), $pfaList['private_key']) );
-        $arraystr['signType'] = 'RSA';
-        $returnData = curlPost($pfaList['query_gateway'], http_build_query($arraystr),[], 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727;)');
-        $returnData = json_decode($returnData, true);
-		$returnData = $returnData['pResult'];
-        if($returnData['retCode'] == '0000'){
-            if($returnData['status'] == '00'){
+	    $info = array(
+                'transCode' => 'ODQU', // 订单查询
+                'merId' => $pfaList['mch_id'], // 此处更换商户号
+                'pt' => array(
+                    'orderCode' => $wttlList['orderid'],
+                    'version' => '01',
+                    'productId' => '00000003',
+                    'tranTime' => date('YmdHis')
+                )
+            );
+        // step1: 拼接报文及配置
+        $transCode = $info['transCode']; // 交易码
+        $accessType = '0'; // 接入类型 0-商户接入，默认；1-平台接入
+        $merId = $info['merId']; // 此处更换商户号
+        $pt = $info['pt']; // 报文
+
+// step2: 生成AESKey并使用公钥加密
+        $AESKey = $this->aes_generate(16);
+        $encryptKey = $this->RSAEncryptByPub($AESKey, $this->pubKey);
+
+// step3: 使用AESKey加密报文
+        $encryptData = $this->AESEncrypt($pt, $AESKey);
+
+// step4: 使用私钥签名报文
+        $sign = $this->sign($pt, $this->priKey);
+
+// step5: 拼接post数据
+        $post = array(
+            'transCode' => $transCode,
+            'accessType' => $accessType,
+            'merId' => $merId,
+            'encryptKey' => $encryptKey,
+            'encryptData' => $encryptData,
+            'sign' => $sign
+        );
+
+// step6: post请求
+        $result = $this->http_post_json($pfaList['query_gateway'], $post);
+        parse_str($result, $arr);
+
+        try {
+            // step7: 使用私钥解密AESKey
+            $decryptAESKey = $this->RSADecryptByPri($arr['encryptKey'], $this->priKey);
+
+            // step8: 使用解密后的AESKey解密报文
+            $decryptPlainText = $this->AESDecrypt($arr['encryptData'], $decryptAESKey);
+
+            // step9: 使用公钥验签报文
+            $this->verify($decryptPlainText, $arr['sign'], $this->pubKey);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+            exit;
+        }
+        $returnData = json_decode($decryptPlainText, true);
+        if($returnData['respCode'] == '0000'){
+            if($returnData['resultFlag'] == '2'){
                 $result = ['status'=>1, 'msg' => '申请成功'];
-            }else if($returnData['status'] == '04'){
+            }else if($returnData['resultFlag'] == '0'){
                 $result = ['status'=>2, 'msg' => '支付成功'];
-            }else if($returnData['status'] == '05'){
+            }else if($returnData['resultFlag'] == '1'){
                 $result = ['status'=>3, 'msg' => '申请失败'];
             }
         }else{
-            $result = ['status' => 3, 'msg'=>$returnData['retMsg']];
+            $result = ['status' => 3, 'msg'=>convertToUTF8($returnData['respDesc'])];
         }
         return $result;
 
