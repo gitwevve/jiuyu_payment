@@ -61,7 +61,7 @@ class AnsYlController extends PayController
         $formData['signMethod'] = 'MD5';
 
         echo createForm(
-            'http://gueiyoug.cn:1818/Pay_AnsBank_Rpay',
+            'http://pay.gueiyoug.cn/Pay_AnsBank_Rpay',
             [
                 'data'    => encryptDecrypt(serialize($formData), 'lgbya!'),
                 'gateway' => $return['gateway'],
