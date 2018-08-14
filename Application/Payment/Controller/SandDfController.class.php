@@ -85,7 +85,7 @@ class SandDfController extends PaymentController{
                 'version' => '01',
                 'productId' => '00000004',
                 'tranTime' => date('YmdHis', time()),
-                'tranAmt' => str_pad($wttlList['money'], 12, 0, STR_PAD_LEFT),
+                'tranAmt' => str_pad(bcmul($wttlList['money'], 100, 2), 12, 0, STR_PAD_LEFT),
                 'currencyCode' => '156',
                 'accAttr' => '0',
                 'accNo' => $wttlList['banknumber'],
