@@ -152,9 +152,6 @@ html;
 
     public function notifyurl()
     {
-//        $steam = urldecode(file_get_contents('php://input'));
-        Log::record(file_get_contents('php://input'));
-//        parse_str($steam, $postData);
         $postData = I('post.');
         $pubkey = $this->loadX509Cert($this->publicKey_);
         if ($postData) {
@@ -173,8 +170,7 @@ html;
                 exit;
             } else {
                 //签名验证失败
-                file_put_contents("temp/sd_notifyUrl_log.txt", date("Y-m-d H:i:s") . "  " . "异步通知返回报文：" . $data . "\r\n",
-                    FILE_APPEND);
+                Log::record(date("Y-m-d H:i:s") . "  " . "异步通知返回报文：" . $data . "\r\n");
                 echo 'sign failed';
                 exit;
             }
