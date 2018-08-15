@@ -152,9 +152,10 @@ html;
 
     public function notifyurl()
     {
-        $steam = urldecode(file_get_contents('php://input'));
+//        $steam = urldecode(file_get_contents('php://input'));
         Log::record(file_get_contents('php://input'));
-        parse_str($steam, $postData);
+//        parse_str($steam, $postData);
+        $postData = I('post.');
         $pubkey = $this->loadX509Cert($this->publicKey_);
         if ($postData) {
             $sign = $postData['sign']; //签名
