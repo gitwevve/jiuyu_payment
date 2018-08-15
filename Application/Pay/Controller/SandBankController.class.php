@@ -31,7 +31,8 @@ class SandBankController extends PayController
         'SPAB' => '03070000',
     ];
 
-    private $privateKey_ = './cert/sande/production.pfx';
+    private $privateKey_ ;
+//    private $privateKey_ = './cert/sande/production.pfx';
 
     private $publicKey_ = './cert/sande/sand.cer';
 
@@ -41,7 +42,8 @@ class SandBankController extends PayController
     {
         $bankid = I("request.pay_bankid", '');
         $return  = $this->getParameter('衫德支付', $array, __CLASS__, 100);
-        // step1: 拼接data
+        $this->privateKey_ = $return['signkey'];
+            // step1: 拼接data
         $bankCode = array_key_exists($bankid, $this->b2cBank_) ? $this->b2cBank_[$bankid] :'01020000';
         $data = array(
             'head' => array(
@@ -150,15 +152,18 @@ html;
 
     public function notifyurl()
     {
-        $postData = I('post.');
+        $steam = urldecode(file_get_contents('php://input'));
         Log::record(file_get_contents('php://input'));
+        parse_str($steam, $postData);
         $pubkey = $this->loadX509Cert($this->publicKey_);
         if ($postData) {
             $sign = $postData['sign']; //签名
+
             $signType = $postData['signType']; //签名方式
             $data = stripslashes($postData['data']); //支付数据
             $charset = $postData['charset']; //支付编码
             $result = json_decode($data, true); //data数据
+            dump($postData);
 
             if ($this->sandverify($data, $sign, $pubkey)) {
                 //签名验证成功
