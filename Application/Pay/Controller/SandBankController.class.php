@@ -162,9 +162,8 @@ html;
 
             if ($this->sandverify($data, $sign, $pubkey)) {
                 //签名验证成功
-                $data = $postData['data'];
                 $data = json_decode($data, true);
-                $this->EditMoney($data['orderCode'], '', 0);
+                $this->EditMoney($data['body']['orderCode'], '', 0);
                 echo "respCode=000000";
                 exit;
             } else {
