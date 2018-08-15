@@ -150,7 +150,7 @@ html;
 
     public function notifyurl()
     {
-        $postData = json_decode(file_get_contents('php://input'), true);
+        $postData = I('request.');
         Log::record(file_get_contents('php://input'));
         $pubkey = $this->loadX509Cert($this->publicKey_);
         if ($postData) {

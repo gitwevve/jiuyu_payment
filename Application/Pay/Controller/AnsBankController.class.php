@@ -27,6 +27,26 @@ namespace Pay\Controller;
 class AnsBankController extends PayController
 {
 
+    protected $b2cBank_ = [
+        'ICBC' => '01020000',
+        'ABC'  => '01030000',
+        'CMB' => '03080000',
+        'BOC'  => '01040000',
+        'CMBC' => '03050000',
+        'CCB'  => '01050000',
+        'CITIC' => '03020000',
+        'COMM' => '03010000',
+        'CIB'  => '03090000',
+        'CEB'  => '03030000',
+        'PSBC' => '01000000',
+        'SHB' => '04012900',
+        'BJB' => '04031000',
+        'HXB' => '03040000',
+        'GBD' => '03060000',
+        'SPDB' => '03100000',
+        'SPAB' => '03070000',
+    ];
+
     /**
      *  发起支付
      */
@@ -34,6 +54,7 @@ class AnsBankController extends PayController
     {
         $orderid  = I("request.pay_orderid");
         $body     = I('request.pay_productname');
+        $bankid   = I('request.pay_bankid', '');
         $return   = $this->getParameter('爱农商网银支付', $array, __CLASS__, 100);
         $formData = [
 
@@ -55,6 +76,7 @@ class AnsBankController extends PayController
             'subject'    => '',
             'body'       => '',
             'merResv1'   => '',
+            'bankId'     => array_key_exists($bankid, $this->b2cBank_) ? $this->b2cBank_[$bankid] : '',
         ];
         // var_dump($this->md5Sign($formData, $return['signkey'],'',0));exit;
         $formData['signature']  = base64_encode($this->md5Sign($formData, $return['signkey']));
