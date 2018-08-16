@@ -156,9 +156,9 @@ html;
         $postData = I('post.');
         $pubkey = $this->loadX509Cert($this->publicKey_);
         Log::record(file_get_contents('php://input'));
-        $stream = urldecode(file_get_contents('php://input'));
-        $postData = $this->parse_result($stream);
+        parse_str(file_get_contents('php://input'), $postData);
         if ($postData) {
+//            $sign = preg_replace('/\s+/', '', $postData['sign']); //签名
             $sign = $postData['sign']; //签名
 
             $signType = $postData['signType']; //签名方式
