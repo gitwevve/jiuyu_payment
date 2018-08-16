@@ -36,13 +36,14 @@ class SandBankController extends PayController
 
     private $publicKey_ = './cert/sande/sand.cer';
 
-    private $private_pwd = '123456';
+    private $private_pwd;
 
     public function Pay($array)
     {
         $bankid = I("request.pay_bankid", '');
         $return  = $this->getParameter('衫德支付', $array, __CLASS__, 100);
         $this->privateKey_ = $return['signkey'];
+        $this->private_pwd = $return['appsecret'];
             // step1: 拼接data
         $bankCode = array_key_exists($bankid, $this->b2cBank_) ? $this->b2cBank_[$bankid] :'01020000';
         $data = array(
