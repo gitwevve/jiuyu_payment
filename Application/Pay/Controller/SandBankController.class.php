@@ -161,7 +161,6 @@ html;
             $data = stripslashes($postData['data']); //支付数据
             $charset = $postData['charset']; //支付编码
             $result = json_decode($data, true); //data数据
-            dump($postData);
 
             if ($this->sandverify($data, $sign, $pubkey)) {
                 //签名验证成功
