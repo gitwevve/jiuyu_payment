@@ -155,6 +155,7 @@ html;
     {
         $postData = I('post.');
         $pubkey = $this->loadX509Cert($this->publicKey_);
+        Log::record(file_get_contents('php://input'));
         if ($postData) {
             $sign = $postData['sign']; //签名
 
