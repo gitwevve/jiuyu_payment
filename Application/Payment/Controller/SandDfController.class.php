@@ -4,11 +4,11 @@ namespace Payment\Controller;
 class SandDfController extends PaymentController{
 
 
-    private $privateKey_ = './cert/sande/production.pfx';
+    private $privateKey_;
 
     private $publicKey_ = './cert/sande/sand.cer';
 
-    private $private_pwd = '123456';
+    private $private_pwd ;
 
     private $priKey;
     private $pubKey;
@@ -16,7 +16,7 @@ class SandDfController extends PaymentController{
 
 	public function __construct(){
         parent::__construct();
-        $this->initKey();
+
         $this->bankMap = [
             '北京银行	' => '',
             '东亚银行	' => '',
@@ -48,6 +48,7 @@ class SandDfController extends PaymentController{
 
 
     public function PaymentExec($wttlList, $pfaList){
+        $this->initKey($pfaList);
 
         /**id	bankcode	bankname	images
 162	BOB	'北京银行	'BOB.gif
@@ -159,6 +160,7 @@ class SandDfController extends PaymentController{
 
     public function PaymentQuery($wttlList, $pfaList){
 
+        $this->initKey($pfaList);
 	    $info = array(
                 'transCode' => 'ODQU', // 订单查询
                 'merId' => $pfaList['mch_id'], // 此处更换商户号
@@ -452,8 +454,10 @@ class SandDfController extends PaymentController{
         }
     }
 
-    private function initKey()
+    private function initKey($pfaList)
     {
+        $this->privateKey_ = $pfaList['private_key'];
+        $this->private_pwd = $pfaList['signkey'];
         // 获取公私钥匙
         $this->priKey = $this->loadPk12Cert($this->privateKey_, $this->private_pwd);
 //$priKey_2 = loadPk12Cert(PRI_KEY_PATH_2, CERT_PWD);
