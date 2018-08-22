@@ -17,12 +17,12 @@ class YtjfController extends PaymentController
         //todo 0、数据初始化
         $MerNo         = $config['mch_id']; //业务申请
         $PayTm         = date('YmdHis'); //时间-dyn
-        $BatchName     = '代付';
+        $BatchName     = 'batchPay';
         $BatchNo       = $this->createOrder($data['id']); //
         $BussNo        = $config['appid']; //测试业务类型，每个商户不同,生产环境由业务分配
         $ProcedureType = '1'; //1:付款方付费 2：收款方付费
         $totCnt        = 1;
-        $totAmt        = $data['money'] * 100;
+        $totAmt        = bcmul($data['money'], 100);
 
         $details[] = [
             'merinsid'  => $BatchNo . mt_rand(10, 99), //每个批次内，流水唯一即可
@@ -141,8 +141,8 @@ class YtjfController extends PaymentController
 
     public function createOrder($id)
     {
-        $bu = 8 - strlen($id);
-        return str_pad($id, $bu, '6', STR_PAD_LEFT);
+//        $bu = 8 - strlen($id);
+        return strlen($id) < 8 ? str_pad($id, 8, '6', STR_PAD_LEFT) : $id;
     }
 
     public function postXmlCurl($xml, $url, $useCert = false, $second = 30)
@@ -188,6 +188,8 @@ class YtjfController extends PaymentController
         } else {
             $error = curl_errno($ch);
             curl_close($ch);
+            var_dump($error);
+            exit();
             // throw new DaiFuException("curl出错，错误码:$error");
         }
     }
@@ -223,7 +225,9 @@ class YtjfController extends PaymentController
     {
 
         //转换为openssl格式密钥
-        $res    = openssl_get_publickey($rsaPublicKeyPem);
+        //读取公钥文件
+        $pubKey = file_get_contents($rsaPublicKeyPem);
+        $res    = openssl_get_publickey($pubKey);
         $blocks = $this->splitCN($data, 0, 30, $charset);
 
         $chrtext  = null;
