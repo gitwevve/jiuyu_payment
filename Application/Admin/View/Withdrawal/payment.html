@@ -246,7 +246,7 @@
                     data: {'id':id ,'opt':name, 'code':code},
                     success: function (res) {
                         if (res.status!='error') {
-                            layer.msg('已成功提交!', {icon: 1, time: 1000},function () {
+                            layer.msg(res.msg, {icon: 1, time: 1000},function () {
                                 location.replace(location.href);
                             });
                         }else{

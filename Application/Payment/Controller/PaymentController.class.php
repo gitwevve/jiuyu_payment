@@ -58,10 +58,10 @@ class PaymentController extends Controller
 		$balance < $money && showError('支付金额错误'); 
 	}
 
-	protected function handle($id, $status=1, $return){
+	protected function handle($id, $status=1, $return=[]){
 	    
 	    //处理成功返回的数据
-        $data = '';
+        $data = [];
         if($status == 1){
            $data['status'] = 1;
            $data['memo'] = '申请成功！';

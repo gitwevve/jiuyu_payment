@@ -96,18 +96,30 @@ class IndexController extends PaymentController{
                 if($opt == 'Exec') {
                     M('Wttklist')->where(['id' => $v['id']])->setField('df_lock', 0);
                 }
+                if($opt == 'Query') {
+                    $data = [
+                        'msg'       => $result['msg'],
+                        'df_id'     => $pfa_list['id'],
+                        'code'      => $pfa_list['code'],
+                        'df_name'   => $pfa_list['title'],
+                    ];
+                    $this->handle($v['id'], $result['status'], $data);
+                    if ($result['status'] == 2) {
+                        showSuccess($result['msg']);
+                    } else {
+                        showError($result['msg']);
+                    }
+                } else {
+                    if ($result['status'] == 3) {
+                        showError('代付申请失败:' . $result['msg']);
+                    } else {
+                        showSuccess($result['msg']);
+                    }
+                }
                 flock($fp,LOCK_UN);
             }
             fclose($fp);
-            if($opt == 'Query') {
-                showSuccess($result['msg']);
-            } else {
-                if ($result['status'] == 3) {
-                    showError('代付申请失败:' . $result['msg']);
-                } else {
-                    showSuccess($result['msg']);
-                }
-            }
+
             exit;
         }
         if($opt == 'Exec') {

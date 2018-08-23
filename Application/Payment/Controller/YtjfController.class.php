@@ -2,18 +2,20 @@
 namespace Payment\Controller;
 
 use Org\Util\Array2XML;
+use Think\Log;
 
 class YtjfController extends PaymentController
 {
 
+    private $_site;
     public function __construct()
     {
         parent::__construct();
+        $this->_site = ((is_https()) ? 'https' : 'http') . '://' . C("DOMAIN") . '/';
     }
 
     public function PaymentExec($data, $config)
     {
-
         //todo 0、数据初始化
         $MerNo         = $config['mch_id']; //业务申请
         $PayTm         = date('YmdHis'); //时间-dyn
@@ -23,9 +25,10 @@ class YtjfController extends PaymentController
         $ProcedureType = '1'; //1:付款方付费 2：收款方付费
         $totCnt        = 1;
         $totAmt        = bcmul($data['money'], 100);
-
+        $merinsid = $BatchNo . mt_rand(10, 99);
+        M('Wttklist')->where(['id'=>$data['id']])->setField('extend',$merinsid);
         $details[] = [
-            'merinsid'  => $BatchNo . mt_rand(10, 99), //每个批次内，流水唯一即可
+            'merinsid'  => $merinsid, //每个批次内，流水唯一即可
             'pay-type'  => '1',
             //todo 1、加密
             'bank-no'   => $this->rsaEncrypt($data['banknumber'], $config['public_key'], 'utf-8'),
@@ -59,6 +62,7 @@ class YtjfController extends PaymentController
                         'procedure-type' => $ProcedureType,
                         'tot-cnt'        => $totCnt,
                         'tot-amt'        => $totAmt,
+                        'back-url'      => $this->_site . "Payment_Ytjf_notifyurl.html",
                     ),
                     'sign'        => $sign,
                     'trn-details' => array(
@@ -121,7 +125,7 @@ class YtjfController extends PaymentController
         $res       = xmlToArray($ResponseD);
 
         if ($res) {
-            $status = ['B001', 'B022'];
+            $status = ['B001', 'B022', 'B025'];
             $bool   = array_search($res['trans']['trn-y2e0011-res']['status']['rspcod'], $status);
             if ($bool !== false) {
                 $orderStatus = $res['trans']['trn-y2e0011-res']["trn-details"]["pay-detail"]["status"];
@@ -280,5 +284,26 @@ class YtjfController extends PaymentController
 
         $base64Signature = base64_encode($signature);
         return $base64Signature;
+    }
+
+    public function notifyurl()
+    {
+        $postData = I('request.', []);
+        Log::record(json_encode($postData));
+        if (!empty($postData)) {
+            $merInside = $postData['merInside'];
+            $where     = [
+                'status' => 1,
+                'extend' => $merInside,
+                'code'   => 'Ytjf'];
+            $order     = M('Wttklist')->where($where)->select();
+            if ($order) {
+                if ($postData['status'] == 'success') {
+                    $this->handle($order['id'], 2, ['channel_mch_id' => $postData['merNo']]);
+                }
+            }
+            echo 'success';
+        }
+        echo 'error post data';
     }
 }
