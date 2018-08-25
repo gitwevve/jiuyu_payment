@@ -1010,6 +1010,11 @@ function isLogin(){
  *showError('错误了');
  */
 function showError($msg='操作失败', $fields=array()){
+    if (session('get_raw_return')) {
+        session('get_raw_return', null);
+        E(json_encode(array('status'=>'error', 'msg'=>$msg, 'data'=>$fields)));
+        return array('status'=>'error', 'msg'=>$msg, 'data'=>$fields);
+    }
     header('Content-Type:application/json; charset=utf-8');
     $data = array('status'=>'error', 'msg'=>$msg, 'data'=>$fields);
     echo json_encode($data,320);
@@ -1025,6 +1030,10 @@ function showError($msg='操作失败', $fields=array()){
  *showSuccess('ok');
  */
 function showSuccess($msg='操作成功',$fields=array()){
+    if (session('get_raw_return')) {
+        session('get_raw_return', null);
+        return array('status'=>'success', 'msg'=>$msg, 'data'=>$fields);
+    }
     header('Content-Type:application/json; charset=utf-8');
     $data = array('status'=>'success', 'msg'=>$msg, 'data'=>$fields);
     echo json_encode($data,320);

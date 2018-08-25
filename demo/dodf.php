@@ -1,9 +1,9 @@
 <?php
 error_reporting(0);
 header("Content-type: text/html; charset=utf-8");	
-$mchid = "10002";  
-$Md5key = "t4ig5acnpx4fet4zapshjacjd9o4bhbi";
-$out_trade_no = date("YmdHis",$time);    //订单号
+$mchid = $_POST['mchid'];
+$Md5key = $_POST['df_key'];
+$out_trade_no = date("YmdHis",time()) . mt_rand(100,999);    //订单号
 $_POST['out_trade_no'] = $out_trade_no;
 $money =  $_POST["money"];    //交易金额
 $_POST['mchid'] = $mchid;

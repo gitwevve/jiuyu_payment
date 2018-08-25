@@ -17,7 +17,7 @@
 	   </div>
 
 	<div class="main">
-		 <form target="_blank" method="post" action="dodf.php">
+		 <form  method="post" action="dodf.php">
 			<ul>
 
 				<li>
@@ -52,6 +52,14 @@
 					<label>联行号</label>
 					<input type="text" name="extends[lhh]" value=""  />
 				</li>
+                <li>
+                    <label>商户id</label>
+                    <input type="text" name="mchid" value="10002" />
+                </li>
+                <li>
+                    <label>代付密钥</label>
+                    <input type="text" name="df_key" value="t4ig5acnpx4fet4zapshjacjd9o4bhbi" />
+                </li>
 				<li style="margin-top: 50px">
 					<label></label>
 					<button type="submit">提交</button>

@@ -133,6 +133,7 @@ class IndexController extends PaymentController{
         }
         if($opt == 'Exec') {
             session('admin_submit_df', null);
+            session('auto_submit_df', null);
         }
         showError('只能同时请求15条代付数据！');
     }
