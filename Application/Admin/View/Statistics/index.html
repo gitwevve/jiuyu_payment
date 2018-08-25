@@ -58,7 +58,7 @@
             </div>
           </div>
         </form>
-        
+
         <div class="ibox float-e-margins chart item">
         <div class="ibox-title"><h5>交易统计</h5></div>
           <div class="ibox-content no-padding">
@@ -120,7 +120,7 @@
           <div class="pagex"> <{$page}></div>
         </div>
       </div>
-      
+
     </div>
   </div>
 </div>
@@ -148,13 +148,13 @@
             , range: '|'
         });
     });
-    
+
     $('#export').on('click',function(){
         window.location.href
             ="<{:U('Admin/Statistics/exportorder',array('memberid'=>$_GET[memberid],'orderid'=>$_GET[orderid],'createtime'=>$_GET[createtime],'successtime'=>$_GET[successtime],'tongdao'=>$_GET[tongdao],'bank'=>$_GET[bank],'status'=>$_GET[status],'ddlx'=>$_GET[ddlx]))}>";
     });
 
-    
+
     var myChart = echarts.init(document.getElementById('dmonth'));
     myChart.setOption({
         tooltip : {

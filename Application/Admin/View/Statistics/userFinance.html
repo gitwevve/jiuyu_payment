@@ -20,6 +20,14 @@
                   <input type="text" name="memberid" autocomplete="off" placeholder="请输入商户号"
                          class="layui-input" value="<{$_GET['memberid']}>">
                 </div>
+                <div class="layui-input-inline">
+                  <input type="text" class="layui-input" name="createtime" id="createtime"
+                         placeholder="创建起始时间" value="<{$_GET['createtime']}>">
+                </div>
+                <!--<div class="layui-input-inline">-->
+                  <!--<input type="text" class="layui-input" name="successtime" id="successtime"-->
+                         <!--placeholder="完成起始时间" value="<{$_GET['successtime']}>">-->
+                <!--</div>-->
      <!--            <div class="layui-inline">
                     <div class="layui-input-inline">
                       <input type="text" class="layui-input" name="order_time" id="order_time"
@@ -156,6 +164,20 @@
             ,form = layui.form //表单
             , table = layui.table //表格
             , element = layui.element;
+        //日期时间范围
+        laydate.render({
+            elem: '#createtime'
+            , type: 'datetime'
+            ,theme: 'molv'
+            , range: '|'
+        });
+        // //日期时间范围
+        // laydate.render({
+        //     elem: '#successtime'
+        //     , type: 'datetime'
+        //     ,theme: 'molv'
+        //     , range: '|'
+        // });
 
         var time = ['order_time', 'wtkk_time',  'tk_time'];
         for(k in time){

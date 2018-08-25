@@ -1,5 +1,25 @@
 <include file="Public/header"/>
+<div class="row">
+    <div class="col-md-12">
+        <!--条件查询-->
+        <div class="ibox-content">
+            <form class="layui-form" action="" method="get" autocomplete="off" id="orderform">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                            <input type="text" class="layui-input" name="createtime" id="createtime"
+                                   placeholder="创建起始时间" value="<{$_GET['createtime']}>">
+                    </div>
 
+                    <div class="layui-inline">
+                        <button type="submit" class="layui-btn"><span
+                                class="glyphicon glyphicon-search"></span> 搜索
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
     <div class="row">
         <foreach name="list" item="v">
@@ -48,6 +68,36 @@
     </div>
 
 <include file="Public/footer"/>
+<script>
 
+
+    layui.use(['laydate', 'laypage', 'layer', 'table', 'form', 'element'], function() {
+        var laydate = layui.laydate //日期
+            , laypage = layui.laypage //分页
+            ,layer = layui.layer //弹层
+            ,form = layui.form //表单
+            , table = layui.table //表格
+            , element = layui.element;
+        //日期时间范围
+        laydate.render({
+            elem: '#createtime'
+            , type: 'datetime'
+            ,theme: 'molv'
+            , range: '|'
+        });
+
+        var time = ['order_time', 'wtkk_time',  'tk_time'];
+        for(k in time){
+            //日期时间范围
+            laydate.render({
+                elem: '#' + time[k]
+                , type: 'datetime'
+                ,theme: 'molv'
+                , range: '|'
+            });
+        }
+    });
+
+</script>
 </body>
 </html>

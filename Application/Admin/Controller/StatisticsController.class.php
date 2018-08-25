@@ -176,6 +176,18 @@ class StatisticsController extends BaseController
         if ($memberid = I('get.memberid', '')) {
             $where['id'] = $memberid - 10000;
         }
+        $createtime = urldecode(I("request.createtime"));
+        if ($createtime) {
+            list($cstime, $cetime)  = explode('|', $createtime);
+
+        } else {
+            $_GET['createtime']      = date('Y-m-d H:i:s', strtotime(date('Y-m', time()))) . " | " . date('Y-m-d H:i:s', time());
+            list($cstime, $cetime)  = explode('|', $_GET['createtime']);
+        }
+        $order_time['pay_applydate'] = ['between', [strtotime($cstime), strtotime($cetime) ? strtotime($cetime) : time()]];
+        $wttklist_time['sqdatetime'] = ['between', [$cstime, $cetime ? : date('Y-m-d H:i:s')]];
+        $tklist_time['sqdatetime'] = ['between', [$cstime, $cetime ? : date('Y-m-d H:i:s')]];
+
         $size = 15;
         $rows = I('get.rows', $size);
         if (!$rows) {
@@ -201,6 +213,7 @@ class StatisticsController extends BaseController
                 $orderList = $Order
                     ->field(['sum(pay_amount) pay_amount', 'sum(pay_poundage) pay_poundage', 'sum(pay_actualamount) pay_actualamount'])
                     ->where(['pay_memberid' => $payMemberid, 'pay_status' => ['neq', 0]])
+                    ->where($order_time)
                     ->find();
                 if (empty($orderList)) {
                     $orderList = ['pay_amount' => 0.00, 'pay_poundage' => 0.00, 'pay_actualamount' => 0.00];
@@ -213,37 +226,39 @@ class StatisticsController extends BaseController
                 $wttklistList = $Wttklist
                     ->field(['sum(tkmoney) tkmoney', 'sum(sxfmoney) sxfmoney', 'sum(money) money'])
                     ->where(['userid' => $v['id'], 'status' => 2])
+                    ->where($wttklist_time)
                     ->find();
 
                 $tklistList = $Tklist
                     ->field(['sum(tkmoney) tkmoney', 'sum(sxfmoney) sxfmoney', 'sum(money) money'])
                     ->where(['userid' => $v['id'], 'status' => 2])
+                    ->where($tklist_time)
                     ->find();
 
                 //计算出金的总金额
                 $tempCounts = ['tkmoney' => 0, 'sxfmoney' => 0, 'money' => 0];
                 foreach ($tempCounts as $k1 => $v1) {
-                    $tempCounts[$k1] = (float) ($tklistList[$k1] + $wttklistList[$k1]);
+                    $tempCounts[$k1] = bcadd($tklistList[$k1], $wttklistList[$k1], 4);
                 }
                 $memberList[$k]                 = array_merge($tempCounts, $orderList, $v);
                 $memberList[$k]['pay_memberid'] = $payMemberid;
                 //提交订单数
-                $memberList[$k]['all_order_count'] =  $Order->where(['pay_memberid' => $payMemberid])->count();
+                $memberList[$k]['all_order_count'] =  $Order->where(['pay_memberid' => $payMemberid])->where($order_time)->count();
                 $memberList[$k]['all_order_count'] +=0;
                 //已付订单数
-                $memberList[$k]['paid_order_count'] =  $Order->where(['pay_memberid' => $payMemberid, 'pay_status'=>['in', '1,2']])->count();
+                $memberList[$k]['paid_order_count'] =  $Order->where(['pay_memberid' => $payMemberid, 'pay_status'=>['in', '1,2']])->where($order_time)->count();
                 $memberList[$k]['paid_order_count'] +=0;
                 //未付订单数
-                $memberList[$k]['nopaid_order_count'] = $Order->where(['pay_memberid' => $payMemberid, 'pay_status'=>0])->count();
+                $memberList[$k]['nopaid_order_count'] = $Order->where(['pay_memberid' => $payMemberid, 'pay_status'=>0])->where($order_time)->count();
                 $memberList[$k]['nopaid_order_count'] +=0;
                 //提交金额
-                $memberList[$k]['all_order_amount'] = $Order->where(['pay_memberid' => $payMemberid])->sum('pay_amount');
+                $memberList[$k]['all_order_amount'] = $Order->where(['pay_memberid' => $payMemberid])->where($order_time)->sum('pay_amount');
                 $memberList[$k]['all_order_amount'] +=0;
                 //实付金额
-                $memberList[$k]['paid_order_amount'] = $Order->where(['pay_memberid' => $payMemberid, 'pay_status'=>['in', '1,2']])->sum('pay_amount');
+                $memberList[$k]['paid_order_amount'] = $Order->where(['pay_memberid' => $payMemberid, 'pay_status'=>['in', '1,2']])->where($order_time)->sum('pay_amount');
                 $memberList[$k]['paid_order_amount'] +=0;
                 //商户收入
-                $actualamount = M('Order')->where(['pay_memberid'=>$payMemberid, 'status' => ['in', '1,2']])->sum('pay_actualamount');
+                $actualamount = M('Order')->where(['pay_memberid'=>$payMemberid, 'status' => ['in', '1,2']])->where($order_time)->sum('pay_actualamount');
                 $profitSum = M('moneychange')->where(['userid'=>$v['id'],'lx'=>9])->sum('money');
                 $redoAddSum = M('redo_order')->where(['type'=>1,'user_id'=>$v['id']])->sum('money');
                 $redoReduceSum = M('redo_order')->where(['type'=>2,'user_id'=>$v['id']])->sum('money');
@@ -251,9 +266,9 @@ class StatisticsController extends BaseController
                 $memberList[$k]['member_income'] = $orderSum;
                 $memberList[$k]['member_income'] +=0;
                 //平台收入
-                $income_profit = M('Order')->where(['pay_memberid'=>$payMemberid, 'status' => ['in', '1,2']])->sum('pay_poundage');
-                $order_cost = M('Order')->where(['pay_memberid'=>$payMemberid, 'status' => ['in', '1,2']])->sum('cost');
-                $pay_cost = M('wttklist')->where(['userid'=>$v['id'], 'status' => 2])->sum('cost');
+                $income_profit = M('Order')->where(['pay_memberid'=>$payMemberid, 'status' => ['in', '1,2']])->where($order_time)->sum('pay_poundage');
+                $order_cost = M('Order')->where(['pay_memberid'=>$payMemberid, 'status' => ['in', '1,2']])->where($order_time)->sum('cost');
+                $pay_cost = M('wttklist')->where(['userid'=>$v['id'], 'status' => 2])->where($wttklist_time)->sum('cost');
                 $agent_profit_cost = M('moneychange')->where(['tcuserid'=>$v['id'],'lx'=>9])->sum('money');
                 $memberList[$k]['platform_income'] = $income_profit - $order_cost - $pay_cost - $agent_profit_cost;
                 $memberList[$k]['platform_income'] += 0;
@@ -263,7 +278,13 @@ class StatisticsController extends BaseController
         $fields = ['tkmoney', 'sxfmoney', 'money' , 'all_order_count', 'paid_order_count', 'nopaid_order_count', 'all_order_amount', 'paid_order_amount', 'member_income', 'platform_income','balance','blockedbalance','pay_amount','tkmoney','sxfmoney'];
         foreach($fields as $field ) {
             foreach($memberList as $k => $v) {
-                $stat[$field] += $v[$field];
+                if (in_array($field, ['all_order_count', 'paid_order_count', 'nopaid_order_count'])) {
+                    $stat[$field] += $v[$field];
+                } else if (in_array($field, ['all_order_amount', 'paid_order_amount'])){
+                    $stat[$field] = bcadd($stat[$field], $v[$field], 2);
+                } else {
+                    $stat[$field] = bcadd($stat[$field], $v[$field], 4);
+                }
             }
         }
         $this->assign('stat', $stat);
@@ -282,6 +303,14 @@ class StatisticsController extends BaseController
         if (!$rows) {
             $rows = $size;
         }
+        $createtime = urldecode(I("request.createtime"));
+        if ($createtime) {
+            list($cstime, $cetime)  = explode('|', $createtime);
+        } else {
+            $_GET['createtime']      = date('Y-m-d H:i:s', strtotime(date('Y-m', time()))) . " | " . date('Y-m-d H:i:s', time());
+            list($cstime, $cetime)  = explode('|', $_GET['createtime']);
+        }
+        $order_time['pay_applydate'] = ['between', [strtotime($cstime), strtotime($cetime) ? strtotime($cetime) : time()]];
         $count = $Product->count();
         $Page  = new Page($count, $rows);
         $show  = $Page->show();
@@ -292,7 +321,7 @@ class StatisticsController extends BaseController
             ->select();
 
         //注意因为很多客户的订单量是很大的，这里要分割查询，我是想不到好的方法 =。=
-        $Order      = M('Order');
+        $Order      = M('Order')->where($order_time);
         $orderCount = $Order->count();
         $orderList  = [];
         $limit      = 100000;
@@ -324,13 +353,13 @@ class StatisticsController extends BaseController
                     if ($v1['pay_status'] != 0) {
                         $productList[$k]['success_count']++;
                         $productList[$k]['pay_amount']       = bcadd($productList[$k]['pay_amount'], $v1['pay_amount'], 2);
-                        $productList[$k]['pay_poundage']     = bcadd($productList[$k]['pay_poundage'], $v1['pay_poundage'], 2);
-                        $productList[$k]['pay_actualamount'] = bcadd($productList[$k]['pay_actualamount'], $v1['pay_actualamount'], 2);
+                        $productList[$k]['pay_poundage']     = bcadd($productList[$k]['pay_poundage'], $v1['pay_poundage'], 4);
+                        $productList[$k]['pay_actualamount'] = bcadd($productList[$k]['pay_actualamount'], $v1['pay_actualamount'], 4);
                     }
                 }
             }
             $productList[$k]['fail_count']   = $productList[$k]['count'] - $productList[$k]['success_count'];
-            $productList[$k]['success_rate'] = bcdiv($productList[$k]['success_count'], $productList[$k]['count'], 4) * 100;
+            $productList[$k]['success_rate'] = bcmul(bcdiv($productList[$k]['success_count'], $productList[$k]['count'], 4), 100, 2);
         }
 
         $this->assign('list', $productList);

@@ -127,6 +127,16 @@ class Auth{
                 }
             }else if (in_array($auth , $name)){
                 $list[] = $auth ;
+            } else {
+                if (IS_AJAX) {
+                    foreach ($name as $item) {
+                        $authCheck = explode('/', $item);
+                        $preg = '#'.$authCheck[0] . '\/.*#';
+                        if (preg_match($preg, $auth)) {
+                            $list[] = $auth;
+                        }
+                    }
+                }
             }
         }
         if ($relation == 'or' and !empty($list)) {
