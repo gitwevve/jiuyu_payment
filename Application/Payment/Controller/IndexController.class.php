@@ -58,6 +58,8 @@ class IndexController extends PaymentController{
         if($opt == 'Exec' && !session('admin_submit_df')) {
             showError('未通过身份验证！');
         }
+        $single_result = null;
+        $success = 0;
         if( count($wttk_lists)<= 15){
             $fp = fopen($file, "r");
             foreach($wttk_lists as $k => $v){
@@ -78,6 +80,7 @@ class IndexController extends PaymentController{
                         }
                         showError('服务器请求失败1！');
                     }
+                    $single_result = $result;
                     if(is_array($result)){
                         $cost = $pfa_list['rate_type'] ? bcmul($v['tkmoney'], $pfa_list['cost_rate'], 2):$pfa_list['cost_rate'];
                         $data = [
@@ -90,36 +93,42 @@ class IndexController extends PaymentController{
                             'cost'      => $cost,
                             'rate_type'=>$pfa_list['rate_type'],
                         ];
+                        if ($result['status'] == 1 || $result['status'] == 2) {
+                            $success ++;
+                        }
                         $this->handle($v['id'], $result['status'], $data);
                     }
                 }
                 if($opt == 'Exec') {
                     M('Wttklist')->where(['id' => $v['id']])->setField('df_lock', 0);
                 }
-                if($opt == 'Query') {
-                    $data = [
-                        'msg'       => $result['msg'],
-                        'df_id'     => $pfa_list['id'],
-                        'code'      => $pfa_list['code'],
-                        'df_name'   => $pfa_list['title'],
-                    ];
-                    $this->handle($v['id'], $result['status'], $data);
-                    if ($result['status'] == 2) {
-                        showSuccess($result['msg']);
-                    } else {
-                        showError($result['msg']);
-                    }
-                } else {
-                    if ($result['status'] == 3) {
-                        showError('代付申请失败:' . $result['msg']);
-                    } else {
-                        showSuccess($result['msg']);
-                    }
-                }
                 flock($fp,LOCK_UN);
             }
             fclose($fp);
+            if ($single_result !== null) {
+                if (count($wttk_lists) == 1) {
+                    if($opt == 'Query') {
+                        if ($single_result['status'] == 2) {
+                            showSuccess($single_result['msg']);
+                        } else {
+                            showError($single_result['msg']);
+                        }
+                    } else {
+                        if ($single_result['status'] == 3) {
+                            showError('代付申请失败:' . $single_result['msg']);
+                        } else {
+                            showSuccess($single_result['msg']);
+                        }
+                    }
 
+                } else {
+                    if($success == 0) {
+                        showError('代付失败！请在页面刷新后查看订单状态！');
+                    } else {
+                        showSuccess('代付成功,请在页面刷新后查看订单状态！');
+                    }
+                }
+            }
             exit;
         }
         if($opt == 'Exec') {
