@@ -1739,6 +1739,22 @@ class WithdrawalController extends UserController
                     }
                 }
                 M()->rollback();
+                session('get_raw_return', 1);
+                session('admin_submit_df', 1);
+                session('auto_submit_df', 1);
+                $res['status'] = 'success';
+                if ($Wttklist) {
+                    $_REQUEST = [
+                        'code'=>'default',
+                        'id'=> $result['id'] .',',
+                        'opt' => 'exec',
+                    ];
+                    try {
+                        $res = R('Payment/Index/index');
+                    } catch (Exception $exception) {
+                        $res = json_decode($exception->getMessage(), true);
+                    }
+                }
                 $this->success('委托结算提交成功！');
             } else {
                 $this->error($errorTxt);
