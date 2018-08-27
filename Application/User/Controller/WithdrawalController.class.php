@@ -8,6 +8,7 @@
 namespace User\Controller;
 
 use Think\Exception;
+use Think\Log;
 use Think\Page;
 use Think\Upload;
 
@@ -1748,18 +1749,20 @@ class WithdrawalController extends UserController
                         $where[] = ['orderid' => $id];
                     }
                     $ids =  M('Wttklist')->where($where)->getField('id', true);
+                    Log::record($ids);
                     session('get_raw_return', 1);
                     session('admin_submit_df', 1);
                     session('auto_submit_df', 1);
                     if ($ids) {
                         $_REQUEST = [
                             'code'=>'default',
-                            'id'=> $ids,
+                            'id'=> $ids . ',',
                             'opt' => 'exec',
                         ];
                         try {
                             $res = R('Payment/Index/index');
                         } catch (Exception $exception) {
+                            Log::record($exception->getMessage());
                             $res = json_decode($exception->getMessage(), true);
                         }
                     }
