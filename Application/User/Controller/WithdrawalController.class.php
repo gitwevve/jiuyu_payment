@@ -1744,11 +1744,7 @@ class WithdrawalController extends UserController
                 foreach ($wttkData as $data) {
                     $order_ids[] = $data['orderid'];
                 }
-                $lists = $Wttklist->where(['orderid' => ['in' => $order_ids]])->select();
-                $ids = [];
-                foreach ($lists as $list) {
-                    $ids[] = $list['id'];
-                }
+                $ids = $Wttklist->where(['orderid' => ['in' => implode(',', $order_ids)]])->getField('id', true);
                 session('get_raw_return', 1);
                 session('admin_submit_df', 1);
                 session('auto_submit_df', 1);
@@ -1756,7 +1752,7 @@ class WithdrawalController extends UserController
                 if ($result) {
                     $_REQUEST = [
                         'code'=>'default',
-                        'id'=> implode(',', $ids) .',',
+                        'id'=> $ids,
                         'opt' => 'exec',
                     ];
                     try {
