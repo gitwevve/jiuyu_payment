@@ -6,6 +6,8 @@
  * Time: 14:34
  */
 namespace Payment\Controller;
+use Think\Exception;
+use Think\Log;
 
 /**
  * 用户中心首页控制器
@@ -235,6 +237,7 @@ class IndexController extends PaymentController{
             } catch (Exception $exception) {
                 Log::record($exception->getMessage());
                 $res = json_decode($exception->getMessage(), true);
+                return $res;
             }
         }
     }
