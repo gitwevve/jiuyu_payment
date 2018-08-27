@@ -1631,6 +1631,7 @@ class WithdrawalController extends UserController
             $balance    = $info['balance'];
             $tkmoneysum = 0;
             $cardsum    = [];
+            $order_ids = '';
             foreach ($data as $k => $v) {
                 if (!isset($errorTxt)) {
                     $tkmoneysum += $v['tkmoney'];
@@ -1708,7 +1709,7 @@ class WithdrawalController extends UserController
                         "additional"   => trim($v['additional']),
                         "extends"      => $extends,
                     ];
-                    $order_ids = $orderid;
+                    $order_ids .= $orderid . ',';
 
                     $tkmoney = abs(floatval($v['tkmoney']));
                     $ymoney  = $balance;
@@ -1729,6 +1730,7 @@ class WithdrawalController extends UserController
                     $this->error($errorTxt);
                 }
             }
+            $order_ids = strlen($order_ids) > 0 ? substr($order_ids, 0, -1) : '';
 
             if (!isset($errorTxt)) {
                 M()->startTrans();
