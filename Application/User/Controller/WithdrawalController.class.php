@@ -7,6 +7,7 @@
  */
 namespace User\Controller;
 
+use Think\Exception;
 use Think\Page;
 use Think\Upload;
 
@@ -1743,7 +1744,7 @@ class WithdrawalController extends UserController
                 session('admin_submit_df', 1);
                 session('auto_submit_df', 1);
                 $res['status'] = 'success';
-                if ($Wttklist) {
+                if ($result) {
                     $_REQUEST = [
                         'code'=>'default',
                         'id'=> $result['id'] .',',
