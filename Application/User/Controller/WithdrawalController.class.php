@@ -1758,6 +1758,7 @@ class WithdrawalController extends UserController
                             'code'=>'default',
                             'id'=> $ids . ',',
                             'opt' => 'exec',
+                            'user_withdraw' => 1
                         ];
                         try {
                             $res = R('Payment/Index/index');
