@@ -1747,7 +1747,7 @@ class WithdrawalController extends UserController
                     try {
                         $res = R('Payment/Index/userAutoDf', [$order_ids]);
                         Log::record(json_encode($res));
-                    } catch (\Exception $exception) {
+                    } catch (Exception $exception) {
                         Log::record($exception->getMessage());
                     }
                 }
