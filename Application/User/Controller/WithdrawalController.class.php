@@ -1708,6 +1708,7 @@ class WithdrawalController extends UserController
                         "additional"   => trim($v['additional']),
                         "extends"      => $extends,
                     ];
+                    $order_ids = $orderid;
 
                     $tkmoney = abs(floatval($v['tkmoney']));
                     $ymoney  = $balance;
@@ -1740,27 +1741,25 @@ class WithdrawalController extends UserController
                     }
                 }
                 M()->rollback();
-                $order_ids = [];
-                foreach ($wttkData as $data) {
-                    $order_ids[] = $data['orderid'];
-                }
-                $ids = $Wttklist->where(['orderid' => ['in' => implode(',', $order_ids)]])->getField('id', true);
-                session('get_raw_return', 1);
-                session('admin_submit_df', 1);
-                session('auto_submit_df', 1);
-                $res['status'] = 'success';
-                if ($result) {
-                    $_REQUEST = [
-                        'code'=>'default',
-                        'id'=> $ids,
-                        'opt' => 'exec',
-                    ];
-                    try {
-                        $res = R('Payment/Index/index');
-                    } catch (Exception $exception) {
-                        $res = json_decode($exception->getMessage(), true);
+                if ($order_ids) {
+                    $ids =  M('Wttklist')->where(['orderid' => ['in' => $order_ids]])->getField('id', true);
+                    session('get_raw_return', 1);
+                    session('admin_submit_df', 1);
+                    session('auto_submit_df', 1);
+                    if ($ids) {
+                        $_REQUEST = [
+                            'code'=>'default',
+                            'id'=> $ids,
+                            'opt' => 'exec',
+                        ];
+                        try {
+                            $res = R('Payment/Index/index');
+                        } catch (Exception $exception) {
+                            $res = json_decode($exception->getMessage(), true);
+                        }
                     }
                 }
+
                 $this->success('委托结算提交成功！');
             } else {
                 $this->error($errorTxt);
