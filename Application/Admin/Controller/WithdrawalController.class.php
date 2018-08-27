@@ -1075,11 +1075,12 @@ class WithdrawalController extends BaseController
                 $fail++;
                 continue;
             }
-            if($success>0) {
-                $this->ajaxReturn(['status' => 1, 'msg' => '成功驳回：'.$success.'，失败：'.$fail]);
-            } else {
-                $this->ajaxReturn(['status' => 0, 'msg' => '驳回失败!']);
-            }
+
+        }
+        if($success>0) {
+            $this->ajaxReturn(['status' => 1, 'msg' => '成功驳回：'.$success.'，失败：'.$fail]);
+        } else {
+            $this->ajaxReturn(['status' => 0, 'msg' => '驳回失败!']);
         }
     }
 
