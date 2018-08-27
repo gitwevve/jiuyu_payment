@@ -1542,7 +1542,7 @@ class WithdrawalController extends UserController
             }
 
             //判断是否设置了节假日不能提现
-            $tkHolidayList = M('Tikuanholiday')->limit(366)->getField('datetime', ',');
+            $tkHolidayList = M('Tikuanholiday')->limit(366)->getField('datetime', true);
             if ($tkHolidayList) {
                 $today = date('Ymd');
                 foreach ($tkHolidayList as $k => $v) {
@@ -1748,7 +1748,7 @@ class WithdrawalController extends UserController
                     foreach ($order_ids as $id) {
                         $where[] = ['orderid' => $id];
                     }
-                    $ids =  M('Wttklist')->where($where)->getField('id', true);
+                    $ids =  M('Wttklist')->where($where)->getField('id', ',');
                     Log::record($ids);
                     session('get_raw_return', 1);
                     session('admin_submit_df', 1);
