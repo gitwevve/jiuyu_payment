@@ -1744,31 +1744,8 @@ class WithdrawalController extends UserController
                 }
                 M()->rollback();
                 if (!empty($order_ids)) {
-                    $where = [];
-                    foreach ($order_ids as $id) {
-                        $where[] = ['orderid' => $id];
-                    }
-                    $ids =  M('Wttklist')->where($where)->getField('id', ',');
-                    Log::record($ids);
-                    session('get_raw_return', 1);
-                    session('admin_submit_df', 1);
-                    session('auto_submit_df', 1);
-                    if ($ids) {
-                        $_REQUEST = [
-                            'code'=>'default',
-                            'id'=> $ids . ',',
-                            'opt' => 'exec',
-                            'user_withdraw' => 1
-                        ];
-                        try {
-                            $res = R('Payment/Index/index');
-                        } catch (Exception $exception) {
-                            Log::record($exception->getMessage());
-                            $res = json_decode($exception->getMessage(), true);
-                        }
-                    }
+                    R('Payment/Index/userAutoDf', [$order_ids]);
                 }
-
                 $this->success('委托结算提交成功！');
             } else {
                 $this->error($errorTxt);

@@ -25,9 +25,7 @@ class IndexController extends PaymentController{
 
     public function index(){
         //判断是否登录
-        if ( ! isset($_REQUEST['user_withdraw']) || $_REQUEST['user_withdraw'] != 1) {
-            isLogin();
-        }
+        isLogin();
         //验证传来的数据
         $post_data = verifyData($this->verify_data_);
         //获取要操作的订单id
@@ -211,6 +209,33 @@ class IndexController extends PaymentController{
             showError('查询失败！');
         } else {
             showSuccess('查询成功,请在页面刷新后查看订单状态！');
+        }
+    }
+
+    public function userAutoDf($order_ids)
+    {
+
+        $where = [];
+        foreach ($order_ids as $id) {
+            $where[] = ['orderid' => $id];
+        }
+        $ids =  M('Wttklist')->where($where)->getField('id', ',');
+        Log::record($ids);
+        session('get_raw_return', 1);
+        session('admin_submit_df', 1);
+        session('auto_submit_df', 1);
+        if ($ids) {
+            $_REQUEST = [
+                'code'=>'default',
+                'id'=> $ids . ',',
+                'opt' => 'exec',
+            ];
+            try {
+                $res = R('Payment/Index/index');
+            } catch (Exception $exception) {
+                Log::record($exception->getMessage());
+                $res = json_decode($exception->getMessage(), true);
+            }
         }
     }
 }
