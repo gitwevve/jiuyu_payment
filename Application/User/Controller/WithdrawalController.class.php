@@ -1744,8 +1744,12 @@ class WithdrawalController extends UserController
                 }
                 M()->rollback();
                 if (!empty($order_ids)) {
-                    $res = R('Payment/Index/userAutoDf', [$order_ids]);
-                    Log::record(json_encode($res));
+                    try {
+                        $res = R('Payment/Index/userAutoDf', [$order_ids]);
+                        Log::record(json_encode($res));
+                    } catch (\Exception $exception) {
+                        Log::record($exception->getMessage());
+                    }
                 }
                 $this->success('委托结算提交成功！');
             } else {

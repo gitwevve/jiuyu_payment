@@ -237,8 +237,8 @@ class IndexController extends PaymentController{
             } catch (Exception $exception) {
                 Log::record($exception->getMessage());
                 $res = json_decode($exception->getMessage(), true);
-                return $res;
             }
+            return $res;
         }
     }
 }
