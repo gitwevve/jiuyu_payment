@@ -1542,7 +1542,7 @@ class WithdrawalController extends UserController
             }
 
             //判断是否设置了节假日不能提现
-            $tkHolidayList = M('Tikuanholiday')->limit(366)->getField('datetime', true);
+            $tkHolidayList = M('Tikuanholiday')->limit(366)->getField('datetime', ',');
             if ($tkHolidayList) {
                 $today = date('Ymd');
                 foreach ($tkHolidayList as $k => $v) {
