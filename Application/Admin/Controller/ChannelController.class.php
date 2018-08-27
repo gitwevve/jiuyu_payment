@@ -577,4 +577,95 @@ class ChannelController extends BaseController
             $this->display();
         }
     }
+
+    public function productDf()
+    {
+        //通道
+        $channels = M('Systembank')
+            ->field('id,bankcode,bankname')
+            ->select();
+        $this->assign('channels', $channels);
+        $this->assign('channellist', json_encode($channels));
+        $lists = [];
+        foreach ($channels as $channel) {
+            $list = $channel;
+            $df_product = M('ProductDf')->where(['paytype' => $channel['id']])->find();
+            $list['polling'] = '默认渠道';
+            if ($df_product) {
+                $list['polling'] = $df_product['polling'] == 1? '轮询' : '单独';
+            }
+            $lists[] = $list;
+        }
+        $this->assign('list', $lists);
+        $this->display();
+    }
+
+    public function editProductDf()
+    {
+        $id   = I('get.bankid', 0, 'intval');
+        $data = M('ProductDf')->where(['paytype' => $id])->find();
+
+        if ( ! $data) {
+            $bank = M('Systembank')->where(['id' => $id])->find();
+            $data['name'] = $bank['bankname'];
+            $data['code'] = $bank['bankcode'];
+        }
+        //权重
+        $weights    = [];
+        $weights    = explode('|', $data['weight']);
+        $tmpWeight = '';
+        if (is_array($weights)) {
+            foreach ($weights as $value) {
+                list($pid, $weight) = explode(':', $value);
+                if ($pid) {
+                    $tmpWeight[$pid] = ['pid' => $pid, 'weight' => $weight];
+                }
+            }
+        } else {
+            list($pid, $weight) = explode(':', $data['weight']);
+            if ($pid) {
+                $tmpWeight[$pid] = ['pid' => $pid, 'weight' => $weight];
+            }
+        }
+        $data['weight'] = $tmpWeight;
+        //通道
+        $channels = M('PayForAnother')->where(["status" => 1])->select();
+        $this->assign('channels', $channels);
+        $this->assign('channellist', json_encode($channels));
+        $this->assign('pd', $data);
+        $this->assign('bankid', $id);
+        $this->display('addProductDf');
+    }
+
+    public function saveProductDf()
+    {
+        if (IS_POST) {
+            $id     = intval($_POST['id']);
+            $bankid = intval($_POST['bankid']);
+            $rows   = $_POST['pd'];
+            $weight = $_POST['w'];
+            //权重
+            $weightStr = '';
+            if (is_array($weight)) {
+                foreach ($weight as $weigths) {
+                    if ($weigths['pid']) {
+                        $weightStr .= $weigths['pid'] . ':' . $weigths['weight'] . "|";
+                    }
+                }
+            }
+
+            $rows['weight'] = trim($weightStr, '|');
+            $rows['status'] = 1;
+            $rows['isdisplay'] = 1;
+
+            $res = M('ProductDf')->where(['paytype' => $bankid])->find();
+            if ($res) {
+                M('ProductDf')->where(['paytype' => $bankid])->setField($rows);
+            } else {
+                $rows['paytype'] = $bankid;
+                $res = M('ProductDf')->add($rows);
+            }
+            $this->ajaxReturn(['status' => $res]);
+        }
+    }
 }
