@@ -1744,7 +1744,7 @@ class WithdrawalController extends UserController
                 foreach ($wttkData as $data) {
                     $order_ids[] = $data['orderid'];
                 }
-                $lists = $Wttklist->where('orderid', ['in' => $order_ids])->select();
+                $lists = $Wttklist->where(['orderid' => ['in' => $order_ids]])->select();
                 $ids = [];
                 foreach ($lists as $list) {
                     $ids[] = $list['id'];
