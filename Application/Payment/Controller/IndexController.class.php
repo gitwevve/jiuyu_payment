@@ -27,7 +27,9 @@ class IndexController extends PaymentController{
 
     public function index(){
         //判断是否登录
-        isLogin();
+        if (session('auto_submit_df')) {
+            isLogin();
+        }
         //验证传来的数据
         $post_data = verifyData($this->verify_data_);
         //获取要操作的订单id
