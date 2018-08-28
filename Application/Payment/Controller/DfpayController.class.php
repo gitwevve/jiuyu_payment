@@ -174,6 +174,7 @@ class DfpayController extends Controller
                         'code'=>'default',
                         'id'=> $Wttklist['id'] .',',
                         'opt' => 'exec',
+                        'auto_df' => 1
                     ];
                     try {
                         $resp = R('Payment/Index/index');
