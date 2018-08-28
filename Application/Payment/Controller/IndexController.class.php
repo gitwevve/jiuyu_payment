@@ -175,7 +175,7 @@ class IndexController extends PaymentController{
             showError('请选择订单！');
         }
         $where['id'] = ['in', $id];
-        $where['status'] = 1;
+        $where['status'] = ['in', [1, 4]];
         $wttk_lists = M('Wttklist')->where($where)->select();
         if(empty($wttk_lists)) {
             showError('所选订单不能查询！');
