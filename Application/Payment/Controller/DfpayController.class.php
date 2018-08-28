@@ -167,7 +167,7 @@ class DfpayController extends Controller
                 session('admin_submit_df', 1);
                 session('auto_submit_df', 1);
                 $Wttklist = M('Wttklist')->where(['out_trade_no' => $out_trade_no])->find();
-                $res['status'] = 'success';
+                $resp['status'] = 'success';
                 if ($Wttklist) {
                     $_REQUEST = [
                         'code'=>'default',
@@ -175,13 +175,13 @@ class DfpayController extends Controller
                         'opt' => 'exec',
                     ];
                     try {
-                        $res = R('Payment/Index/index');
+                        $resp = R('Payment/Index/index');
                     } catch (Exception $exception) {
-                        $res = json_decode($exception->getMessage(), true);
+                        $resp = json_decode($exception->getMessage(), true);
                     }
                 }
                 header('Content-Type:application/json; charset=utf-8');
-                $data = array('status' => 'success', 'msg' => $res['status'] == 'success'? '代付申请成功':'代付申请成功，请等待工作人员审核', 'transaction_id'=>$data['trade_no']);
+                $data = array('status' => 'success', 'msg' => $resp['status'] == 'success'? '代付申请成功':'代付申请成功，请等待工作人员审核', 'transaction_id'=>$data['trade_no']);
                 echo json_encode($data);
                 exit;
             } else {
