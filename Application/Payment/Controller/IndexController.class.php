@@ -30,9 +30,9 @@ class IndexController extends PaymentController{
         //验证传来的数据
         $post_data = verifyData($this->verify_data_);
         //判断是否登录
-        if ($post_data['auto_df'] == 1 || session('auto_submit_df')) {
-            isLogin();
-        }
+//        if ($post_data['auto_df'] == 1 || session('auto_submit_df')) {
+//            isLogin();
+//        }
         //获取要操作的订单id
         $post_data['id'] = explode(',', rtrim($post_data['id'], ',') );
 		
