@@ -26,10 +26,13 @@ class IndexController extends PaymentController{
 
 
     public function index(){
-        //判断是否登录
-        isLogin();
+
         //验证传来的数据
         $post_data = verifyData($this->verify_data_);
+        //判断是否登录
+//        if ($post_data['auto_df'] == 1 || session('auto_submit_df')) {
+//            isLogin();
+//        }
         //获取要操作的订单id
         $post_data['id'] = explode(',', rtrim($post_data['id'], ',') );
 		
@@ -58,7 +61,9 @@ class IndexController extends PaymentController{
         //循环存在代付通道的文件限制一次只能操作15条数据
         $opt = ucfirst( $post_data['opt']);
         if($opt == 'Exec' && !session('admin_submit_df')) {
-            showError('未通过身份验证！');
+            if (!$post_data['auto_df'] && !session('auto_submit_df')) {
+                showError('未通过身份验证！');
+            }
         }
         $single_result = null;
         $success = 0;

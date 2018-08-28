@@ -6,6 +6,7 @@ namespace Payment\Controller;
 
 use Think\Controller;
 use Think\Exception;
+use Think\Log;
 use Think\Queue;
 
 class DfpayController extends Controller
@@ -167,21 +168,23 @@ class DfpayController extends Controller
                 session('admin_submit_df', 1);
                 session('auto_submit_df', 1);
                 $Wttklist = M('Wttklist')->where(['out_trade_no' => $out_trade_no])->find();
-                $res['status'] = 'success';
+                $resp['status'] = 'success';
                 if ($Wttklist) {
                     $_REQUEST = [
                         'code'=>'default',
                         'id'=> $Wttklist['id'] .',',
                         'opt' => 'exec',
+                        'auto_df' => 1
                     ];
                     try {
-                        $res = R('Payment/Index/index');
+                        $resp = R('Payment/Index/index');
                     } catch (Exception $exception) {
-                        $res = json_decode($exception->getMessage(), true);
+                        $resp = json_decode($exception->getMessage(), true);
                     }
+                    Log::record($data['trade_no'] . '自动打款返回状态:' . json_encode($resp));
                 }
                 header('Content-Type:application/json; charset=utf-8');
-                $data = array('status' => 'success', 'msg' => $res['status'] == 'success'? '代付申请成功':'代付申请成功，请等待工作人员审核', 'transaction_id'=>$data['trade_no']);
+                $data = array('status' => 'success', 'msg' => $resp['status'] == 'success'? '代付申请成功':'代付申请成功，请等待工作人员审核', 'transaction_id'=>$data['trade_no']);
                 echo json_encode($data);
                 exit;
             } else {
