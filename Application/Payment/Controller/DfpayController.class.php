@@ -6,6 +6,7 @@ namespace Payment\Controller;
 
 use Think\Controller;
 use Think\Exception;
+use Think\Log;
 use Think\Queue;
 
 class DfpayController extends Controller
@@ -179,6 +180,7 @@ class DfpayController extends Controller
                     } catch (Exception $exception) {
                         $resp = json_decode($exception->getMessage(), true);
                     }
+                    Log::record($data['trade_no'] . '自动打款返回状态:' . json_encode($resp));
                 }
                 header('Content-Type:application/json; charset=utf-8');
                 $data = array('status' => 'success', 'msg' => $resp['status'] == 'success'? '代付申请成功':'代付申请成功，请等待工作人员审核', 'transaction_id'=>$data['trade_no']);
