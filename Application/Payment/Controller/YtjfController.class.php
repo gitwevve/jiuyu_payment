@@ -19,7 +19,7 @@ class YtjfController extends PaymentController
         //todo 0、数据初始化
         $MerNo         = $config['mch_id']; //业务申请
         $PayTm         = date('YmdHis'); //时间-dyn
-        $BatchName     = 'batchPay';
+        $BatchName     = $data['orderid'];
         $BatchNo       = $this->createOrder($data['id']); //
         $BussNo        = $config['appid']; //测试业务类型，每个商户不同,生产环境由业务分配
         $ProcedureType = '1'; //1:付款方付费 2：收款方付费

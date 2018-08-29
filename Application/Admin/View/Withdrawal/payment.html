@@ -102,6 +102,7 @@
                         <th lay-data="{field:'key', width:80}"></th>
                         <th lay-data="{field:'t', width:60}">类型</th>
                         <th lay-data="{field:'orderid', width:180}">系统订单号</th>
+                        <th lay-data="{field:'out_trade_no', width:180}">商户订单号</th>
                         <th lay-data="{field:'userid', width:100,style:'color:#060;'}">商户编号</th>
                         <th lay-data="{field:'channel_mch_id', width:150,style:'color:#060;'}">通道商户号</th>
                         <th lay-data="{field:'tkmoney', width:110}">结算金额</th>
@@ -128,6 +129,7 @@
                             <td><{$vo.id}></td>
                             <td>T+<{$vo.t}></td>
                             <td><{$vo.orderid}></td>
+                            <td><{$vo.out_trade_no}></td>
                             <td><{$vo["userid"]+10000}></td>
                             <td><{$vo["channel_mch_id"]}></td>
                             <td><{$vo["tkmoney"]}> 元</td>
