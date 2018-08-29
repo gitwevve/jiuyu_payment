@@ -147,7 +147,7 @@ class IndexController extends PaymentController{
 
     //定时任务-查询上游代付订单
     public function evenQuery(){
-        $where = ['status'=>1];
+        $where = ['status'=>['in', [1, 4]]];
         $wttk_lists = $this->selectOrder($where);
         foreach($wttk_lists as $k => $v){
             $file = APP_PATH . 'Payment/Controller/' . $v['code'] . 'Controller.class.php';
@@ -180,7 +180,7 @@ class IndexController extends PaymentController{
             showError('请选择订单！');
         }
         $where['id'] = ['in', $id];
-        $where['status'] = 1;
+        $where['status'] = ['in', [1, 4]];
         $wttk_lists = M('Wttklist')->where($where)->select();
         if(empty($wttk_lists)) {
             showError('所选订单不能查询！');
