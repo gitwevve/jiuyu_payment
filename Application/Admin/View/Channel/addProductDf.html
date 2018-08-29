@@ -48,9 +48,7 @@
 					<select name="pd[channel]" lay-verify="" id="channels" lay-search="">
 					<option value="">直接选择或搜索选择</option>
 					<volist name="channels" id="c">
-						<!--<if condition="$c[paytype] eq $pd[paytype]">-->
-				    	<option <if condition="$pd[channel] eq $c[id]">selected</if> value="<{$c.id}>"><{$c.title}></option>
-						<!--</if>-->
+						<option <if condition="$pd[channel] eq $c[id]">selected</if> value="<{$c.id}>"><{$c.title}></option>
 				    </volist>
 					</select>
 				  </div>
@@ -65,17 +63,17 @@
 					  </thead>
 					  <tbody>
 					  <volist name="channels" id="c">
-						<!--<if condition="$c['paytype'] eq $pd['paytype']">-->
+
 						<tr>
 							<td><input type="checkbox" name="w[<{$c.id}>][pid]" <if
-										condition="$pd['weight'][$c['id']][pid]">checked</if>
-								lay-skin="primary" value="<if condition="$pd['weight'][$c['id']]"><{$pd['weight'][$c['id']][pid]}><else/><{$c['id']}></if>"></td>
-							<td><{$c.id}></td>
+									condition="$pd['weight'][$c['id']][pid]">checked</if>
+								lay-skin="primary" value="<if condition="$pd['weight'][$c['id']]"><{$pd['weight'][$c['id']][pid]}><else/><{$c.id}></if>"></td>
+							<td><{$c.code}></td>
 						  <td><{$c.title}></td>
 						  <td><input type="number" min="0" max="9" name="w[<{$c.id}>][weight]"
-									 class="layui-input" value="<{$pd['weight'][$c['id']][weight]}>"></td>
+									 class="layui-input" value="<{$pd['weight'][$c['id']][weight]}>">
+						  </td>
 					    </tr>
-						  <!--</if>-->
 					</volist>
 					  </tbody>
 				  </table>

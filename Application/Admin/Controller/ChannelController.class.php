@@ -613,7 +613,7 @@ class ChannelController extends BaseController
         //权重
         $weights    = [];
         $weights    = explode('|', $data['weight']);
-        $tmpWeight = '';
+        $tmpWeight = [];
         if (is_array($weights)) {
             foreach ($weights as $value) {
                 list($pid, $weight) = explode(':', $value);

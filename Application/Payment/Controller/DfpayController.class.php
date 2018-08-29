@@ -515,4 +515,59 @@ class DfpayController extends Controller
         echo json_encode($data, 320);
         exit;
     }
+
+    public function getPaymentId($bankname)
+    {
+        $where['status'] = 1;
+        $channel = M('ProductDf')->where(['name' => $bankname])->order('id', 'desc')->find();
+        $m_Channel = M('PayForAnother');
+        if ($channel) {
+            if ($channel['polling'] == 1 && $channel['weight']) {
+
+                /***********************多渠道,轮询，权重随机*********************/
+                $weight_item  = [];
+                $error_msg    = '已经下线';
+                $temp_weights = explode('|', $this->channel['weight']);
+                $unset_keys = [];
+                $i = 0;
+                foreach ($temp_weights as $k => $v) {
+                    list($pid, $weight) = explode(':', $v);
+                    $weight_item[$i] = ['pid' => $pid, 'weight' => $weight];
+                    $unset_keys[$pid] = $i;
+                    $i++;
+                }
+                $shift_weight          = getWeight($weight_item);
+                $pid = $shift_weight['pid'];
+                $payment = $m_Channel->where(['status' => 1, 'id' => $pid])->find();
+                if ( ! $payment) {
+
+                }
+                //如果所有通道风控，提示最后一个消息
+                if ($weight_item == []) {
+                    $this->showmessage('通道:' . $error_msg);
+                }
+                $weight_item          = getWeight($weight_item);
+                $this->channel['api'] = $weight_item['pid'];
+
+            } else {
+                /***********************单渠道,没有轮询*********************/
+
+                //查询通道信息
+                $pid          = $this->channel['channel'];
+                $channel_info = $m_Channel->where(['id' => $pid])->find();
+
+                //通道风控
+                $l_ChannelRiskcontrol->setConfigInfo($channel_info); //设置配置属性
+                $error_msg = $l_ChannelRiskcontrol->monitoringData();
+
+                if ($error_msg !== true) {
+                    $this->showmessage('通道:' . $error_msg);
+                }
+                $this->channel['api'] = $pid;
+            }
+        } else {
+            $where['is_default']  = 1;
+        }
+        $list = $m_Channel->where($where)->find();
+    }
 }
