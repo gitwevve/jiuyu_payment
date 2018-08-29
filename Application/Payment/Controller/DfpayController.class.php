@@ -167,22 +167,26 @@ class DfpayController extends Controller
                 session('get_raw_return', 1);
                 session('admin_submit_df', 1);
                 session('auto_submit_df', 1);
-                $Wttklist = M('Wttklist')->where(['out_trade_no' => $out_trade_no])->find();
-                $resp['status'] = 'success';
-                if ($Wttklist) {
-                    $_REQUEST = [
-                        'code'=>'default',
-                        'id'=> $Wttklist['id'] .',',
-                        'opt' => 'exec',
-                        'auto_df' => 1
-                    ];
-                    try {
-                        $resp = R('Payment/Index/index');
-                    } catch (Exception $exception) {
-                        $resp = json_decode($exception->getMessage(), true);
+                $pid = $this->getPaymentId($bankname);
+                $resp['status'] = 'error';
+                if ($pid) {
+                    $Wttklist = M('Wttklist')->where(['out_trade_no' => $out_trade_no])->find();
+                    if ($Wttklist) {
+                        $_REQUEST = [
+                            'code'=>$pid,
+                            'id'=> $Wttklist['id'] .',',
+                            'opt' => 'exec',
+                            'auto_df' => 1
+                        ];
+                        try {
+                            $resp = R('Payment/Index/index');
+                        } catch (Exception $exception) {
+                            $resp = json_decode($exception->getMessage(), true);
+                        }
+                        Log::record($data['trade_no'] . '自动打款返回状态:' . json_encode($resp));
                     }
-                    Log::record($data['trade_no'] . '自动打款返回状态:' . json_encode($resp));
                 }
+
                 header('Content-Type:application/json; charset=utf-8');
                 $data = array('status' => 'success', 'msg' => $resp['status'] == 'success'? '代付申请成功':'代付申请成功，请等待工作人员审核', 'transaction_id'=>$data['trade_no']);
                 echo json_encode($data);
@@ -523,51 +527,37 @@ class DfpayController extends Controller
         $m_Channel = M('PayForAnother');
         if ($channel) {
             if ($channel['polling'] == 1 && $channel['weight']) {
-
                 /***********************多渠道,轮询，权重随机*********************/
                 $weight_item  = [];
-                $error_msg    = '已经下线';
-                $temp_weights = explode('|', $this->channel['weight']);
-                $unset_keys = [];
-                $i = 0;
+                $temp_weights = explode('|', $channel['weight']);
                 foreach ($temp_weights as $k => $v) {
                     list($pid, $weight) = explode(':', $v);
-                    $weight_item[$i] = ['pid' => $pid, 'weight' => $weight];
-                    $unset_keys[$pid] = $i;
-                    $i++;
-                }
-                $shift_weight          = getWeight($weight_item);
-                $pid = $shift_weight['pid'];
-                $payment = $m_Channel->where(['status' => 1, 'id' => $pid])->find();
-                if ( ! $payment) {
+                    //检查是否开通
+                    $temp_info = $m_Channel->where(['id' => $pid, 'status' => 1])->find();
 
+                    //判断通道是否开启风控并上线
+                    if ($temp_info) {
+                        $weight_item[] = ['pid' => $pid, 'weight' => $weight];
+                    }
                 }
                 //如果所有通道风控，提示最后一个消息
-                if ($weight_item == []) {
-                    $this->showmessage('通道:' . $error_msg);
+                if (!empty($weight_item)) {
+                    $weight_item          = getWeight($weight_item);
+                    return $weight_item['pid'];
                 }
-                $weight_item          = getWeight($weight_item);
-                $this->channel['api'] = $weight_item['pid'];
-
             } else {
                 /***********************单渠道,没有轮询*********************/
 
                 //查询通道信息
-                $pid          = $this->channel['channel'];
-                $channel_info = $m_Channel->where(['id' => $pid])->find();
-
-                //通道风控
-                $l_ChannelRiskcontrol->setConfigInfo($channel_info); //设置配置属性
-                $error_msg = $l_ChannelRiskcontrol->monitoringData();
-
-                if ($error_msg !== true) {
-                    $this->showmessage('通道:' . $error_msg);
+                $pid          = $channel['channel'];
+                $payment = $m_Channel->where(['id' => $pid, 'status' => 1])->find();
+                if ($payment) {
+                    return $pid;
                 }
-                $this->channel['api'] = $pid;
             }
-        } else {
-            $where['is_default']  = 1;
         }
+        $where['is_default']  = 1;
         $list = $m_Channel->where($where)->find();
+        return $list['id'];
     }
 }
