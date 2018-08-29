@@ -146,7 +146,7 @@ class YtjfController extends PaymentController
     public function createOrder($id)
     {
 //        $bu = 8 - strlen($id);
-        return strlen($id) < 8 ? str_pad($id, 8, '6', STR_PAD_LEFT) : $id;
+        return strlen($id) < 8 ? str_pad($id, 8, '0', STR_PAD_LEFT) : $id;
     }
 
     public function postXmlCurl($xml, $url, $useCert = false, $second = 30)
