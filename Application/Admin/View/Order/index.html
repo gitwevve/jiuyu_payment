@@ -185,7 +185,8 @@
           <!--交易列表-->
           <div class="page">  
               <form class="layui-form" action="" method="get" id="pageForm"  autocomplete="off">
-                  <{$page}>                 
+                  <{$page}>
+                  <span>当前页共<em id="getRows">15</em>条</span>
                   <select name="rows" style="height: 32px;" id="pageList" lay-ignore >
                       <option value="">显示条数</option>
                       <option <if condition="$_GET[rows] neq '' && $_GET[rows] eq 15">selected</if> value="15">15条</option>
@@ -228,6 +229,9 @@
             , range: '|'
         });
     });
+      $(function () {
+          $("#getRows").text($("tbody tr").length);
+      });
     /*订单-查看*/
     function order_view(title,url,w,h){
         x_admin_show(title,url,w,h);

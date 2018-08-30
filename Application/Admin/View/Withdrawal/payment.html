@@ -24,6 +24,10 @@
                                        class="layui-input" value="<{$_GET['orderid']}>">
                             </div>
                             <div class="layui-input-inline">
+                                <input type="text" name="merchantno" autocomplete="off" placeholder="请输入商户订单号"
+                                       class="layui-input" value="<{$_GET['merchantno']}>">
+                            </div>
+                            <div class="layui-input-inline">
                                 <input type="text" name="bankfullname" autocomplete="off" placeholder="请输入开户名"
                                        class="layui-input" value="<{$_GET['bankfullname']}>">
                             </div>
@@ -185,8 +189,9 @@
                 <div class="page">
                     <form class="layui-form" action="" method="get" id="pageForm"  autocomplete="off">
                         <{$page}>
+                        <span>当前页共<em id="getRows">15</em>条</span>
                         <select name="rows" style="height: 32px;" id="pageList" lay-ignore >
-                            <option value="">显示条数</option>
+                            <!--<option value="">显示条数</option>-->
                             <option <if condition="$_GET[rows] neq '' && $_GET[rows] eq 15">selected</if> value="15">15条</option>
                             <option <if condition="$_GET[rows] eq 30">selected</if> value="30">30条</option>
                             <option <if condition="$_GET[rows] eq 50">selected</if> value="50">50条</option>
@@ -223,6 +228,10 @@
             , range: '|'
         });
 
+    });
+
+    $(function () {
+        $("#getRows").text($("tbody tr").length);
     });
     /*订单-查看*/
     function set_wtop(title,url,w,h){

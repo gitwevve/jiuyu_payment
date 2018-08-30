@@ -324,6 +324,10 @@ class WithdrawalController extends BaseController
         if($orderid) {
             $where['orderid'] = array('eq', $orderid);
         }
+        $merchantid = I("request.merchantno");
+        if($merchantid) {
+            $where['out_trade_no'] = array('eq', $merchantid);
+        }
         $bankfullname = I("request.bankfullname");
         if($bankfullname) {
             $where['bankfullname'] = array('eq', $bankfullname);
@@ -446,7 +450,7 @@ class WithdrawalController extends BaseController
             $where['cldatetime']   = ['between', [$sstime, $setime ? $setime : date('Y-m-d')]];
         }
 
-        $title = array('类型', '商户编号', '通道名称', '通道商户号', '系统订单号', '结算金额', '手续费', '到账金额', '银行名称', '支行名称', '银行卡号', '开户名', '所属省', '所属市', '申请时间', '处理时间', '状态', "备注");
+        $title = array('类型', '商户编号', '通道名称', '通道商户号', '系统订单号', '商户订单号', '结算金额', '手续费', '到账金额', '银行名称', '支行名称', '银行卡号', '开户名', '所属省', '所属市', '申请时间', '处理时间', '状态', "备注");
         $data  = M('Wttklist')->where($where)->select();
 
         foreach ($data as $item) {
@@ -482,6 +486,7 @@ class WithdrawalController extends BaseController
                 'df_name'      => $item['df_name'],
                 'channel_mch_id' => $item['channel_mch_id'],
                 'orderid' => $item['orderid'],
+                'out_trade_no' => $item['out_trade_no'],
                 'tkmoney'      => $item['tkmoney'],
                 'sxfmoney'     => $item['sxfmoney'],
                 'money'        => $item['money'],
