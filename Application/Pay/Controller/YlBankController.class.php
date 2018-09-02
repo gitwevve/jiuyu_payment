@@ -1,6 +1,8 @@
 <?php
 namespace Pay\Controller;
 
+use Think\Log;
+
 class YlBankController extends PayController
 {
 
@@ -44,7 +46,7 @@ class YlBankController extends PayController
 
         // 订单号，可以为空，如果为空，由系统统一的生成
         $return = $this->orderadd($parameter);
-        $this->EditMoney($return['orderid'], '', 0);
+//        $this->EditMoney($return['orderid'], '', 0);
         //如果生成错误，自动跳转错误页面
         $return["status"] == "error" && $this->showmessage($return["errorcontent"]);
 
@@ -130,6 +132,7 @@ class YlBankController extends PayController
     public function notifyurl()
     {
         $data = $_REQUEST;
+        Log::record(json_encode($data));
         if ($data['status'] == '1') {
             $sign = $data['sign'];
             unset($data['sign']);
