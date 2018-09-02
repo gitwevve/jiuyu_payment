@@ -202,7 +202,7 @@ class PayController extends Controller
         $time       = time(); //当前时间
 
         //********************************************订单支付成功上游回调处理********************************************//
-        if ($order_info["pay_status"] == 0) {
+        if ($order_info["pay_status"] == 0 && $returntype == 0) {
             //开启事物
             M()->startTrans();
             //查询用户信息
