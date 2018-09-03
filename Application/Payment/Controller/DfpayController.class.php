@@ -145,7 +145,7 @@ class DfpayController extends Controller
             if($this->merchants['df_auto_check']) {//自动通过审核
                 $data['check_status'] = 1;
             } else {
-                $data['check_status']  = 0;
+                $data['check_status'] = 0;
             }
             $data['extends']       = base64_decode($extends);
             //$data['notifyurl']     = $notifyurl;

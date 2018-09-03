@@ -11,9 +11,11 @@ class YlController extends PaymentController
 
     public function PaymentExec($data, $config)
     {
+        $orderid = $this->createOrderId($data['id']);
+        M('Wttklist')->where(['id' => $data['id']])->setField('extends', $orderid);
         $arraystr = [
             'mid'             => $config['mch_id'],
-            'orderNo'         => $data['orderid'],
+            'orderNo'         => $orderid,
             'amount'          => $data['money'],
             'receiveName'     => $data['bankfullname'],
             'openProvince'    => $data['sheng'],
@@ -53,9 +55,14 @@ class YlController extends PaymentController
 
     public function PaymentQuery($data, $config)
     {
+        if ( ! $data['extends']) {
+            $orderid = $data['extends'];
+        } else {
+            $orderid = $data['orderid'];
+        }
         $arraystr = [
             'mid'     => $config['mch_id'],
-            'orderNo' => $data['orderid'],
+            'orderNo' => $orderid,
             'noise'   => nonceStr(),
         ];
         $arraystr['sign'] = strtoupper(md5Sign($arraystr, $config['signkey'], '&'));
@@ -81,6 +88,11 @@ class YlController extends PaymentController
             }
         }
         return $return;
+    }
+
+    public function createOrderId($id)
+    {
+        return strlen($id) < 13? str_pad($id, 13, '0', STR_PAD_LEFT) : $id;
     }
 
 }
