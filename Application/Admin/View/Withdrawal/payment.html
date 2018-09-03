@@ -107,7 +107,7 @@
                     <thead>
                     <tr>
                         <th lay-data="{field:'check' , width:60}"> </th>
-                        <th lay-data="{field:'key', width:80}"></th>
+                        <!--<th lay-data="{field:'key', width:80}"></th>-->
                         <th lay-data="{field:'t', width:60}">类型</th>
                         <th lay-data="{field:'orderid', width:180}">系统订单号</th>
                         <th lay-data="{field:'out_trade_no', width:180}">商户订单号</th>
@@ -135,7 +135,7 @@
                     <volist name="list" id="vo">
                         <tr>
                             <td><input type="checkbox"  title="" value="<{$vo.id}>" class='checkIds' lay-skin="primary"></td>
-                            <td><{$vo.id}></td>
+                            <!--<td><{$vo.id}></td>-->
                             <td>T+<{$vo.t}></td>
                             <td><{$vo.orderid}></td>
                             <td><{$vo.out_trade_no}></td>
