@@ -28,6 +28,10 @@
                                        class="layui-input" value="<{$_GET['merchantno']}>">
                             </div>
                             <div class="layui-input-inline">
+                                <input type="text" name="extends" autocomplete="off" placeholder="请输入处理号"
+                                       class="layui-input" value="<{$_GET['extends']}>">
+                            </div>
+                            <div class="layui-input-inline">
                                 <input type="text" name="bankfullname" autocomplete="off" placeholder="请输入开户名"
                                        class="layui-input" value="<{$_GET['bankfullname']}>">
                             </div>
@@ -107,6 +111,7 @@
                         <th lay-data="{field:'t', width:60}">类型</th>
                         <th lay-data="{field:'orderid', width:180}">系统订单号</th>
                         <th lay-data="{field:'out_trade_no', width:180}">商户订单号</th>
+                        <th lay-data="{field:'extends', width:180}">处理号</th>
                         <th lay-data="{field:'userid', width:100,style:'color:#060;'}">商户编号</th>
                         <th lay-data="{field:'channel_mch_id', width:150,style:'color:#060;'}">通道商户号</th>
                         <th lay-data="{field:'tkmoney', width:110}">结算金额</th>
@@ -134,6 +139,7 @@
                             <td>T+<{$vo.t}></td>
                             <td><{$vo.orderid}></td>
                             <td><{$vo.out_trade_no}></td>
+                            <td><{$vo.extends}></td>
                             <td><{$vo["userid"]+10000}></td>
                             <td><{$vo["channel_mch_id"]}></td>
                             <td><{$vo["tkmoney"]}> 元</td>
