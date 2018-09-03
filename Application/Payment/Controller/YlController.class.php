@@ -11,11 +11,9 @@ class YlController extends PaymentController
 
     public function PaymentExec($data, $config)
     {
-        $orderid = $this->createOrderId($data['id']);
-        M('Wttklist')->where(['id' => $data['id']])->setField('extends', $orderid);
         $arraystr = [
             'mid'             => $config['mch_id'],
-            'orderNo'         => $orderid,
+            'orderNo'         => $data['orderid'],
             'amount'          => $data['money'],
             'receiveName'     => $data['bankfullname'],
             'openProvince'    => $data['sheng'],
@@ -55,14 +53,9 @@ class YlController extends PaymentController
 
     public function PaymentQuery($data, $config)
     {
-        if ( ! $data['extends']) {
-            $orderid = $data['extends'];
-        } else {
-            $orderid = $data['orderid'];
-        }
         $arraystr = [
             'mid'     => $config['mch_id'],
-            'orderNo' => $orderid,
+            'orderNo' => $data['orderid'],
             'noise'   => nonceStr(),
         ];
         $arraystr['sign'] = strtoupper(md5Sign($arraystr, $config['signkey'], '&'));

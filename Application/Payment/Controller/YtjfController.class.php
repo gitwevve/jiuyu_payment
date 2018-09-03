@@ -16,17 +16,16 @@ class YtjfController extends PaymentController
 
     public function PaymentExec($data, $config)
     {
-        //todo 0、数据初始化
         $MerNo         = $config['mch_id']; //业务申请
         $PayTm         = date('YmdHis'); //时间-dyn
-        $BatchName     = $data['orderid'];
+        $BatchName     = $data['id'];
         $BatchNo       = $this->createOrder($data['id']); //
         $BussNo        = $config['appid']; //测试业务类型，每个商户不同,生产环境由业务分配
         $ProcedureType = '1'; //1:付款方付费 2：收款方付费
         $totCnt        = 1;
         $totAmt        = bcmul($data['money'], 100);
         $merinsid = $BatchNo . mt_rand(10, 99);
-        M('Wttklist')->where(['id'=>$data['id']])->setField('extend',$merinsid);
+        M('Wttklist')->where(['id'=>$data['id']])->setField('extends',$data['id']);
         $details[] = [
             'merinsid'  => $merinsid, //每个批次内，流水唯一即可
             'pay-type'  => '1',
