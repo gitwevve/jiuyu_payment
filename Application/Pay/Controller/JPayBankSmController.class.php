@@ -25,7 +25,7 @@ use Org\Util\Jp\util\RsaEncryptor;
  *    注：下游对接请查看商户API对接文档部分.
  */
 
-class JPayBankController extends PayController
+class JPayBankSmController extends PayController
 {
     protected $common_params = [
         'charset' => '02', // UTF-8
@@ -49,40 +49,26 @@ class JPayBankController extends PayController
      */
     public function Pay($array)
     {
-        $orderid = I("request.pay_orderid");
-        $body    = I('request.pay_productname');
-        $bankid  = I('request.pay_bankid');
 
-        $return  = $this->getParameter('久派支付', $array, __CLASS__, 100);
+        $return  = $this->getParameter('久派支付(银联扫码)', $array, __CLASS__, 100);
 
         $config = [
             'merchantId' => $return['mch_id'],
             'requestTime' => date('YmdHis'),
             'requestId' => md5(time().mt_rand(100, 999)),
-            'service' => 'rpmBankPayment',
+            'service' => 'qrcodeSpdbPreOrder',
         ];
         $this->mergeCommonParams($config);
         $formData = [
-            'merchantName'    => 'jiuyu',
-            'memberId'   => $return['mch_id'],
-            'orderTime'    => date('YmdHis'),
-            'orderId'      => $return['orderid'],
-            'totalAmount'  => $return['amount'],
-            'currency' => 'CNY',
-            'bankAbbr' => array_key_exists($bankid, $this->b2cBank_) ?$this->b2cBank_[$bankid] : 'ICBC',
-            'notifyUrl'       => $return['callbackurl'],
-            'pageReturnUrl'      => $return['notifyurl'],
-            'cardType'    => '0',
-            'payType'    => 'B2C',
-            'validNum'    => '2',
-            'validUnit'    => '01',
+            'payChannel'    => 'UPOP',
             'goodsName'   => '产品充值',
-            'terminalType' =>'01',
-            'orderDetail' =>'jiuyu'. $return['orderid'],
-            'busTypeScene' =>'01',
-            'busTypeCode' =>'100002',
-            'tradeUse' =>'用户充值',
-            'tradeAbstract' => $return['orderid']
+            'corpOrg'    => 'UPOP',
+            'clientIP'    => getIP(),
+            'terminalId'    => mt_rand(10000000, 99999999),
+            'orderId'      => $return['orderid'],
+            'amount'  => $return['amount'],
+//            'bankUrl' => $return['callbackurl'],
+            'offlineNotifyUrl'      => $return['notifyurl'],
         ];
 
         $data = array_merge($formData, $this->common_params);
@@ -91,6 +77,8 @@ class JPayBankController extends PayController
         $data['merchantSign'] = RsaEncryptor::RSASign($text, $return['signkey'], $return['appsecret']);
         $data['merchantCert'] = RsaEncryptor::getPubCert($return['signkey'], $return['appsecret']);
 
+//        $res = curlPost($return['gateway'], http_build_query($data), array('Content-Type: application/x-www-form-urlencoded'));
+//        dump($res);
         echo createForm($return['gateway'], $data);
 
     }
@@ -134,36 +122,23 @@ class JPayBankController extends PayController
     {
         $postData = I('request.', '');
 
-        if ($postData['respCode'] == '0000') {
-            $txnString =
-                $postData['transCode'] . '|' .
-                $postData['merchantId'] . '|' .
-                $postData['respCode'] . '|' .
-                $postData['sysTraceNum'] . '|' .
-                $postData['merOrderNum'] . '|' .
-                $postData['orderId'] . '|' .
-                $postData['bussId'] . '|' .
-                $postData['tranAmt'] . '|' .
-                $postData['orderAmt'] . '|' .
-                $postData['bankFeeAmt'] . '|' .
-                $postData['integralAmt'] . '|' .
-                $postData['vaAmt'] . '|' .
-                $postData['bankAmt'] . '|' .
-                $postData['bankId'] . '|' .
-                $postData['integralSeq'] . '|' .
-                $postData['vaSeq'] . '|' .
-                $postData['bankSeq'] . '|' .
-                $postData['tranDateTime'] . '|' .
-                $postData['payMentTime'] . '|' .
-                $postData['settleDate'] . '|' .
-                $postData['currencyType'] . '|' .
-                $postData['orderInfo'] . '|' .
-                $postData['userId'];
+        if ($postData['orderSts'] == 'PD') {
+            $data = $postData;
+            unset($data['serverSign']);
+            unset($data['serverCert']);
 
-            $key       = getKey($postData['merOrderNum']);
-            $signValue = md5($txnString . $key);
-            if ($signValue == $postData['signValue']) {
-                $this->EditMoney($postData['merOrderNum'], '', 0);
+            ksort($data);
+            $text = $this->normalResponse($data);
+            $key       = getKey($data['orderId']);
+            $order  = M('Order')->where(['pay_orderid' => $data['orderId']])->find();
+            $appsecret = '';
+            if ($order) {
+                $appsecret = M('ChannelAccount')->where(['id' => $order['account_id']])->getField('appsecret');
+            }
+            $signValue = RsaEncryptor::RSASign($text, $key, $appsecret);
+
+            if ($signValue == $postData['serverSign']) {
+                $this->EditMoney($postData['orderId'], '', 0);
                 exit("success");
             }
         }

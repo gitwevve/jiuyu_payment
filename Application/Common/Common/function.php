@@ -1070,6 +1070,7 @@ function curlPost($url, $data = '', $headers = array(), $agent = '')
     curl_setopt($ch, CURLOPT_HEADER, false);
     curl_setopt($ch, CURLOPT_USERAGENT, $agent);
     $file_contents = curl_exec($ch);
+    curl_close($ch);
 
     //这里解析
     return $file_contents;
