@@ -236,6 +236,7 @@ class IndexController extends PaymentController{
                 'code'=>'default',
                 'id'=> $ids . ',',
                 'opt' => 'exec',
+                'auto_df' => 1
             ];
             try {
                 $res = R('Payment/Index/index');
