@@ -7,6 +7,7 @@
  */
 namespace Pay\Controller;
 use Org\Util\Jp\util\RsaEncryptor;
+use Think\Log;
 
 /**
  * 第三方接口开发示例控制器
@@ -130,6 +131,7 @@ class JPayBankSmController extends PayController
     public function notifyurl()
     {
         $postData = I('request.', '');
+        Log::record(json($postData));
 
         if ($postData['orderSts'] == 'PD') {
             $data = $postData;
