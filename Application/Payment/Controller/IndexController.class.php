@@ -67,7 +67,7 @@ class IndexController extends PaymentController{
         }
         $single_result = null;
         $success = 0;
-        if( count($wttk_lists)<= 15){
+        if( count($wttk_lists)<= 100){
             $fp = fopen($file, "r");
             foreach($wttk_lists as $k => $v){
                 //开启文件锁防止多人操作重复提交
