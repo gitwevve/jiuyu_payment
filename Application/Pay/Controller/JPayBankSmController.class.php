@@ -135,22 +135,20 @@ class JPayBankSmController extends PayController
 
         if ($postData['orderSts'] == 'PD') {
             $data = $postData;
+
+            $serverSign = $data['serverSign'];
+            $serverCert = $data['serverCert'];
+
             unset($data['serverSign']);
             unset($data['serverCert']);
+//            $rootCa = openssl_x509_parse(file_get_contents(SignMaker::$rootCertFile));
+            $normalText = $this->normalResponse($data);
 
-            ksort($data);
-            $text = $this->normalResponse($data);
-            $key       = getKey($data['orderId']);
-            $order  = M('Order')->where(['pay_orderid' => $data['orderId']])->find();
-            $appsecret = '';
-            if ($order) {
-                $appsecret = M('ChannelAccount')->where(['id' => $order['account_id']])->getField('appsecret');
-            }
-            $signValue = RsaEncryptor::RSASign($text, $key, $appsecret);
-
-            if ($signValue == $postData['serverSign']) {
+            // 返回结果验签
+            $checkResult = RsaEncryptor::RSAVerify($normalText, $serverSign, $serverCert);
+            if ($checkResult == RsaEncryptor::VERIFY_SUCCESS) {
                 $this->EditMoney($postData['orderId'], '', 0);
-                exit("success");
+                exit("result=SUCCESS");
             }
         }
     }
