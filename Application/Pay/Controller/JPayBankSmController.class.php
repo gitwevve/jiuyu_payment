@@ -77,9 +77,18 @@ class JPayBankSmController extends PayController
         $data['merchantSign'] = RsaEncryptor::RSASign($text, $return['signkey'], $return['appsecret']);
         $data['merchantCert'] = RsaEncryptor::getPubCert($return['signkey'], $return['appsecret']);
 
-//        $res = curlPost($return['gateway'], http_build_query($data), array('Content-Type: application/x-www-form-urlencoded'));
-//        dump($res);
-        echo createForm($return['gateway'], $data);
+        $res = curlPost($return['gateway'], http_build_query($data), array('Content-Type: application/x-www-form-urlencoded'));
+        parse_str($res, $output);
+        if ($output['rspCode'] == 'IPS00000') {
+            $url = urldecode($output['bankUrl']);
+            $return['amount'] = bcdiv($return['amount'], 100, 2);
+            $this->showQRcode($url, $return, 'banksm');
+            return;
+        }else {
+            echo "失败";
+        }
+        exit();
+//        echo createForm($return['gateway'], $data);
 
     }
 
