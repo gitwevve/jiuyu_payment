@@ -131,7 +131,7 @@ class JPayBankSmController extends PayController
     public function notifyurl()
     {
         $postData = I('request.', '');
-
+        Log::write(json_encode($postData),'WARN');
         if ($postData['orderSts'] == 'PD') {
             $data = $postData;
 
