@@ -134,6 +134,7 @@ class JPayBankSmController extends PayController
         Log::write(json_encode($postData),'WARN');
         if ($postData['orderSts'] == 'PD') {
             $data = $postData;
+            ksort($data);
 
             $serverSign = $data['serverSign'];
             $serverCert = $data['serverCert'];
@@ -148,6 +149,8 @@ class JPayBankSmController extends PayController
             if ($checkResult == RsaEncryptor::VERIFY_SUCCESS) {
                 $this->EditMoney($postData['orderId'], '', 0);
                 exit("result=SUCCESS");
+            } else {
+                exit('sign failed');
             }
         }
     }
