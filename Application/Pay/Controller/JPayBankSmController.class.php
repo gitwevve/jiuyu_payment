@@ -116,13 +116,13 @@ class JPayBankSmController extends PayController
 
     public function callbackurl()
     {
-        $Order      = M("Order");
-        $pay_status = $Order->where("pay_orderid = '" . $_REQUEST["merOrderNum"] . "'")->getField("pay_status");
-        if ($pay_status != 0) {
-            $this->EditMoney($_REQUEST["merOrderNum"], '', 1);
-        } else {
-            exit("error");
-        }
+//        $Order      = M("Order");
+//        $pay_status = $Order->where("pay_orderid = '" . $_REQUEST["merOrderNum"] . "'")->getField("pay_status");
+//        if ($pay_status != 0) {
+//            $this->EditMoney($_REQUEST["merOrderNum"], '', 1);
+//        } else {
+//            exit("error");
+//        }
     }
 
     /**
