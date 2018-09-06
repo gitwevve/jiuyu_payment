@@ -24,10 +24,38 @@
 					<label>金额</label>
 					<input type="text" name="money" value="100" />
 				</li>
-				<li>
-					<label>开户行</label>
-					<input type="text" name="bankname" value="" />
-				</li>
+<!--				<li>-->
+<!--					<label>开户行</label>-->
+<!--					<input type="text" name="bankname" value="" />-->
+<!--				</li>-->
+                <li>
+                    <label>银行编码</label>
+                    <select name="bankid">
+                        <option value="BOB">北京银行</option>
+                        <option value="BEA">东亚银行</option>
+                        <option value="ICBC">中国工商银行</option>
+                        <option value="CEB">中国光大银行</option>
+                        <option value="GDB">广发银行</option>
+                        <option value="HXB">华夏银行</option>
+                        <option value="CCB">中国建设银行</option>
+                        <option value="BCM">交通银行</option>
+                        <option value="CMSB">中国民生银行</option>
+                        <option value="NJCB">南京银行</option>
+                        <option value="NBCB">宁波银行</option>
+                        <option value="ABC">中国农业银行</option>
+                        <option value="PAB">平安银行</option>
+                        <option value="BOS">上海银行</option>
+                        <option value="SPDB">上海浦东发展银行</option>
+                        <option value="SDB">深圳发展银行</option>
+                        <option value="CIB">兴业银行</option>
+                        <option value="PSBC">中国邮政储蓄银行</option>
+                        <option value="CMBC">招商银行</option>
+                        <option value="CZB">浙商银行</option>
+                        <option value="BOC">中国银行</option>
+                        <option value="CNCB">中信银行</option>
+
+                    </select>
+                </li>
 				<li>
 					<label>支行名称</label>
 					<input type="text" name="subbranch" value="" />

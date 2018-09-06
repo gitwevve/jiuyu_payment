@@ -1691,6 +1691,7 @@ class WithdrawalController extends UserController
                     if (isset($v['extend'])) {
                         $extends = json_encode($v['extend']);
                     }
+                    $bank = M('Systembank')->where(['bankname' => $bankCard['bankname']])->find();
                     //提现记录
                     $wttkData[] = [
                         'orderid'      => $orderid,
@@ -1699,6 +1700,7 @@ class WithdrawalController extends UserController
                         "banknumber"   => $bankCard["cardnumber"],
                         "bankfullname" => $bankCard['accountname'],
                         "sheng"        => $bankCard["province"],
+                        'bankid'       => $bank['bankcode'],
                         "shi"          => $bankCard["city"],
                         "userid"       => $userid,
                         "sqdatetime"   => $time,

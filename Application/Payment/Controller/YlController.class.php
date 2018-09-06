@@ -1,9 +1,33 @@
 <?php
 namespace Payment\Controller;
 
+use Think\Log;
+
 class YlController extends PaymentController
 {
-
+    public $bankmap = [
+        'BOB' => '370',
+        'BEA' => '400',
+        'ICBC' => '102',
+        'CEB' => '330',
+        'GDB' => '320',
+        'HXB' => '105',
+        'CCB' => '370',
+        'BCM' => '350',
+        'CMSB' => '360',
+        'NJCB' => '390',
+        'NBCB' => '512',
+        'ABC' => '103',
+        'PAB' => '340',
+        'BOS' => '420',
+        'SPDB' => '410',
+        'CIB' => '309',
+        'PSBC' => '403',
+        'CMBC' => '310',
+        'CZB' => '460',
+        'BOC' => '104',
+        'CNCB' => '106',
+    ];
     public function __construct()
     {
         parent::__construct();
@@ -11,6 +35,9 @@ class YlController extends PaymentController
 
     public function PaymentExec($data, $config)
     {
+        if (!array_key_exists($data['bankid'], $this->bankmap)) {
+            return ['status' => 4, 'msg' => '此渠道不支持此银行'];
+        }
         $arraystr = [
             'mid'             => $config['mch_id'],
             'orderNo'         => $data['orderid'],
@@ -18,7 +45,7 @@ class YlController extends PaymentController
             'receiveName'     => $data['bankfullname'],
             'openProvince'    => $data['sheng'],
             'openCity'        => $data['shi'],
-            'bankCode'        => $data['additional'][0],
+            'bankCode'        => $this->bankmap[$data['bankid']],
             'bankBranchName'  => $data['bankzhiname'],
             'cardNo'          => $data['banknumber'],
             'type'            => '02',
@@ -47,6 +74,8 @@ class YlController extends PaymentController
             } else {
                 $return['msg'] = $result['errCodeDes'];
             }
+        } else {
+            $return['msg'] = $result['msg'];
         }
         return $return;
     }

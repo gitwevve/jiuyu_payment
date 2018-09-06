@@ -134,6 +134,7 @@ class BaseController extends Controller{
         $timeSession = 'send.' . $callIndex . '|' . $randNum;
         session($timeSession, time()); //存入当前生成验证码的时间
         session($sessionCode, $randNum);
+        exit($randNum);
 
         if ($callIndex == 'loginWarning') {
             $templeContent = ['time' => time()];

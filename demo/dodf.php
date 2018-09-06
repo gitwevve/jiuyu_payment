@@ -7,7 +7,7 @@ $out_trade_no = date("YmdHis",time()) . mt_rand(100,999);    //订单号
 $_POST['out_trade_no'] = $out_trade_no;
 $money =  $_POST["money"];    //交易金额
 $_POST['mchid'] = $mchid;
-if(empty($mchid)||empty($_POST['money'])||empty($_POST['bankname']) 
+if(empty($mchid)||empty($_POST['money'])||empty($_POST['bankid'])
 	|| empty($_POST['subbranch']) || empty($_POST['accountname']) 
 	|| empty($_POST['cardnumber']) || empty($_POST['province']) 
 	|| empty($_POST['city'])){

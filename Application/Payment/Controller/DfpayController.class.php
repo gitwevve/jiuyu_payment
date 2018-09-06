@@ -67,10 +67,20 @@ class DfpayController extends Controller
         if($money<=0) {
             $this->showmessage('金额错误！');
         }
-        $bankname = I("post.bankname", '');
-        if(!$bankname) {
-            $this->showmessage('银行名称不能为空！');
+        //增加bankid
+        $bankid = I("post.bankid", '');
+        if(!$bankid) {
+            $this->showmessage('银行编码不能为空！');
         }
+        $bank = M('Systembank')->where(['bankcode' => $bankid])->find();
+        if (!$bank) {
+            $this->showmessage('银行编码有误！');
+        }
+        $bankname = $bank['bankname'];
+//        $bankname = I("post.bankname", '');
+//        if(!$bankname) {
+//            $this->showmessage('银行名称不能为空！');
+//        }
         $subbranch = I("post.subbranch", '');
         if(!$subbranch) {
             $this->showmessage('支行名称不能为空');
@@ -136,6 +146,7 @@ class DfpayController extends Controller
             $data['out_trade_no']  = $out_trade_no;
             $data['money']         = $money;
             $data['bankname']      = $bankname;
+            $data['bankid']        = $bankid;
             $data['subbranch']     = $subbranch;
             $data['accountname']   = $accountname;
             $data['cardnumber']    = $cardnumber;
@@ -412,6 +423,7 @@ class DfpayController extends Controller
                 "sheng"        => $data["province"],
                 "shi"          => $data["city"],
                 "userid"       => $data['userid'],
+                'bankid'       => $data['bankid'],
                 "sqdatetime"   => $time,
                 "status"       => 0,
                 "t"            => $t,
